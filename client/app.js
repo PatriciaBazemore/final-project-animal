@@ -14,6 +14,10 @@ angular.module('volunteerApp', ['volunteerApp.controllers', 'volunteerApp.factor
             templateUrl: 'views/single_animal.html',
             controller: 'SingleAnimalController'
         })
+        .when('/donate', {
+            templateUrl: 'views/donations.html',
+            controller: 'DonationController'
+        })
         .otherwise({
             redirectTo: '/'
         });
