@@ -37,10 +37,21 @@ nav {
     font-size: 2em;
     font-family: 'Zilla Slab', serif;
 }
+.nav-text-b {
+    color: white;
+    font-size: 2em;
+    font-family: 'Zilla Slab', serif;
+}
+#donate {
+    height: 1.5em;
+    width: 4.5em;
+    border-radius: 0.45em;
+    background-color: rgb(2, 92, 46);
+}
 
 .brand-footer {
-    background-color: rgb(244, 244, 244);
-    color: rgb(209, 210, 212);
+    background-color: rgb(2, 92, 46);
+    color: white;
     padding: 1em;
 }
 /* WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME */

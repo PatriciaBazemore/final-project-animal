@@ -9,6 +9,10 @@ angular.module('volunteerApp.controllers', [])
         $location.path('/animal_list');
     }
 }])
+// .controller('NavToggle', ['$scope', '$routeParams', '$location', function($scope, $routeParams, $location) {
+//     if $location.url() === 
+// }])
+// WORK W WILL TO CREATE CONTROLLERS TOGGLING PUBLIC NAV & PRIVATE (USER) NAV
 .controller('AnimalsController', ['$scope', 'Animal', 'SEOService', '$location', function($scope, Animal, SEOService, $location) {
     $scope.animals = Animal.query();
 
@@ -27,6 +31,7 @@ angular.module('volunteerApp.controllers', [])
             description: 'McKamey Animal Shelter Volunteer Portal'
         })
 }]);
+
 // .controller('NavController', ['$scope', '$location', function($scope, $location) {
 //     if(localStorage.items === undefined) 
 //         localStorage.items = angular.toJson([]);
