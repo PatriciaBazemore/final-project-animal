@@ -56,7 +56,7 @@ angular.module('volunteerApp.controllers', [])
 
     $scope.errorMessage = '';
 
-    $scope.processDonation() = function() {
+    $scope.processDonation = function() {
         stripe.createToken(card, {
             name: $scope.fullname,
             address_line1: $scope.line1,
