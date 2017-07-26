@@ -1,0 +1,8 @@
+<!-- DISPLAY OF ALL ANIMALS // SEARCH COMPONENT @ TOP (aka page you go to looking for animals)  // shelterId/Name to single_animal.html -->
+<div class="container">
+    <div class="container" id="animal-list" ng-repeat="a in animals">
+        <h1>{{ a.name }} - #{{ a.shelterid }}</h1>
+        <a href="/animals/{{ a.id }}"><img src="{{ a.imageurl }}" class="animal-img" width="500px"></a>
+        <h3>{{ a.breed }} - {{ a.age }} - {{ a.gender }} - {{ a.size }}</h3>
+    </div>
+</div>

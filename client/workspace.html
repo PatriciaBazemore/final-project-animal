@@ -1,0 +1,60 @@
+<!-- NAVBAR CODE  -->
+
+<div class="container" ng-controller="NavController">
+      <nav class="navbar navbar-inverse custom-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar .navbar-collapse" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand nav-logo" href="/">
+                <img alt="Brand" class="nav-logo" src="/images/Newlogo.png">
+            </a>
+            <!-- <ul class="nav navbar-nav navbar-left">
+            <li><a class="brand nav-logo" href="/"><img alt="Brand" class="nav-logo" src="/images/Newlogo.png"></a></li>
+            <li><a href="#" class="pipe disabled" role="button"><p id="pipe">|</p></a></li></ul> -->
+          </div>
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+            <ul class="nav navbar-nav">
+                <li class="line"> </li>
+              <li class="underline"><a href="/apparel" class="nav-text">APPAREL</a></li>
+              <li class="underline"><a href="/misc" class="nav-text">MISC</a></li>
+              <li class="underline"><a href="/contact" class="nav-text">CONTACT</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a class="nav-text" href="/checkout">Cart <span class="badge">{{ cartTotal }}</span></a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+    </div>
+        <!--END HEADER  -->
+
+    <div ng-view class="view"></div>
+    
+    <!--FOOTER-->
+    <div class="col-md-12 brand-footer">
+        <div class="container-fluid">
+            <img alt="Brand" class="col-3-sm nav-logo-b" src="/images/logo-footer.svg">
+            <p class="copyright">Copyright Covalence LLC</p>
+        </div>
+    </div>
+
+
+
+<div class="navContainer mobileSideNav" style="min-height: 1139px; display: block;">
+  <nav class="navContent">
+    <ul id="navTopLevel" data-mobile-nav-label="Menu" data-mobile-nav-style="side" data-mobile-nav-reveal="push" data-mobile-nav-animation="slide" data-mobile-nav-trigger="icon" data-mobile-nav-icon-position="left" data-home-nav-collapse-min="1" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement"><li><a href="/" class="selected" itemprop="url"><span class="currArrow">▸</span>Home</a></li><li><span class="navLabel">ADOPTION <span class="dropArrow">▾</span></span><ul class="subNav"><li><a href="/adoption" itemprop="url">Adoption</a></li><li><a href="/available-pets" itemprop="url">Available Pets</a></li><li><a href="/behavior-training" itemprop="url">Behavior Training</a></li></ul></li><li><a href="/volunteer" itemprop="url">Volunteer</a></li><li><a href="/services" itemprop="url">Services <span class="dropArrow">▾</span></a><ul class="subNav"><li>
+  <a href="https://secure.jotformpro.com/form/51336352450953" target="_blank" rel="noopener noreferrer" itemprop="url">
+    City Pet Licenses
+  </a></li><li><a href="/services/lost-pets" itemprop="url">Lost Pets</a></li><li><a href="/services/microchipping" itemprop="url">Microchipping</a></li><li><a href="/services/community-outreach" itemprop="url">Community Outreach</a></li><li><a href="/services/fight-animal-cruelty" itemprop="url">Fight Animal Cruelty</a></li><li><a href="/services/wildlife" itemprop="url">Wildlife</a></li><li><a href="/services/birthday-parties" itemprop="url">Birthday Parties</a></li><li><a href="/services/dogs-in-outdoor-dining-permit" itemprop="url">Dogs In Outdoor Dining Permit</a></li></ul></li><li><span class="navLabel">Programs <span class="dropArrow">▾</span></span><ul class="subNav"><li><a href="/vaccination-clinic" itemprop="url">Vaccination Clinic</a></li><li><a href="/trailblazer-club" itemprop="url">Trailblazer Club</a></li><li><a href="/foster-partners" itemprop="url">Foster Partners</a></li><li><a href="/spay-neuter-programs" itemprop="url">Spay &amp; Neuter Programs</a></li><li><a href="/become-a-rescue-partner" itemprop="url">Become a Rescue Partner</a></li><li><a href="/office-romance-project" itemprop="url">Office Romance Project</a></li><li><a href="/paws-to-read" itemprop="url">Paws to Read</a></li></ul></li><li><span class="navLabel">Center Info <span class="dropArrow">▾</span></span><ul class="subNav"><li><a href="/in-the-news" itemprop="url">In the News</a></li><li><a href="/contact" itemprop="url">Contact</a></li><li><a href="/about-us" itemprop="url">About Us</a></li><li><a href="/careers" itemprop="url">Careers</a></li><li><a href="/board-of-directors" itemprop="url">Board of Directors</a></li></ul></li><li><span class="navLabel">Events <span class="dropArrow">▾</span></span><ul class="subNav"><li><a href="/vaccination-clinic-2" itemprop="url">Vaccination Clinic</a></li></ul></li><li>
+  <a href="/one-time-donation" class="button navButton" itemprop="url">
+    Donate <span class="dropArrow">▾</span>
+  </a><ul class="subNav"><li><a href="/one-time-donation" itemprop="url">One-Time Donation</a></li><li><a href="/reoccurring-donation" itemprop="url">Reoccurring Donation</a></li><li><a href="/mary-dubes-angel-fund" itemprop="url">Mary Dube's Angel Fund</a></li><li><a href="/healing-hearts-fund" itemprop="url">Healing Hearts Fund</a></li><li><a href="/donate-a-kuranda-bed" itemprop="url">Donate a Kuranda Bed</a></li><li><a href="/paw-print-pathway" itemprop="url">Paw Print Pathway</a></li><li><a href="/amazon-wish-list" itemprop="url">Amazon Wish List</a></li><li><a href="/shop-on-amazon-smile" itemprop="url">Shop on Amazon Smile</a></li><li><a href="/donation-wish-list" itemprop="url">Donation Wish List</a></li></ul></li></ul>
+  </nav><!-- /navContent -->
+</div>
+
+<!-- END NAVBAR  -->

@@ -1,0 +1,36 @@
+{
+  "name": "final-project-animal",
+  "version": "1.0.0",
+  "description": "animal-volunteer-helper",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "source .variables && nodemon",
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatriciaBazemore/final-project-animal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatriciaBazemore/final-project-animal/issues"
+  },
+  "homepage": "https://github.com/PatriciaBazemore/final-project-animal#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "express-mysql": "0.0.1",
+    "express-mysql-session": "^1.2.1",
+    "express-session": "^1.15.4",
+    "mysql": "^2.13.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "prerender": "^4.4.1",
+    "prerender-node": "^2.7.2",
+    "sendgrid": "^5.2.0",
+    "stripe": "^4.23.1"
+  }
+}
