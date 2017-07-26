@@ -5,4 +5,8 @@ angular.module('volunteerApp.factories', [])
             method: 'PUT'
         }
     });
+}])
+.factory('Donation', ['$resource', function($resource) {
+    return $resource('api/donations/:id');
+
 }]);
