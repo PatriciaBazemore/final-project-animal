@@ -1,10 +1,32 @@
 angular.module('volunteerApp.controllers', [])
-.controller('WelcomeController', ['$scope', 'SEOService', '$location', function($scope, SEOService, $location) {
+.controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', function($scope, SEOService, $location, UserService) {
+    UserService.me().then(function() {
+        redirect();
+    });
+
+    $scope.login = function() {
+        UserService.login($scope.email, $scope.password)
+        .then(function() {
+            redirect();
+        }, function(err) {
+            console.log(err);
+        });
+    }
+
+    function redirect() {
+        var dest = $location.search().dest;
+        if (!dest) {
+            dest = '/';
+        }
+        $location.replace().path(dest).search('dest', null);
+    }
+
     SEOService.setSEO({
         title: 'Welcome',
         url: $location.url(),
         description: 'McKamey Animal Shelter Volunteer Portal'
     })
+
     $scope.animals = function() {
         $location.path('/animal_list');
     }
