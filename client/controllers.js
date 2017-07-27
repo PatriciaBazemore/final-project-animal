@@ -1,25 +1,26 @@
 angular.module('volunteerApp.controllers', [])
 .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', function($scope, SEOService, $location, UserService) {
     UserService.me().then(function() {
-        redirect();
+        // redirect();
     });
 
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
         .then(function() {
-            redirect();
+            // redirect();
+            location.pathname('/animals');
         }, function(err) {
             console.log(err);
         });
     }
 
-    function redirect() {
-        var dest = $location.search().dest;
-        if (!dest) {
-            dest = '/';
-        }
-        $location.replace().path().search('dest', null);
-    }
+    // function redirect() {
+    //     var dest = $location.search().dest;
+    //     if (!dest) {
+    //         dest = '/';
+    //     }
+    //     $location.replace().path().search('dest', null);
+    // }
 
     SEOService.setSEO({
         title: 'Welcome',
