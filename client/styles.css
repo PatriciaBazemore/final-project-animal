@@ -59,7 +59,15 @@ nav {
     border: solid black .5px;
 }
 
+.fa {
+    color: white;
+    height: 22px;
+    width: 22px;
+}
 
+#cat-prices {
+    float: right;
+}
 /* ANIMAL LIST ANIMAL LIST ANIMAL LIST ANIMAL LIST */
 
 /* SINGLE ANIMAL SINGLE ANIMAL SINGLE ANIMAL */
