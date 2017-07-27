@@ -36,6 +36,12 @@ angular.module('volunteerApp.controllers', [])
 //     if $location.url() === 
 // }])
 // WORK W WILL TO CREATE CONTROLLERS TOGGLING PUBLIC NAV & PRIVATE (USER) NAV
+.controller('IndexController', ['$scope', function($scope) {
+    // $('.').click(function() {
+    $(this).toggleClass('myclass');
+    $(this).toggleClass('showhidenew');
+;
+}])
 .controller('AnimalsController', ['$scope', 'Animal', 'SEOService', '$location', function($scope, Animal, SEOService, $location) {
     $scope.animals = Animal.query();
 
@@ -89,9 +95,12 @@ angular.module('volunteerApp.controllers', [])
     UserService.isAdmin();
     $scope.user = User.get({ id: $routeParams.id });
 
-    //if update button
     $scope.updateUser = function() {
-        $location.path('/users/' + $routeParams.id + '/update');
+        $scope.user.$update(function(success) {
+            $location.path('/users/' + $routeParams.id);
+        }, function(err) {
+            console.log(err);
+        });
     };
 
     $scope.deleteUser = function() {
