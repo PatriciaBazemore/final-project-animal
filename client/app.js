@@ -14,6 +14,10 @@ angular.module('volunteerApp', ['volunteerApp.controllers', 'volunteerApp.factor
             templateUrl: 'views/animal_list.html',
             controller: 'AnimalsController'
         })
+        .when('/users/:id/update', {
+            templateUrl: 'views/user_update.html',
+            controller: 'UserUpdateController'
+        })
         .when('/users/:id', {
             templateUrl: 'views/single_user.html',
             controller: 'SingleUserController'

@@ -57,7 +57,7 @@ router.route('/')
             res.sendStatus(500);
         });
     })
-    .post(auth.isAdmin, function(req, res) { //create new user
+    .post(function(req, res) { //create new user
         var u = req.body;
         utils.encryptPassword(u.password)
         .then(function(hash) {
