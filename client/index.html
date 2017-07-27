@@ -41,52 +41,58 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
              <ul class="nav navbar-nav navbar-right"> 
-                <li><a class="nav-text" href="#">Adopt</a></li>
-                <li><a class="nav-text" href="#">Contact</a></li>
+                <li><a class="nav-text" href="http://www.mckameyanimalcenter.org/adoption" target="_blank">Adopt</a></li>
+                <li><a class="nav-text" href="http://www.mckameyanimalcenter.org/contact" target="_blank">Contact</a></li>
                 <li><a class="nav-text" href="#">Calendar</a></li>
                 <li><a class="nav-text" href="/donate">Donate</a></li>
                 <!-- Put here your menu items -->
             </ul>
-
+</div>
         </div --><!--/.navbar-collapse -->
     </div>
 </nav> 
     
     <!-- HEADER END  -->
+
     <div ng-view class="view" ></div>
+
     <!-- FOOTER BEGIN  -->
-    <div class="col-md-12 brand-footer">
-        <div class="container-fluid">
-            <div class="footer-prices">
-                <div class="row col-md-5">
-                    <div id="dog-prices">
+    <div class="container-fluid col-md-12 brand-footer">
+        <!-- LEFT  -->
+            <div class="text-center row col-md-4">
+                    <h3>Not a volunteer?</h3>
+                    <a class="nav-text-b" href="http://www.mckameyanimalcenter.org/" target="_blank"> <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Go back to main site </a>
+                    <!-- <div id="dog-prices">
                         <h6>Dogs</h6>
                         <ul>
                             <li>Ambassadors(puppies/pure breds): $150</li>
                             <li>Adults: $80</li>
                         </ul>
                         <h6>Senior discounts (1/2 off) available for pets 7+ years old. Only one discount per pet is allowed</h6>
-                    </div>
+                    </div> -->
                 </div>
-
-                <div class="contact-info text-center row col-md-2">
-                    <h6>Have questions? Visit us!</h6>
-                    <h5>4500 North Access Rd.</h5>
-                    <h5>Chattanooga, TN 37415</h5>
-                    <a href="https://www.facebook.com/McKameyAnimalCenter/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/McKameyCenter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+<!-- CENTER  -->
+                <div class="text-center row col-md-4">
+                    <h3>Have questions? Visit us!</h3>
+                    <p style="font-size: 1.1em;">4500 North Access Rd.</p>
+                    <p style="font-size: 1.1em;">Chattanooga, TN 37415</p>
+                    <a href="https://www.facebook.com/McKameyAnimalCenter/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/McKameyCenter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 </div>
+<!-- RIGHT  -->
 
-
-                <div class="row col-md-5">
-                    <div id="cat-prices">
+                <div class="text-center row col-md-4">
+                    <h3>Need Karen?</h3>
+                    <p>(423) 305-6504</p>
+                    <p>volunteercoordinator@mckameyanimalcenter.org</p>
+                    <!-- <div id="cat-prices">
                         <h6>Cats</h6>
                         <ul>
                             <li>Kittens: $70</li>
                             <li>Adults: $50</li>
                         </ul>
                         <h6>Pricing and availability of livestock and exotic pets may vary</h6>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -97,7 +103,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.js"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.js"></script>
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js"
+   <script src="http://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -110,27 +116,7 @@
         var stripe = Stripe('pk_test_ye1BCcNNC8XfSujv8k1l3xIP');
 
 </script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-    <script>
-        var slideout = new Slideout({
-            'panel': document.getElementById('panel'),
-            'menu': document.getElementById('menu'),
-            'padding': 256,
-            'tolerance': 70
-        });
-        window.onload = function() {
-        document.querySelector('.toggle-button').addEventListener('click', function() {
-        slideout.toggle();
-      });
-
-        document.querySelector('.menu').addEventListener('click', function(eve) {
-          if (eve.target.nodeName === 'A') { slideout.close(); }
-        });
-        }
-// Toggle button
-      
-</script> -->
-
+ 
 </body>
 
 </html>

@@ -6,8 +6,17 @@ h1, h2, h3, h4, h5, h6, .title {
 p, .lead {
     font-family: 'Roboto', serif;
 }
-
-
+a:focus, a:hover {
+    color: white;
+    background-color: black;
+}
+#navbar>.navbar-nav>li>a:hover {
+    color: white;
+    background-color: black;
+}
+.navbar-nav>li>a:hover {
+    background-color: transparent;
+}
 /* INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX */
 nav {
     width: 100%;
@@ -21,13 +30,17 @@ nav {
     z-index: 1000;
     border: none;
     background-color: white;
-    height: 7.5em;
+    /* height: 7.5em; */
+    min-height: 7.5em;
 }
 
 .nav-logo {
     height: 3.5em;
     width: auto;
     /* margin: 1em 1.5em 1em 1em; */
+}
+a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-brand:link {
+    background-color: transparent;
 }
  .glyphicon-triangle-left {
     font-size: 0.7em;
@@ -53,10 +66,12 @@ nav {
     font-family: 'Zilla Slab', serif;
 }
 #donate {
-    width: 4.5em;
-    border-radius: 0.25em;
+    height: 1.25em;
+    width: 4.25em;
+    /* border-radius: 0.25em; */
     background-color: rgb(2, 92, 46);
     text-align: center;
+    padding: 0.2em;
 }
 
 
@@ -99,7 +114,15 @@ nav {
 .login {
     border: solid black .5px;
 }
-
+.carousel-control.right:hover, .carousel-control.right:active,
+.carousel-control.right:visited,
+.carousel-control.right:link {
+ background-color: transparent;
+}
+.carousel-control.left:hover, .carousel-control.left:active, .carousel-control.left:visited,
+.carousel-control.left:link {
+ background-color: transparent;
+}
 .fa {
     color: white;
     height: 22px;
