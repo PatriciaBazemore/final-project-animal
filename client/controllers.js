@@ -36,6 +36,12 @@ angular.module('volunteerApp.controllers', [])
 //     if $location.url() === 
 // }])
 // WORK W WILL TO CREATE CONTROLLERS TOGGLING PUBLIC NAV & PRIVATE (USER) NAV
+.controller('IndexController', ['$scope', function($scope) {
+    // $('.').click(function() {
+    $(this).toggleClass('myclass');
+    $(this).toggleClass('showhidenew');
+;
+}])
 .controller('AnimalsController', ['$scope', 'Animal', 'SEOService', '$location', function($scope, Animal, SEOService, $location) {
     $scope.animals = Animal.query();
 
@@ -60,19 +66,19 @@ angular.module('volunteerApp.controllers', [])
 
     $scope.saveUser = function() {
         var payload = {
-            email: $scope.newEmail,
-            password: $scope.newPassword,
-            firstname: $scope.newFirstName,
-            lastname: $scope.newLastName
+            email: $scope.email,
+            password: $scope.password,
+            firstname: $scope.firstname,
+            lastname: $scope.lastname
         };
 
         var u = new User(payload);
 
         u.$save(function(success) {
-            $scope.newEmail = '';
-            $scope.newPassword = '';
-            $scope.newFirstName = '';
-            $scope.newLastName = '';
+            $scope.email = '';
+            $scope.password = '';
+            $scope.firstname = '';
+            $scope.lastname = '';
             $scope.users = User.query();
         }, function(err) {
             console.log(err);
@@ -89,11 +95,6 @@ angular.module('volunteerApp.controllers', [])
     UserService.isAdmin();
     $scope.user = User.get({ id: $routeParams.id });
 
-    //if update button
-    $scope.updateUser = function() {
-        $location.path('/users/' + $routeParams.id + '/update');
-    };
-
     $scope.deleteUser = function() {
         if(confirm('Are you sure you want to delete ' + $scope.user.firstname + ' ' + $scope.user.lastname + '?')) {
             $scope.user.$delete(function(success) {
@@ -102,6 +103,24 @@ angular.module('volunteerApp.controllers', [])
                 console.log(err);
             });
         }
+    };
+
+    SEOService.setSEO({
+            title: 'Current Volunteers',
+            url: $location.url(),
+            description: 'McKamey Animal Shelter Volunteer List'
+        })
+}])
+.controller('UserUpdateController', ['$scope', 'User', 'UserService', 'SEOService', '$location', '$routeParams', function($scope, User, UserService, SEOService, $location, $routeParams) {
+    UserService.isAdmin();
+    $scope.user = User.get({ id: $routeParams.id });
+
+    $scope.updateUser = function() {
+        $scope.user.$update(function(success) {
+            $location.path('/users/' + $routeParams.id);
+        }, function(err) {
+            console.log(err);
+        });
     };
 
     SEOService.setSEO({

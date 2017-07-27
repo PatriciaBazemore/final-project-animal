@@ -21,14 +21,13 @@ nav {
     z-index: 1000;
     border: none;
     background-color: white;
+    height: 7.5em;
 }
 
 .nav-logo {
-    height: 5em;
+    height: 3.5em;
     width: auto;
-    margin-top: 1em;
-    margin-left: 1em;
-    margin-right: 1.5em;
+    /* margin: 1em 1.5em 1em 1em; */
 }
  .glyphicon-triangle-left {
     font-size: 0.7em;
@@ -38,23 +37,64 @@ nav {
     font-size: 2em;
     font-family: 'Zilla Slab', serif;
 }
+#public-nav {
+    display: inline-block;
+    list-style-type: none;
+    margin-top: 1em;
+}
+.navbar-nav>li>a {
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    margin-top: 0.75em;
+}
 .nav-text-b {
     color: white;
     font-size: 2em;
     font-family: 'Zilla Slab', serif;
 }
 #donate {
-    height: 1.5em;
     width: 4.5em;
-    border-radius: 0.45em;
+    border-radius: 0.25em;
     background-color: rgb(2, 92, 46);
+    text-align: center;
 }
+
 
 .brand-footer {
     background-color: rgb(2, 92, 46);
     color: white;
     padding: 1em;
 }
+/* SIDE PANEL SIDE PANEL SIDE PANEL SIDE PANEL */
+/* .slideout-menu {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+        width: 256px;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        display: none;
+      }
+
+      .slideout-panel {
+        position: relative;
+        z-index: 1;
+        will-change: transform;
+      }
+
+      .slideout-open,
+      .slideout-open body,
+      .slideout-open .slideout-panel {
+        overflow: hidden;
+      }
+
+      .slideout-open .slideout-menu {
+        display: block;
+      } */
+
 /* WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME */
 .login {
     border: solid black .5px;

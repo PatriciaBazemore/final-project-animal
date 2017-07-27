@@ -1,91 +1,95 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="volunteerApp">
 
-   <head>
-        <base href="/">
-        <meta name="fragment" content="!">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <title>{{ seo.title }}</title>
-        <meta property="og:title" content="{{ seo.title }}">
-        <meta property="twitter:title" content="{{seo.title}}">
-        <meta property="og:image" content="{{ seo.image }}">
-        <meta property="twitter:image" content="{{seo.image}}">
-        <meta property="og:url" content="{{ seo.url }}">
-        <meta property="twitter:url" content="{{ seo.url }}">
-        <meta property="description" content="{{ seo.description }}">
-        <meta property="og:description" content="{{ seo.description }}">
-        <meta property="twitter:description" content="{{ seo.description }}">
+<head>
+    <base href="/">
+    <meta name="fragment" content="!">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <title>{{ seo.title }}</title>
+    <meta property="og:title" content="{{ seo.title }}">
+    <meta property="twitter:title" content="{{seo.title}}">
+    <meta property="og:image" content="{{ seo.image }}">
+    <meta property="twitter:image" content="{{seo.image}}">
+    <meta property="og:url" content="{{ seo.url }}">
+    <meta property="twitter:url" content="{{ seo.url }}">
+    <meta property="description" content="{{ seo.description }}">
+    <meta property="og:description" content="{{ seo.description }}">
+    <meta property="twitter:description" content="{{ seo.description }}">
 
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,400|Zilla+Slab:300,400" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <link rel="stylesheet" href="/styles.css">
-    </head>
-    <body>
-        
-<!-- HEADER BEGIN  -->
-<div class="container">
-    <nav class="navbar custom-top" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <!-- HAMBURGER GOES HERE -->
-                <a class="brand nav-logo" href="/">
-                    <img alt="McKamey Logo" class="nav-logo" src="http://0d368e4264074a316fe7-20bead50f0a484ec4adb7b671367dd87.r59.cf2.rackcdn.com/f849fa7b7457410fbfa6d2b9cc006a39.png">
-                </a>
-            </div>
-            <div id="public-nav">
-                <ul class="nav navbar-nav">
-                    <li> <a class="nav-text" href="#"> <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Back to Main Site </a> </li>
-                    <li> <a class="nav-text" href="#"> Contact </a> </li>
-                    <li> <a class="nav-text" href="#"> Adopt </a> </li>
-                    <li> <a class="nav-text" href="#"> Calendar </a> </li>
-                    <li> <a class="nav-text-b" href="/donate"> <div id="donate">  Donate  </div> </a> </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</div>
-<!-- HEADER END  -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400|Zilla+Slab:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+</head>
 
-<div class="view" ng-view></div>
- 
-<!-- FOOTER BEGIN  -->
-<div class="col-md-12 brand-footer">
+<body>
+    <div class="container" ng-controller="IndexController">
+ <nav class="navbar custom-top" role="navigation">
     <div class="container-fluid">
-        <div class="footer-prices">
-            <div class="row col-md-5">
-                <div id="dog-prices">
-                    <h6>Dogs</h6>
+        <div class="navbar-header">
+            <button ng-click="clearClass()" class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar" style="background-color: black;"></span>
+                <span class="icon-bar" style="background-color: black;"></span>
+                <span class="icon-bar" style="background-color: black;"></span>
+            </button><ul class="nav navbar-nav navbar-right"><li>
+             <a class="navbar-brand" href="/"><img alt="McKamey Logo" class="nav-logo" src="http://0d368e4264074a316fe7-20bead50f0a484ec4adb7b671367dd87.r59.cf2.rackcdn.com/f849fa7b7457410fbfa6d2b9cc006a39.png"></a></li></ul> 
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+             <ul class="nav navbar-nav navbar-right"> 
+                <li><a class="nav-text" href="#">Adopt</a></li>
+                <li><a class="nav-text" href="#">Contact</a></li>
+                <li><a class="nav-text" href="#">Calendar</a></li>
+                <li><a class="nav-text" href="/donate">Donate</a></li>
+                <!-- Put here your menu items -->
+            </ul>
+
+        </div --><!--/.navbar-collapse -->
+    </div>
+</nav> 
+    
+    <!-- HEADER END  -->
+    <div ng-view class="view" ></div>
+    <!-- FOOTER BEGIN  -->
+    <div class="col-md-12 brand-footer">
+        <div class="container-fluid">
+            <div class="footer-prices">
+                <div class="row col-md-5">
+                    <div id="dog-prices">
+                        <h6>Dogs</h6>
                         <ul>
                             <li>Ambassadors(puppies/pure breds): $150</li>
                             <li>Adults: $80</li>
                         </ul>
-                    <h6>Senior discounts (1/2 off) available for pets 7+ years old. Only one discount per pet is allowed</h6>
+                        <h6>Senior discounts (1/2 off) available for pets 7+ years old. Only one discount per pet is allowed</h6>
+                    </div>
                 </div>
-            </div>
 
-        <div class="contact-info text-center row col-md-2">
-            <h6>Have questions? Visit us!</h6>
-            <h5>4500 North Access Rd.</h5> 
-            <h5>Chattanooga, TN 37415</h5>
-            <a href="https://www.facebook.com/McKameyAnimalCenter/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="https://twitter.com/McKameyCenter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        </div>
+                <div class="contact-info text-center row col-md-2">
+                    <h6>Have questions? Visit us!</h6>
+                    <h5>4500 North Access Rd.</h5>
+                    <h5>Chattanooga, TN 37415</h5>
+                    <a href="https://www.facebook.com/McKameyAnimalCenter/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/McKameyCenter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </div>
 
 
-            <div class="row col-md-5">
-                <div id="cat-prices">
-                    <h6>Cats</h6>
+                <div class="row col-md-5">
+                    <div id="cat-prices">
+                        <h6>Cats</h6>
                         <ul>
                             <li>Kittens: $70</li>
                             <li>Adults: $50</li>
                         </ul>
-                    <h6>Pricing and availability of livestock and exotic pets may vary</h6>
-                </div>
+                        <h6>Pricing and availability of livestock and exotic pets may vary</h6>
+                    </div>
                 </div>
             </div>
+        </div>
     </div>
 </div>
 <!-- FOOTER END  -->
