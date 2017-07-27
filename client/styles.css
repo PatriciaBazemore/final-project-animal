@@ -76,6 +76,10 @@ nav {
 #scroll-image {
     max-height: 950px;
     width: 100%;
+   
+}
+.carousel slide {
+    margin-top: 51px;
 }
 
 .btn-mckamey {
