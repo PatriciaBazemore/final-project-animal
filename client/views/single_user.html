@@ -6,3 +6,17 @@
         <button ng-click="deleteUser()" class="btn btn-danger btn-xs delete-btn"><span id="btn-text"><i class="fa fa-trash-o" aria-hidden="true"></i>Delete User</span></button>
     </div>
 </div>
+
+<div class="container">
+    <div class="container" id="edit-user">
+        <input ng-required="true" type="text" class="form-control text" placeholder="First Name" ng-model="user.firstname"></input>
+        <input ng-required="true" type="text" class="form-control text" placeholder="Last Name" ng-model="user.lastname"></input>
+        <input ng-required="true" type="text" class="form-control text" placeholder="Email" ng-model="user.email"></input>
+        <select ng-model="user.role">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select>
+        <button ng-click="updateUser()" class="btn btn-sm btn-info"><span id="btn-text">Submit</span></button>
+        </div>
+    </div>
+</div>

@@ -60,19 +60,19 @@ angular.module('volunteerApp.controllers', [])
 
     $scope.saveUser = function() {
         var payload = {
-            email: $scope.newEmail,
-            password: $scope.newPassword,
-            firstname: $scope.newFirstName,
-            lastname: $scope.newLastName
+            email: $scope.email,
+            password: $scope.password,
+            firstname: $scope.firstname,
+            lastname: $scope.lastname
         };
 
         var u = new User(payload);
 
         u.$save(function(success) {
-            $scope.newEmail = '';
-            $scope.newPassword = '';
-            $scope.newFirstName = '';
-            $scope.newLastName = '';
+            $scope.email = '';
+            $scope.password = '';
+            $scope.firstname = '';
+            $scope.lastname = '';
             $scope.users = User.query();
         }, function(err) {
             console.log(err);
