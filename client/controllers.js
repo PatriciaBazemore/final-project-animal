@@ -1,25 +1,26 @@
 angular.module('volunteerApp.controllers', [])
 .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', function($scope, SEOService, $location, UserService) {
     UserService.me().then(function() {
-        redirect();
+        // redirect();
     });
 
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
         .then(function() {
-            redirect();
+            // redirect();
+            $location.path('/animals');
         }, function(err) {
             console.log(err);
         });
     }
 
-    function redirect() {
-        var dest = $location.search().dest;
-        if (!dest) {
-            dest = '/';
-        }
-        $location.replace().path(dest).search('dest', null);
-    }
+    // function redirect() {
+    //     var dest = $location.search().dest;
+    //     if (!dest) {
+    //         dest = '/';
+    //     }
+    //     $location.replace().path().search('dest', null);
+    // }
 
     SEOService.setSEO({
         title: 'Welcome',
@@ -51,6 +52,62 @@ angular.module('volunteerApp.controllers', [])
             title: 'Adoptable',
             url: $location.url(),
             description: 'McKamey Animal Shelter Volunteer Portal'
+        })
+}])
+.controller('UserListController', ['$scope', 'User', 'UserService', 'SEOService', '$location', function($scope, User, UserService, SEOService, $location) {
+    UserService.isAdmin();
+    $scope.users = User.query();
+
+    $scope.saveUser = function() {
+        var payload = {
+            email: $scope.newEmail,
+            password: $scope.newPassword,
+            firstname: $scope.newFirstName,
+            lastname: $scope.newLastName
+        };
+
+        var u = new User(payload);
+
+        u.$save(function(success) {
+            $scope.newEmail = '';
+            $scope.newPassword = '';
+            $scope.newFirstName = '';
+            $scope.newLastName = '';
+            $scope.users = User.query();
+        }, function(err) {
+            console.log(err);
+        });
+    }
+
+    SEOService.setSEO({
+            title: 'Current Volunteers',
+            url: $location.url(),
+            description: 'McKamey Animal Shelter Volunteer List'
+        })
+}])
+.controller('SingleUserController', ['$scope', 'User', 'UserService', 'SEOService', '$location', '$routeParams', function($scope, User, UserService, SEOService, $location, $routeParams) {
+    UserService.isAdmin();
+    $scope.user = User.get({ id: $routeParams.id });
+
+    //if update button
+    $scope.updateUser = function() {
+        $location.path('/users/' + $routeParams.id + '/update');
+    };
+
+    $scope.deleteUser = function() {
+        if(confirm('Are you sure you want to delete ' + $scope.user.firstname + ' ' + $scope.user.lastname + '?')) {
+            $scope.user.$delete(function(success) {
+                $location.replace().path('/users');
+            }, function(err) {
+                console.log(err);
+            });
+        }
+    };
+
+    SEOService.setSEO({
+            title: 'Current Volunteers',
+            url: $location.url(),
+            description: 'McKamey Animal Shelter Volunteer List'
         })
 }])
 .controller('DonationController', ['$scope', 'SEOService', 'Donation', '$location', function($scope, SEOService, Donation, $location) {

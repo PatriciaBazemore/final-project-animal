@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="container" id="user-list" ng-repeat="u in users">
+        <h1>{{ u.firstname }} {{ u.lastname }} - {{ u.email }} </h1>
+    </div>
+</div>
+
+<div class="text-center">
+    <h1>Add New User</h1>
+    <form ng-submit="signup()">
+        <input ng-model="firstname" placeholder="First Name">
+        <input ng-model="lastname" placeholder="Last Name">
+        <input type="email" ng-model="email" placeholder="Email">
+        <input type="password" ng-model="password" placeholder="Password">
+        <button ng-click="signup()"></button>
+    </form>
+</div>
