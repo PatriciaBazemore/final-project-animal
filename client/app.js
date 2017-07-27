@@ -6,13 +6,17 @@ angular.module('volunteerApp', ['volunteerApp.controllers', 'volunteerApp.factor
             templateUrl: 'views/welcome.html',
             controller: 'WelcomeController'
         })
+        .when('/animals/:id', {
+            templateUrl: 'views/single_animal.html',
+            controller: 'SingleAnimalController'
+        })
         .when('/animals', {
             templateUrl: 'views/animal_list.html',
             controller: 'AnimalsController'
         })
-        .when('/animals/:id', {
-            templateUrl: 'views/single_animal.html',
-            controller: 'SingleAnimalController'
+        .when('/users/:id', {
+            templateUrl: 'views/single_user.html',
+            controller: 'SingleUserController'
         })
         .when('/users', {
             templateUrl: 'views/user_list.html',
