@@ -1,13 +1,8 @@
 angular.module('volunteerApp.services', [])
 .service('UserService', ['$http', '$location', function($http, $location) {
     var currentUser;
-    
     this.isLoggedIn = function() {
-        if (currentUser) {
-            return trues;
-        } else {
-            return false;
-        }
+        return !!currentUser;
     }
 
     this.isAdmin = function() {
@@ -21,7 +16,7 @@ angular.module('volunteerApp.services', [])
 //(replaced requireLogin-wont redirect to the original)
     this.loginRedirect = function() {
         var current = $location.path();
-        $location.replace().path('/login').search('dest', current);
+        $location.replace().path('/').search('dest', current);
     }
     
     this.login = function(email, password) {
