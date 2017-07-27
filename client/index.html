@@ -27,110 +27,34 @@
 </head>
 
 <body>
-
-    
-<nav id="menu" class="menu">
-      <a href="https://github.com/mango/slideout" target="_blank">
-        <header class="menu-header">
-          <span class="menu-header-title">Back to Main Site</span>
-        </header>
-      </a>
-
-      <section class="menu-section">
-        <h3 class="menu-section-title">User</h3>
-        <ul class="menu-section-list">
-          <li><a href="https://github.com/mango/slideout#installation" target="_blank">Login/Logout</a></li>
-          <li><a href="https://github.com/mango/slideout#usage" target="_blank">View/Edit Profile</a></li>
-           <li><a href="https://github.com/mango/slideout#api" target="_blank">Forum</a></li> 
-        </ul>
-      </section>
-
-      <section class="menu-section">
-        <h3 class="menu-section-title">Animals</h3>
-        <ul class="menu-section-list">
-          <li><a href="https://github.com/mango/slideout#installation" target="_blank">See Animals</a></li>
-          <li><a href="https://github.com/mango/slideout#usage" target="_blank">Search</a></li>
-        </ul>
-      </section>
-
-      <section class="menu-section">
-        <h3 class="menu-section-title">Misc Links</h3>
-        <ul class="menu-section-list">
-          <li><a href="https://github.com/mango/slideout#installation" target="_blank">Adopt</a></li>
-          <li><a href="https://github.com/mango/slideout#usage" target="_blank">Calendar</a></li>
-          <li><a href="https://github.com/mango/slideout#api" target="_blank">Contact</a></li>
-          <li><a href="https://github.com/mango/slideout#npm-scripts" target="_blank">Donate</a></li>
-        </ul>
-      </section>
-
-       <section class="menu-section">
-        <h3 class="menu-section-title">Admin</h3>
-        <ul class="menu-section-list">
-          <li><a href="https://github.com/mango/slideout#installation" target="_blank">Controls</a></li>
-        </ul>
-      </section> 
-    </nav>
-
-    <main id="panel" class="panel">
-        <div class="container">
-  <nav class="navbar custom-top" role="navigation">
+    <div class="container" ng-controller="IndexController">
+ <nav class="navbar custom-top" role="navigation">
     <div class="container-fluid">
-      <div class="navbar-header">
-      <header class="panel-header">
-        <button type="button" class="btn btn-primary btn-lg btn-hamburger js-slideout-toggle toggle-button" data-toggle="button" aria-pressed="false" autocomplete="off">
-            <!-- class="btn-hamburger js-slideout-toggle"> -->☰
-        </button>
-        <!-- <h1 class="title">Slideout.js</h1> -->
-        <a class="brand nav-logo" href="/">
-                    <img alt="McKamey Logo" class="nav-logo" src="http://0d368e4264074a316fe7-20bead50f0a484ec4adb7b671367dd87.r59.cf2.rackcdn.com/f849fa7b7457410fbfa6d2b9cc006a39.png">
-                </a>
-                </div>
-                <div id="public-nav" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
-                    <ul class="nav navbar-nav">
-                        <li> <a class="nav-text" href="#"> <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Back to Main Site </a>                            </li>
-                        <li> <a class="nav-text" href="#"> Contact </a> </li>
-                        <li> <a class="nav-text" href="#"> Adopt </a> </li>
-                        <li> <a class="nav-text" href="#"> Calendar </a> </li>
-                        <li> <a id="donate" class="btn btn-success nav-text-b" href="/donate">Donate</a> </li>
-                    </ul>
-                      </div>
-                  
-      </header>
-    <!-- HEADER BEGIN  -->
-    <!-- <div class="container"> -->
-        <!-- <nav class="navbar custom-top" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header"> -->
-                    <!-- HAMBURGER GOES HERE -->
-                     <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar .navbar-collapse" aria-expanded="false"
-                        aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-                    <a class="brand nav-logo" href="/">
-                    <img alt="McKamey Logo" class="nav-logo" src="http://0d368e4264074a316fe7-20bead50f0a484ec4adb7b671367dd87.r59.cf2.rackcdn.com/f849fa7b7457410fbfa6d2b9cc006a39.png">
-                </a>
-                </div>
-                <div id="public-nav" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
-                    <ul class="nav navbar-nav">
-                        <li> <a class="nav-text" href="#"> <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Back to Main Site </a>                            </li>
-                        <li> <a class="nav-text" href="#"> Contact </a> </li>
-                        <li> <a class="nav-text" href="#"> Adopt </a> </li>
-                        <li> <a class="nav-text" href="#"> Calendar </a> </li>
-                        <li> <a id="donate" class="btn btn-success nav-text-b" href="/donate">Donate</a> </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>  -->
+        <div class="navbar-header">
+            <button ng-click="clearClass()" class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar" style="background-color: black;"></span>
+                <span class="icon-bar" style="background-color: black;"></span>
+                <span class="icon-bar" style="background-color: black;"></span>
+            </button><ul class="nav navbar-nav navbar-right"><li>
+             <a class="navbar-brand" href="/"><img alt="McKamey Logo" class="nav-logo" src="http://0d368e4264074a316fe7-20bead50f0a484ec4adb7b671367dd87.r59.cf2.rackcdn.com/f849fa7b7457410fbfa6d2b9cc006a39.png"></a></li></ul> 
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+             <ul class="nav navbar-nav navbar-right"> 
+                <li><a class="nav-text" href="#">Adopt</a></li>
+                <li><a class="nav-text" href="#">Contact</a></li>
+                <li><a class="nav-text" href="#">Calendar</a></li>
+                <li><a class="nav-text" href="/donate">Donate</a></li>
+                <!-- Put here your menu items -->
+            </ul>
+
+        </div --><!--/.navbar-collapse -->
+    </div>
+</nav> 
+    
     <!-- HEADER END  -->
-    <section class="box">
-    <div class="view box-content" ng-view></div>
-</section>
+    <div ng-view class="view" ></div>
     <!-- FOOTER BEGIN  -->
-    <footer class="panel">
     <div class="col-md-12 brand-footer">
         <div class="container-fluid">
             <div class="footer-prices">
@@ -167,14 +91,16 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-    </footer>
-    </main>
     <!-- FOOTER END  -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="app.js"></script>
     <script src="controllers.js"></script>
     <script src="factories.js"></script>
@@ -184,7 +110,7 @@
         var stripe = Stripe('pk_test_ye1BCcNNC8XfSujv8k1l3xIP');
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
     <script>
         var slideout = new Slideout({
             'panel': document.getElementById('panel'),
@@ -203,34 +129,8 @@
         }
 // Toggle button
       
-</script>
+</script> -->
 
 </body>
 
 </html>
-=======
-</div>
-<!-- FOOTER END  -->
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.js"></script> 
-        <script src="app.js"></script>
-        <script src="controllers.js"></script>
-        <script src="factories.js"></script>
-        <script src="services.js"></script>
-        <script src="https://js.stripe.com/v3"></script>
-        <script type="text/javascript">
-            var stripe = Stripe('pk_test_ye1BCcNNC8XfSujv8k1l3xIP');
-        </script>
-        <script
-            src="http://code.jquery.com/jquery-3.2.1.js"
-            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-            crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
-            crossorigin="anonymous"></script>
-    </body>
-
-</html>
->>>>>>> c61ada60196d54be3a2b16b8662f0f1e0d27ce1f

@@ -36,6 +36,12 @@ angular.module('volunteerApp.controllers', [])
 //     if $location.url() === 
 // }])
 // WORK W WILL TO CREATE CONTROLLERS TOGGLING PUBLIC NAV & PRIVATE (USER) NAV
+.controller('IndexController', ['$scope', function($scope) {
+    // $('.').click(function() {
+    $(this).toggleClass('myclass');
+    $(this).toggleClass('showhidenew');
+;
+}])
 .controller('AnimalsController', ['$scope', 'Animal', 'SEOService', '$location', function($scope, Animal, SEOService, $location) {
     $scope.animals = Animal.query();
 
