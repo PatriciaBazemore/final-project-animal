@@ -27,7 +27,7 @@ router.post('/login', function(req, res, next) {
     })(req, res, next);
 });
 
-// router.all('*', auth.isLoggedIn);
+router.all('*', auth.isLoggedIn);
 
 router.get('/logout', function(req, res) {
     req.session.destroy(function() {
@@ -48,7 +48,7 @@ router.get('/me', function(req, res) {
 
 // /api/users/
 router.route('/')
-    .get(function(req, res) { //view all users
+    .get(auth.isAdmin, function(req, res) { //view all users
         procedures.all()
         .then(function(users) {
             res.send(users);
@@ -57,7 +57,7 @@ router.route('/')
             res.sendStatus(500);
         });
     })
-    .post(function(req, res) { //create new user
+    .post(auth.isAdmin, function(req, res) { //create new user
         var u = req.body;
         utils.encryptPassword(u.password)
         .then(function(hash) {
@@ -72,7 +72,7 @@ router.route('/')
 
 // /api/users/:id
 router.route('/:id')
-    .get(function(req, res) {
+    .get(auth.isAdmin, function(req, res) {
         procedures.read(req.params.id)
         .then(function(user) {
             res.send(user);
@@ -90,7 +90,7 @@ router.route('/:id')
             res.sendStatus(500);
         });
     })
-    .delete(function(req, res) {
+    .delete(auth.isAdmin, function(req, res) {
         procedures.destroy(req.params.id)
         .then(function() {
             res.sendStatus(204);

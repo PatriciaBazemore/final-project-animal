@@ -95,9 +95,12 @@ angular.module('volunteerApp.controllers', [])
     UserService.isAdmin();
     $scope.user = User.get({ id: $routeParams.id });
 
-    //if update button
     $scope.updateUser = function() {
-        $location.path('/users/' + $routeParams.id + '/update');
+        $scope.user.$update(function(success) {
+            $location.path('/users/' + $routeParams.id);
+        }, function(err) {
+            console.log(err);
+        });
     };
 
     $scope.deleteUser = function() {
