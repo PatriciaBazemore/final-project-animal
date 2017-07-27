@@ -1,11 +1,12 @@
 var express = require('express');
 var passport = require('passport');
 var session = require('express-session');
+var userProc = require('../procedures/users.proc');
 var MySQLStore = require('express-mysql-session')(session);
 var LocalStrategy = require('passport-local').Strategy;
 
 var pool = require('./db').pool;
-//var utils = require('../utils');
+var utils = require('../utils');
 
 ///need to edit to work for check out and cart instead of logging in for users 
 function configurePassport(app) {
@@ -16,7 +17,7 @@ function configurePassport(app) {
         var loginError = 'Invalid Login Credentials';
         userProc.readByEmail(email).then(function(user) {
             if (!user) {
-                return done(null, false);
+                return done(null, false, { message: loginError });
             }
             // if (user.password !== password) {
             //     return done(null, false, { message: 'Incorrent Login Information'});
@@ -46,7 +47,7 @@ function configurePassport(app) {
         });
     });
     var sessionStore = new MySQLStore({
-        createDataTable: true //creates sessions table and everything it needs to properly function
+        createDatabaseTable: true //creates sessions table and everything it needs to properly function
     }, pool);
 
     app.use(session({  //turns on sessions

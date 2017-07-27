@@ -8,6 +8,10 @@ exports.read = function(id) {
     return db.row('GetUser', [id]);
 }
 
+exports.readByEmail = function(email) {
+    return db.row('GetUserByEmail', [email]);
+}
+
 exports.update = function(firstname, lastname, email, password, role, id) {
     return db.empty('UpdateUser', [firstname, lastname, email, password, role, id]);
 }
