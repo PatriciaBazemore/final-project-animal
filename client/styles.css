@@ -60,6 +60,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     padding-bottom: 0.25em;
     margin-top: 0.75em;
 }
+
 .nav-text-b {
     color: white;
     font-size: 2em;
@@ -130,19 +131,27 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 }
 
 #custom-caption {
-    /*right: unset;*/
     left: 1em;
     text-align: left;
-    margin-bottom: 600px;
-    margin-top: 1em;
+    top: 5%;
+    -o-transform: translateY(-5%);
+    -moz-transform: translateY(-5%);
+    -ms-transform: translateY(-5%);
+    -webkit-transform: translateY(-5%);
+    transform: translateY(-5%);
 }
 #scroll-image {
     max-height: 950px;
     width: 100%;
-   position: center center;
+    position: center center;
+    margin-top: 5px;
 }
-.carousel slide {
-    margin-top: 51px;
+#myCarousel {
+    margin-top: 7.5em;
+}
+.carousel-inner {
+    margin-top: 0;
+    width: 100%;
 }
 
 .btn-mckamey {
