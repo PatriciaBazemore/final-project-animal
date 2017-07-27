@@ -48,7 +48,7 @@ angular.module('volunteerApp.services', [])
         else {
             return $http({
                 method: 'GET',
-                url: 'http://localhost:3000/api/users/me'
+                url: '/api/users/me'
             }).then(function (response) {
                 currentUser = response.data;
                 return currentUser;

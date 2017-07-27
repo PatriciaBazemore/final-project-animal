@@ -1,11 +1,12 @@
 var express = require('express');
 var passport = require('passport');
 var session = require('express-session');
+var userProc = require('../procedures/users.proc');
 var MySQLStore = require('express-mysql-session')(session);
 var LocalStrategy = require('passport-local').Strategy;
 
 var pool = require('./db').pool;
-//var utils = require('../utils');
+var utils = require('../utils');
 
 ///need to edit to work for check out and cart instead of logging in for users 
 function configurePassport(app) {

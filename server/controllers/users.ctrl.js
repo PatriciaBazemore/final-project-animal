@@ -27,7 +27,7 @@ router.post('/login', function(req, res, next) {
     })(req, res, next);
 });
 
-// router.all('*', auth.isLoggedIn);
+router.all('*', auth.isLoggedIn);
 
 router.get('/logout', function(req, res) {
     req.session.destroy(function() {
@@ -48,7 +48,7 @@ router.get('/me', function(req, res) {
 
 // /api/users/
 router.route('/')
-    .get(function(req, res) { //view all users
+    .get(auth.isAdmin, function(req, res) { //view all users
         procedures.all()
         .then(function(users) {
             res.send(users);

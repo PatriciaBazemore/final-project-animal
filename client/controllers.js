@@ -18,7 +18,7 @@ angular.module('volunteerApp.controllers', [])
         if (!dest) {
             dest = '/';
         }
-        $location.replace().path(dest).search('dest', null);
+        $location.replace().path().search('dest', null);
     }
 
     SEOService.setSEO({
