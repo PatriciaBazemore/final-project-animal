@@ -45,6 +45,25 @@ nav {
 }
 /* WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME */
 
+#custom-caption {
+    right: unset;
+    left: 1em;
+    text-align: left;
+    padding-bottom: 100px;
+    margin-bottom: 210px;
+    padding-right: 90px;    
+}
+.btn-mckamey {
+    background-color: rgb(2, 92, 46);
+    color:rgb(150, 136, 98);
+    font-family: 'Zilla Slab', serif;
+}
+
+
+
+
+
+
 /* ANIMAL LIST ANIMAL LIST ANIMAL LIST ANIMAL LIST */
 
 /* SINGLE ANIMAL SINGLE ANIMAL SINGLE ANIMAL */
