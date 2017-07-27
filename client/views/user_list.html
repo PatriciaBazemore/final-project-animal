@@ -1,6 +1,8 @@
 <div class="container">
     <div class="container" id="user-list" ng-repeat="u in users">
         <h1>{{ u.firstname }} {{ u.lastname }} - {{ u.email }} </h1>
+        <button class="edit-btn btn btn-info btn-xs"><a ng-href="/{{ user.id }}/update"><span id="btn-text"><i class="glyphicon glyphicon-pencil edit-btn" aria-hidden="true"></i>Edit User</span></a></button>
+        <button ng-click="deleteUser()" class="btn btn-danger btn-xs delete-btn"><span id="btn-text"><i class="fa fa-trash-o" aria-hidden="true"></i>Delete User</span></button>
     </div>
 </div>
 
