@@ -1,8 +1,13 @@
 angular.module('volunteerApp.services', [])
 .service('UserService', ['$http', '$location', function($http, $location) {
     var currentUser;
+    
     this.isLoggedIn = function() {
-        return !!currentUser;
+        if (currentUser) {
+            return trues;
+        } else {
+            return false;
+        }
     }
 
     this.isAdmin = function() {

@@ -17,7 +17,7 @@ function configurePassport(app) {
         var loginError = 'Invalid Login Credentials';
         userProc.readByEmail(email).then(function(user) {
             if (!user) {
-                return done(null, false);
+                return done(null, false, { message: loginError });
             }
             // if (user.password !== password) {
             //     return done(null, false, { message: 'Incorrent Login Information'});
@@ -47,7 +47,7 @@ function configurePassport(app) {
         });
     });
     var sessionStore = new MySQLStore({
-        createDataTable: true //creates sessions table and everything it needs to properly function
+        createDatabaseTable: true //creates sessions table and everything it needs to properly function
     }, pool);
 
     app.use(session({  //turns on sessions
