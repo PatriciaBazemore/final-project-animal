@@ -95,14 +95,6 @@ angular.module('volunteerApp.controllers', [])
     UserService.isAdmin();
     $scope.user = User.get({ id: $routeParams.id });
 
-    $scope.updateUser = function() {
-        $scope.user.$update(function(success) {
-            $location.path('/users/' + $routeParams.id);
-        }, function(err) {
-            console.log(err);
-        });
-    };
-
     $scope.deleteUser = function() {
         if(confirm('Are you sure you want to delete ' + $scope.user.firstname + ' ' + $scope.user.lastname + '?')) {
             $scope.user.$delete(function(success) {
@@ -111,6 +103,24 @@ angular.module('volunteerApp.controllers', [])
                 console.log(err);
             });
         }
+    };
+
+    SEOService.setSEO({
+            title: 'Current Volunteers',
+            url: $location.url(),
+            description: 'McKamey Animal Shelter Volunteer List'
+        })
+}])
+.controller('UserUpdateController', ['$scope', 'User', 'UserService', 'SEOService', '$location', '$routeParams', function($scope, User, UserService, SEOService, $location, $routeParams) {
+    UserService.isAdmin();
+    $scope.user = User.get({ id: $routeParams.id });
+
+    $scope.updateUser = function() {
+        $scope.user.$update(function(success) {
+            $location.path('/users/' + $routeParams.id);
+        }, function(err) {
+            console.log(err);
+        });
     };
 
     SEOService.setSEO({
