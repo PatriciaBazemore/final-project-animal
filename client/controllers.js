@@ -8,7 +8,7 @@ angular.module('volunteerApp.controllers', [])
         UserService.login($scope.email, $scope.password)
         .then(function() {
             // redirect();
-            location.pathname('/animals');
+            $location.pathname('/animals');
         }, function(err) {
             console.log(err);
         });
