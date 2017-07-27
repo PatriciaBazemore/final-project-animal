@@ -37,14 +37,35 @@ nav {
     font-size: 2em;
     font-family: 'Zilla Slab', serif;
 }
+.nav-text-b {
+    color: white;
+    font-size: 2em;
+    font-family: 'Zilla Slab', serif;
+}
+#donate {
+    height: 1.5em;
+    width: 4.5em;
+    border-radius: 0.45em;
+    background-color: rgb(2, 92, 46);
+}
 
 .brand-footer {
-    background-color: rgb(244, 244, 244);
-    color: rgb(209, 210, 212);
+    background-color: rgb(2, 92, 46);
+    color: white;
     padding: 1em;
 }
 /* WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME */
+.login {
+    border: solid black .5px;
+}
 
+.fa {
+    color: white;
+    height: 22px;
+    width: 22px;
+}
+
+<<<<<<< HEAD
 #custom-caption {
     right: unset;
     left: 1em;
@@ -64,6 +85,11 @@ nav {
 
 
 
+=======
+#cat-prices {
+    float: right;
+}
+>>>>>>> 83e51433ec00c505e3e567e03ec9a88c4cb5b164
 /* ANIMAL LIST ANIMAL LIST ANIMAL LIST ANIMAL LIST */
 
 /* SINGLE ANIMAL SINGLE ANIMAL SINGLE ANIMAL */

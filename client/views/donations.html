@@ -1,0 +1,29 @@
+<!--KEEP NG-MODELS THE SAME-->
+<div class="page-header text-center">
+    <h1>Donate</h1>
+</div>
+<form class="my-form" ng-submit="processDonation()">
+    <div class="form-group">
+        <input class="form-control" type="number" step=".01" ng-model="amount" placeholder="Donation Amount/$USD">
+    </div>
+    <div class="form-group">
+        <label for="card-field">Credit Card</label>
+        <div class="form-control" id="card-field"></div>
+    </div>
+    <div class="form-group">
+        <label>Billing Address</label>
+        <input class="form-control" type="text" ng-model="fullname" placeholder="Cardholder Name">
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" ng-model="line1" placeholder="Line 1">
+        <input class="form-control" trpe="text" ng-model="line2" placeholder="Line 2">
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" ng-model="city" placeholder="City">
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" ng-model="state" placeholder="State">
+    </div>
+    <div class="alert alert-danger" role="alert" ng-hide="errorMessage.length === 0">{{ errorMessage }}</div>
+    <input class="btn btn-success" type="submit" value="Donate">
+</form>
