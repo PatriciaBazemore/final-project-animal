@@ -139,7 +139,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 #scroll-image {
     max-height: 950px;
     width: 100%;
-   
+   position: center center;
 }
 .carousel slide {
     margin-top: 51px;
@@ -156,6 +156,36 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 }
 
 /* ANIMAL LIST ANIMAL LIST ANIMAL LIST ANIMAL LIST */
+#animal-display {
+    /*align-content: center;
+    padding: 10px;
+    margin: 10px;
+    vertical-align: middle;
+    justify-content: center;*/
+}
+.the-animals {
+    padding: 5px;
+}
+.animal-name {
+    float: left;
+}
+.animal-description {
+    float: right;
+}
+/*.animal-div {
+    align-content: center;
+}*/
+.animal-pic {
+    height: auto;
+    width: auto;
+    max-height: 300px;
+    max-width: 300px;
+    min-height: 300px;
+    min-width: 300px;
+}
+
+
+
 
 /* SINGLE ANIMAL SINGLE ANIMAL SINGLE ANIMAL */
 
