@@ -6,8 +6,17 @@ h1, h2, h3, h4, h5, h6, .title {
 p, .lead {
     font-family: 'Roboto', serif;
 }
-
-
+a:focus, a:hover {
+    color: white;
+    background-color: black;
+}
+#navbar>.navbar-nav>li>a:hover {
+    color: white;
+    background-color: black;
+}
+.navbar-nav>li>a:hover {
+    background-color: transparent;
+}
 /* INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX */
 nav {
     width: 100%;
@@ -21,13 +30,17 @@ nav {
     z-index: 1000;
     border: none;
     background-color: white;
-    height: 7.5em;
+    /* height: 7.5em; */
+    min-height: 7.5em;
 }
 
 .nav-logo {
     height: 3.5em;
     width: auto;
     /* margin: 1em 1.5em 1em 1em; */
+}
+a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-brand:link {
+    background-color: transparent;
 }
  .glyphicon-triangle-left {
     font-size: 0.7em;
@@ -47,16 +60,19 @@ nav {
     padding-bottom: 0.25em;
     margin-top: 0.75em;
 }
+
 .nav-text-b {
     color: white;
     font-size: 2em;
     font-family: 'Zilla Slab', serif;
 }
 #donate {
-    width: 4.5em;
-    border-radius: 0.25em;
+    height: 1.25em;
+    width: 4.25em;
+    /* border-radius: 0.25em; */
     background-color: rgb(2, 92, 46);
     text-align: center;
+    padding: 0.2em;
 }
 
 
@@ -99,7 +115,15 @@ nav {
 .login {
     border: solid black .5px;
 }
-
+.carousel-control.right:hover, .carousel-control.right:active,
+.carousel-control.right:visited,
+.carousel-control.right:link {
+ background-color: transparent;
+}
+.carousel-control.left:hover, .carousel-control.left:active, .carousel-control.left:visited,
+.carousel-control.left:link {
+ background-color: transparent;
+}
 .fa {
     color: white;
     height: 22px;
@@ -107,19 +131,27 @@ nav {
 }
 
 #custom-caption {
-    /*right: unset;*/
     left: 1em;
     text-align: left;
-    margin-bottom: 600px;
-    margin-top: 1em;
+    top: 5%;
+    -o-transform: translateY(-5%);
+    -moz-transform: translateY(-5%);
+    -ms-transform: translateY(-5%);
+    -webkit-transform: translateY(-5%);
+    transform: translateY(-5%);
 }
 #scroll-image {
     max-height: 950px;
     width: 100%;
-   
+    position: center center;
+    margin-top: 5px;
 }
-.carousel slide {
-    margin-top: 51px;
+#myCarousel {
+    margin-top: 7.5em;
+}
+.carousel-inner {
+    margin-top: 0;
+    width: 100%;
 }
 
 .btn-mckamey {
@@ -133,6 +165,36 @@ nav {
 }
 
 /* ANIMAL LIST ANIMAL LIST ANIMAL LIST ANIMAL LIST */
+#animal-display {
+    /*align-content: center;
+    padding: 10px;
+    margin: 10px;
+    vertical-align: middle;
+    justify-content: center;*/
+}
+.the-animals {
+    padding: 5px;
+}
+.animal-name {
+    float: left;
+}
+.animal-description {
+    float: right;
+}
+/*.animal-div {
+    align-content: center;
+}*/
+.animal-pic {
+    height: auto;
+    width: auto;
+    max-height: 300px;
+    max-width: 300px;
+    min-height: 300px;
+    min-width: 300px;
+}
+
+
+
 
 /* SINGLE ANIMAL SINGLE ANIMAL SINGLE ANIMAL */
 
