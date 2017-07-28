@@ -4,5 +4,7 @@
         <img src="{{ animal.imageurl }}" class="animal-img" width="500px">
         <h3>{{ animal.breed }} - {{ animal.age }} - {{ animal.gender }} - {{ animal.size }}</h3>
         <p>{{ animal.bio }}</p>
+        <button ng-show="user.role === 'admin'" class="edit-btn btn btn-info btn-xs"><a ng-href="/animals/{{ u.id }}/update"><span id="btn-text"><i class="glyphicon glyphicon-pencil edit-btn" aria-hidden="true"></i>Edit Animal</span></a></button>
+        <button ng-show="user.role === 'admin'" ng-click="deleteAnimal()" class="btn btn-danger btn-xs delete-btn"><span id="btn-text"><i class="fa fa-trash-o" aria-hidden="true"></i>Delete Animal</span></button>
     </div>
 </div>

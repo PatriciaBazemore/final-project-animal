@@ -1,0 +1,26 @@
+<div class="container">
+    <img src="{{ animal.imageurl }}" alt="{{ animal.name }}">
+    <div class="container" id="edit-animal">
+        <input ng-required="true" type="text" class="form-control text" placeholder="Name" ng-model="animal.name"></input>
+        <select class="form-control" ng-model="animal.age">
+            <option value="Young">Young</option>
+            <option value="Adult">Adult</option>
+            <option value="Senior">Senior</option>
+        </select>
+        <select class="form-control" ng-model="animal.gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <input ng-required="true" type="text" class="form-control text" placeholder="Species (Dog, Cat, Rabbit, etc.)" ng-model="animal.species"></input>
+        <input ng-required="true" type="text" class="form-control text" placeholder="Breed" ng-model="animal.breed"></input>
+        <select class="form-control" ng-model="animal.size">
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+        </select>
+        <input ng-required="true" type="text" class="form-control text" placeholder="Shelter ID" ng-model="animal.shelterid"></input>
+        <button ng-click="updateAnimal()" class="btn btn-sm btn-info"><span id="btn-text">Submit</span></button>
+        <button ng-click="deleteAnimal()" class="btn btn-danger btn-xs delete-btn"><span id="btn-text"><i class="fa fa-trash-o" aria-hidden="true"></i>Delete Animal</span></button>
+        </div>
+    </div>
+</div>

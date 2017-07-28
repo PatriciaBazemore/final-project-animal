@@ -12,6 +12,15 @@ router.route('/')
             console.log(err);
             res.sendStatus(500);
         });
+    })
+    .post(function(req, res) {
+        procedures.create(req.body.name, req.body.age, req.body.gender, req.body.species, req.body.breed, req.body.size, req.body.shelterid, req.body.imageurl, req.body.bio)
+        .then(function (id) {
+            res.status(201).send(id);
+        }, function (err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
     });
 
 // need to add isAdmin? see users.ctrl

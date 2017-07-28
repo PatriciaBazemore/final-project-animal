@@ -6,6 +6,14 @@ angular.module('volunteerApp', ['volunteerApp.controllers', 'volunteerApp.factor
             templateUrl: 'views/welcome.html',
             controller: 'WelcomeController'
         })
+        .when('/animals/add', {
+            templateUrl: 'views/add_animal.html',
+            controller: 'AddAnimalController'
+        })
+        .when('/animals/:id/update', {
+            templateUrl: 'views/animal_update.html',
+            controller: 'AnimalUpdateController'
+        })
         .when('/animals/:id', {
             templateUrl: 'views/single_animal.html',
             controller: 'SingleAnimalController'
@@ -29,6 +37,10 @@ angular.module('volunteerApp', ['volunteerApp.controllers', 'volunteerApp.factor
         .when('/donate', {
             templateUrl: 'views/donations.html',
             controller: 'DonationController'
+        })
+        .when('/logout', {
+            templateUrl: 'views/logout.html',
+            controller: 'LogoutController'
         })
         .otherwise({
             redirectTo: '/'
