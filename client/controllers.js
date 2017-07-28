@@ -42,8 +42,12 @@ angular.module('volunteerApp.controllers', [])
     $(this).toggleClass('showhidenew');
 ;
 }])
-.controller('AnimalsController', ['$scope', 'Animal', 'SEOService', '$location', function($scope, Animal, SEOService, $location) {
+.controller('AnimalsController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', function($scope, Animal, UserService, SEOService, $location) {
     $scope.animals = Animal.query();
+    UserService.me()
+    .then(function(success){
+        $scope.user = success;
+    }); 
 
     SEOService.setSEO({
             title: 'Adoptable',

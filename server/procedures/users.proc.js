@@ -12,8 +12,8 @@ exports.readByEmail = function(email) {
     return db.row('GetUserByEmail', [email]);
 }
 
-exports.update = function(firstname, lastname, email, password, role, id) {
-    return db.empty('UpdateUser', [firstname, lastname, email, password, role, id]);
+exports.update = function(firstname, lastname, email, role, id) {
+    return db.empty('UpdateUser', [firstname, lastname, email, role, id]);
 }
 
 exports.destroy = function(id) {
