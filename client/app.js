@@ -42,6 +42,10 @@ angular.module('volunteerApp', ['volunteerApp.controllers', 'volunteerApp.factor
             templateUrl: 'views/logout.html',
             controller: 'LogoutController'
         })
+        .when('/admin', {
+            templateUrl: 'views/admin_controls.html',
+            controller: 'AdminController'
+        })
         .otherwise({
             redirectTo: '/'
         });

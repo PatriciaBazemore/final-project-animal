@@ -23,6 +23,10 @@ nav {
     padding: 0.4em;
 }
 
+.top {
+    margin-top: 7.5em;
+}
+
 .custom-top {
     position: absolute;
     left:0;
@@ -150,11 +154,9 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     position: center center;
     margin-top: 5px;
 }
-
-#myCarousel {
+/*#myCarousel {
     margin-top: 7.5em;
-}
-
+}*/
 .carousel-inner {
     margin-top: 0;
     width: 100%;
@@ -188,11 +190,9 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 .animal-description {
     float: right;
 }
-
-.animal-div {
+/*.animal-div {
     margin-top: 7.5em;
-}
-
+}*/
 .animal-pic {
     height: auto;
     width: auto;
@@ -201,12 +201,11 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     min-height: 300px;
     min-width: 300px;
 }
-
-/* SINGLE ANIMAL SINGLE ANIMAL SINGLE ANIMAL */
-#edit-animal input, select {
-    margin: 10px 10px;
-    clear: right;
-    max-width: 200px;
+#selectAnAnimalSection {
+    margin-left: 1em;
+}
+#selectAnimalButton {
+    margin-left: 1em;
 }
 
 .update-animal-pic {
@@ -266,3 +265,9 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 /* DONATIONS DONATIONS DONATIONS DONATIONS */
 
 /* ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN */
+#animalDropDown {
+    max-width: 25em;
+}
+/*#admin-container {
+    margin-top: 7.5em;
+}*/
