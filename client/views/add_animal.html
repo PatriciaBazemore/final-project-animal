@@ -1,28 +1,35 @@
-<div class="container">
+<div class="container pad-top bottom-pad">
     <div class="container" id="edit-animal">
-        <input ng-required="true" type="text" class="form-control text" placeholder="Name" ng-model="name"></input>
-        <select class="form-control" ng-model="age">
-            <option value="">Age</option>
-            <option value="Young">Young</option>
-            <option value="Adult">Adult</option>
-            <option value="Senior">Senior</option>
-        </select>
-        <select class="form-control" ng-model="gender">
-            <option value="">Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-        </select>
-        <input ng-required="true" type="text" class="form-control text" placeholder="Species (Dog, Cat, Rabbit, etc.)" ng-model="species"></input>
-        <input ng-required="true" type="text" class="form-control text" placeholder="Breed" ng-model="breed"></input>
-        <select class="form-control" ng-model="size">
-            <option value="">Size</option>
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
-        </select>
-        <input ng-required="true" type="text" class="form-control text" placeholder="Shelter ID" ng-model="shelterid"></input>
-        <input type="text" class="form-control text" placeholder="Image URL" ng-model="imageurl"></input>
-        <textarea class="form-control" cols="30" rows="10" placeholder="Animal Bio/Information" ng-model="bio"></textarea>
-        <button ng-click="saveAnimal()" class="btn btn-sm btn-info"><span id="btn-text">Add Animal</span></button>
+        <h1 class="text-center"><strong>Add a New Animal to Adoptions</strong></h1>
+        <div class="col-md-6">
+            <input ng-required="true" type="text" class="form-control text" placeholder="Name" ng-model="name"></input>
+            <select class="form-control" ng-model="age">
+                <option value="">Age</option>
+                <option value="Young">Young</option>
+                <option value="Adult">Adult</option>
+                <option value="Senior">Senior</option>
+            </select>
+            <select class="form-control" ng-model="gender">
+                <option value="">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <input ng-required="true" type="text" class="form-control text" placeholder="Species (Dog, Cat, Rabbit, etc.)" ng-model="species"></input>
+            <input ng-required="true" type="text" class="form-control text" placeholder="Breed" ng-model="breed"></input>
+            <select class="form-control" ng-model="size">
+                <option value="">Size</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <input ng-required="true" type="text" class="form-control text" placeholder="Shelter ID" ng-model="shelterid"></input>
+            <input type="text" class="form-control text" placeholder="Image URL" ng-model="imageurl"></input>
+            <textarea class="form-control" cols="30" rows="5" placeholder="Animal Bio/Information" ng-model="bio"></textarea>
+            <button ng-click="saveAnimal()" class="btn btn-md btn-text add-animal-btn">Add Animal</button>
+        </div>
+
     </div>
 </div>

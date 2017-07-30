@@ -7,20 +7,11 @@ angular.module('volunteerApp.controllers', [])
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
         .then(function() {
-            // redirect();
             $location.path('/animals');
         }, function(err) {
             console.log(err);
         });
     }
-
-    // function redirect() {
-    //     var dest = $location.search().dest;
-    //     if (!dest) {
-    //         dest = '/';
-    //     }
-    //     $location.replace().path().search('dest', null);
-    // }
 
     SEOService.setSEO({
         title: 'Welcome',
@@ -50,7 +41,7 @@ angular.module('volunteerApp.controllers', [])
     }); 
 
     SEOService.setSEO({
-            title: 'Adoptable',
+            title: 'Adoptions List',
             url: $location.url(),
             description: 'McKamey Animal Shelter Volunteer Portal'
         })
@@ -73,9 +64,9 @@ angular.module('volunteerApp.controllers', [])
     };
 
     SEOService.setSEO({
-            title: 'Adoptable',
+            title: 'Animal Bio',
             url: $location.url(),
-            description: 'McKamey Animal Shelter Volunteer Portal'
+            description: 'Single Animal bio page on McKamey Animal Shelter Volunteer Portal'
         })
 }])
 .controller('AnimalUpdateController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', '$routeParams', function($scope, Animal, UserService, SEOService, $location, $routeParams) {
@@ -103,7 +94,7 @@ angular.module('volunteerApp.controllers', [])
     SEOService.setSEO({
             title: 'Edit Animal',
             url: $location.url(),
-            description: 'McKamey Animal Shelter Animal List'
+            description: 'Edit Animal on McKamey Animal Shelter Animal List'
         })
 }])
 .controller('AddAnimalController', ['$scope', 'Animal', 'SEOService', '$location', function($scope, Animal, SEOService, $location) {
@@ -134,7 +125,7 @@ angular.module('volunteerApp.controllers', [])
     SEOService.setSEO({
             title: 'Add A New Animal',
             url: $location.url(),
-            description: 'McKamey Animal Shelter Animal List'
+            description: 'Admin add a new animal to McKamey Animal Shelter Animal List'
         })
 }])
 .controller('UserListController', ['$scope', 'User', 'UserService', 'SEOService', '$location', function($scope, User, UserService, SEOService, $location) {
@@ -163,9 +154,9 @@ angular.module('volunteerApp.controllers', [])
     }
 
     SEOService.setSEO({
-            title: 'Current Volunteers',
+            title: 'Manage Users',
             url: $location.url(),
-            description: 'McKamey Animal Shelter Volunteer List'
+            description: 'McKamey Animal Shelter Volunteer User List'
         })
 }])
 .controller('SingleUserController', ['$scope', 'User', 'UserService', 'SEOService', '$location', '$routeParams', function($scope, User, UserService, SEOService, $location, $routeParams) {
@@ -183,9 +174,9 @@ angular.module('volunteerApp.controllers', [])
     };
 
     SEOService.setSEO({
-            title: 'Current Volunteers',
+            title: 'View User',
             url: $location.url(),
-            description: 'McKamey Animal Shelter Volunteer List'
+            description: 'View McKamey Animal Shelter Volunteer'
         })
 }])
 .controller('UserUpdateController', ['$scope', 'User', 'UserService', 'SEOService', '$location', '$routeParams', function($scope, User, UserService, SEOService, $location, $routeParams) {
@@ -200,10 +191,20 @@ angular.module('volunteerApp.controllers', [])
         });
     };
 
+    $scope.deleteUser = function() {
+        if(confirm('Are you sure you want to delete ' + $scope.user.firstname + ' ' + $scope.user.lastname + '?')) {
+            $scope.user.$delete(function(success) {
+                $location.replace().path('/users');
+            }, function(err) {
+                console.log(err);
+            });
+        }
+    };
+
     SEOService.setSEO({
-            title: 'Current Volunteers',
+            title: 'Edit User',
             url: $location.url(),
-            description: 'McKamey Animal Shelter Volunteer List'
+            description: 'Edit McKamey Animal Shelter Volunteer User'
         })
 }])
 .controller('DonationController', ['$scope', 'SEOService', 'Donation', '$location', function($scope, SEOService, Donation, $location) {
@@ -253,7 +254,7 @@ angular.module('volunteerApp.controllers', [])
     SEOService.setSEO({
             title: 'Logging Out',
             url: $location.url(),
-            description: 'McKamey Animal Shelter Volunteer Portal'
+            description: 'Leaving the McKamey Animal Shelter Volunteer Portal'
         })
 }]);
 
