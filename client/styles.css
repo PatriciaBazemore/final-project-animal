@@ -181,9 +181,9 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 .animal-description {
     float: right;
 }
-/*.animal-div {
-    align-content: center;
-}*/
+.animal-div {
+    margin-top: 7.5em;
+}
 .animal-pic {
     height: auto;
     width: auto;
