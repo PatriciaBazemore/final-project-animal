@@ -1,3 +1,52 @@
 <!--add comments that have been flagged inappropriate-->
 <!--button to go to /users
 button to go to /admin-animals-->
+<div class="container top" id="admin-container">
+
+<div>
+    <h1>Users</h1>
+    <div>
+        <a href="/users"><h3>Add a User</h3></a>
+    </div>
+    <div>
+        <h3>Select an User to Edit</h3>
+        <div class="dropdown userDropdownMainDiv" auto-close="outsideClick">
+            <button class="btn btn-default dropdown-toggle userDropdownBtn" type="button" id="individualDrop" data-toggle="dropdown">{{user.id}}<span class="caret pull-right"></span></button>
+            <span ng-show="submitted"><label class="error">Select a User</label></span>
+            <ul id="userDropDown" class="dropdown-menu userDropdownUlStyle" role="menu" aria-labelledby="individualDrop">
+                <input disable-auto-close type="search" ng-model="serchFilter" class="userDropdownSearchBox" placeholder="Search"></input>
+                <li role="presentation" ng-repeat="u in users | filter: serchFilter"><a role="menuitem" ng-href="/users/{{ u.id }}">{{u.firstname}} {{u.lastname}}</a></li>  
+            </ul>
+    </div>
+</div>
+</div>
+
+<div>
+    <h1>Animals</h1>   
+        <div>
+            <a href="/animal/add"><h3>Add an Animal</h3></a>  
+        </div>
+    <!--<a href="/animals/add"><h3>Add an Animal</h3></a>
+    <a href="/animals"><h3>Edit an Animal</h3></a>-->
+    <!--<select class="ac-select animalList" ac-model="selectedAnimal" ac-options="s.name for s in getAnimals()" 
+        ac-settings="{ comboMode: true, loadOnOpen: true, minWidth: '300px' }" ac-change="animalSelected(value)"></select>-->
+        <div>
+            <h3>Select an Animal to Edit</h3>
+            <div class="dropdown animalDropdownMainDiv" auto-close="outsideClick">
+                <button class="btn btn-default dropdown-toggle animalDropdownBtn" type="button" id="individualDrop" data-toggle="dropdown">{{animal.shelterid}}<span class="caret pull-right"></span></button>
+                <span ng-show="submitted"><label class="error">Select an Animal</label></span>
+                <ul id="animalDropDown" class="dropdown-menu animalDropdownUlStyle" role="menu" aria-labelledby="individualDrop">
+                    <input disable-auto-close type="search" ng-model="serchFilter" class="animalDropdownSearchBox" placeholder="Search"></input>
+                    <li role="presentation" ng-repeat="a in animals | filter: serchFilter"><a role="menuitem" ng-href="/animals/{{ a.id }}">{{a.name}} {{a.shelterid}}</a></li>  
+                </ul>
+            </div>
+        </div>
+</div>
+
+<div>
+    <h1>Flagged Comments</h1>
+</div>
+
+
+
+</div>

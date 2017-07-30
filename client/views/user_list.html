@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container top">
+    <h1>Volunteers</h1>
     <div class="container" id="user-list" ng-repeat="u in users">
         <h1>{{ u.firstname }} {{ u.lastname }} - {{ u.email }} </h1>
         <button class="edit-btn btn btn-info btn-xs"><a ng-href="/users/{{ u.id }}/update"><span id="btn-text"><i class="glyphicon glyphicon-pencil edit-btn" aria-hidden="true"></i>Edit User</span></a></button>
