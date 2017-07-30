@@ -119,21 +119,19 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 .login {
     border: solid black .5px;
 }
+
 .carousel-control.right:hover, .carousel-control.right:active,
 .carousel-control.right:visited,
 .carousel-control.right:link{
- background-color: transparent;
+     background-color: transparent;
 }
-
 
 .carousel-control.left:hover, .carousel-control.left:active, .carousel-control.left:visited,
 .carousel-control.left:link {
- background-color: transparent;
+     background-color: transparent;
 }
 
-
-
-.fa {
+.footer-icon {
     color: white;
     height: 22px;
     width: 22px;
@@ -149,6 +147,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     -webkit-transform: translateY(-5%);
     transform: translateY(-5%);
 }
+
 #scroll-image {
     max-height: 950px;
     width: 100%;
@@ -170,9 +169,6 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     float: right;
 }
 
-#cat-prices {
-    float: right;
-}
 
 /* ANIMAL LIST ANIMAL LIST ANIMAL LIST ANIMAL LIST */
 /*#animal-display {
@@ -182,12 +178,15 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     vertical-align: middle;
     justify-content: center;
 }*/
+
 .the-animals {
     padding: 5px;
 }
+
 .animal-name {
     float: left;
 }
+
 .animal-description {
     float: right;
 }
@@ -219,14 +218,55 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     margin-left: 30%;
     padding-top: 5em;
 }
-
-
-/* SINGLE ANIMAL SINGLE ANIMAL SINGLE ANIMAL */
+.update-animal-pic {
+    float: left;
+}
+.add-animal-btn {
+    margin: 5px;
+}
 
 /* USER LIST USER LIST USER LIST USER LIST */
+.pad-top {
+    padding-top: 100px;
+}
 
-/* SINGLE USER SINGLE USER SINGLE USER SINGLE USER */
+.btn-text {
+    background-color: rgb(2, 92, 46);
+    color: white;
+    font-family: 'Zilla Slab', serif;
+    text-decoration: none;
+}
 
+/* SINGLE/UPDATE USER SINGLE/UPDATE USER SINGLE/UPDATE USER SINGLE/UPDATE USER */
+.extra-pad-top {
+    padding-top: 110px;
+}
+
+.bottom-pad {
+    padding-bottom: 100px;
+}
+
+.extra-bottom-pad {
+    padding-bottom: 175px;
+}
+
+#edit-user input {
+    max-width: 200px;
+    margin: 5px;
+}
+
+#edit-user select {
+    max-width: 90px;
+    margin: 5px;
+}
+
+.delete-user {
+    margin-left: 25px;
+}
+
+.btn-danger {
+    border-radius: 40px;
+}
 /* FORUM HOME FORUM HOME FORUM HOME FORUM HOME */
 
 /* SINGLE POST SINGLE POST SINGLE POST SINGLE POST */
