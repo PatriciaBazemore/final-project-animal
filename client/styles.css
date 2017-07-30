@@ -208,7 +208,17 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 #selectAnimalButton {
     margin-left: 1em;
 }
-
+#admin-animals {
+    float: right;
+}
+#admin-users {
+    float: left;
+}
+#admin-comments {
+    clear: both;
+    margin-left: 30%;
+    padding-top: 5em;
+}
 
 
 /* SINGLE ANIMAL SINGLE ANIMAL SINGLE ANIMAL */

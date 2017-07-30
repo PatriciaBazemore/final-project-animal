@@ -3,13 +3,13 @@
 button to go to /admin-animals-->
 <div class="container top" id="admin-container">
 
-<div>
+<div id="admin-users">
     <h1>Users</h1>
     <div>
         <a href="/users"><h3>Add a User</h3></a>
     </div>
     <div>
-        <h3>Select an User to Edit</h3>
+        <h3>Select User</h3>
         <div class="dropdown userDropdownMainDiv" auto-close="outsideClick">
             <button class="btn btn-default dropdown-toggle userDropdownBtn" type="button" id="individualDrop" data-toggle="dropdown">{{user.id}}<span class="caret pull-right"></span></button>
             <span ng-show="submitted"><label class="error">Select a User</label></span>
@@ -21,7 +21,7 @@ button to go to /admin-animals-->
 </div>
 </div>
 
-<div>
+<div id="admin-animals">
     <h1>Animals</h1>   
         <div>
             <a href="/animal/add"><h3>Add an Animal</h3></a>  
@@ -31,7 +31,7 @@ button to go to /admin-animals-->
     <!--<select class="ac-select animalList" ac-model="selectedAnimal" ac-options="s.name for s in getAnimals()" 
         ac-settings="{ comboMode: true, loadOnOpen: true, minWidth: '300px' }" ac-change="animalSelected(value)"></select>-->
         <div>
-            <h3>Select an Animal to Edit</h3>
+            <h3>Select Animal</h3>
             <div class="dropdown animalDropdownMainDiv" auto-close="outsideClick">
                 <button class="btn btn-default dropdown-toggle animalDropdownBtn" type="button" id="individualDrop" data-toggle="dropdown">{{animal.shelterid}}<span class="caret pull-right"></span></button>
                 <span ng-show="submitted"><label class="error">Select an Animal</label></span>
@@ -43,10 +43,9 @@ button to go to /admin-animals-->
         </div>
 </div>
 
-<div>
-    <h1>Flagged Comments</h1>
+<div id="admin-comments">
+        <h1>Flagged Comments</h1>
 </div>
-
 
 
 </div>
