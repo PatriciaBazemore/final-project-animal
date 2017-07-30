@@ -43,11 +43,18 @@ angular.module('volunteerApp.controllers', [])
 ;
 }])
 .controller('AnimalsController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', function($scope, Animal, UserService, SEOService, $location) {
+    $scope.getAnimals = function (callback) {
+        callback($scope.animals);
+        };
+    $scope.animalSelected = function (animal) {
+        $scope.animalInfo = animal.name + " (" + animal.shelterid + ")";
+    };
     $scope.animals = Animal.query();
     UserService.me()
     .then(function(success){
         $scope.user = success;
     }); 
+    
 
     SEOService.setSEO({
             title: 'Adoptable',

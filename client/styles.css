@@ -202,7 +202,12 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     min-height: 300px;
     min-width: 300px;
 }
-
+#selectAnAnimalSection {
+    margin-left: 1em;
+}
+#selectAnimalButton {
+    margin-left: 1em;
+}
 
 
 
