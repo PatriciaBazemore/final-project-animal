@@ -14,7 +14,7 @@
                 <button class="btn btn-default dropdown-toggle animalDropdownBtn" type="button" id="individualDrop" data-toggle="dropdown">{{animal.shelterid}}<span class="caret pull-right"></span></button>
                 <span ng-show="submitted"><label class="error">Select an Animal</label></span>
                 <ul id="animalDropDown" class="dropdown-menu animalDropdownUlStyle" role="menu" aria-labelledby="individualDrop">
-                    <input disable-auto-close type="search" ng-model="serchFilter" class="animalDropdownSearchBox" placeholder="Search"></input>
+                    <input disable-auto-close type="search" ng-model="serchFilter" class="animalDropdownSearchBox" placeholder="Search by Name or ID"></input>
                     <li role="presentation" ng-repeat="a in animals | filter: serchFilter"><a role="menuitem" ng-href="/animals/{{ a.id }}">{{a.name}} {{a.shelterid}}</a></li>  
                 </ul>
             </div>
