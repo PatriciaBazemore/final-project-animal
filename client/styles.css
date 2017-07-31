@@ -186,6 +186,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 }
 .topp {
     margin-top: 5em;
+<<<<<<< HEAD
 }
 #vol-logo {
     /* height: 50px;
@@ -213,6 +214,8 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 }
 #gold-btn:hover {
     background-color: black;
+=======
+>>>>>>> 9f744c8daa9a461ea8193bfe8f0f926609797e1b
 }
 /* ANIMAL LIST ANIMAL LIST ANIMAL LIST ANIMAL LIST */
 
