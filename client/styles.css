@@ -301,7 +301,10 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 /* SINGLE POST SINGLE POST SINGLE POST SINGLE POST */
 
 /* DONATIONS DONATIONS DONATIONS DONATIONS */
-
+.gold-bar {
+    background-color: rgb(150, 136, 98);
+    color: white;
+}
 .my-form {
     max-width: 50em;
 }
