@@ -10,11 +10,11 @@ a:focus, a:hover {
     color: white;
     background-color: black;
 }
-#navbar>.navbar-nav>li>a:hover {
+#navbar>.navbar-nav>li>a:hover, #navbar>.navbar-nav>li>a:focus {
     color: white;
     background-color: black;
 }
-.navbar-nav>li>a:hover {
+.navbar-nav>li>a:hover, .navbar-nav>li>a:link, .navbar-nav>li>a:visited {
     background-color: transparent;
 }
 /* INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX */
@@ -85,6 +85,15 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     color: white;
     padding: 1em;
 }
+.login {
+    border: solid black .5px;
+}
+.fa {
+    color: white;
+    height: 22px;
+    width: 22px;
+}
+
 /* SIDE PANEL SIDE PANEL SIDE PANEL SIDE PANEL */
 /* .slideout-menu {
         position: fixed;
@@ -116,9 +125,6 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
       } */
 
 /* WELCOME WELCOME WELCOME WELCOME WELCOME WELCOME */
-.login {
-    border: solid black .5px;
-}
 
 .carousel-control.right:hover, .carousel-control.right:active,
 .carousel-control.right:visited,
@@ -130,13 +136,17 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 .carousel-control.left:link {
      background-color: transparent;
 }
-
+.carousel-control.right {
+    background-color: transparent;
+}
+.carousel-control.left {
+    background-color: transparent;
+}
 .footer-icon {
     color: white;
     height: 22px;
     width: 22px;
 }
-
 #custom-caption {
     left: 1em;
     text-align: left;
@@ -161,7 +171,6 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     margin-top: 0;
     width: 100%;
 }
-
 .btn-mckamey {
     background-color: rgb(2, 92, 46);
     color: white;
@@ -190,9 +199,16 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 .animal-description {
     float: right;
 }
-/*.animal-div {
-    margin-top: 7.5em;
-}*/
+.animal-div:hover {
+    /* margin-top: 7.5em; */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(2, 92, 46); */
+    background-color: black;
+    color: white;
+}
+.animal-div {
+    padding: 1.5em;
+}
 .animal-pic {
     height: auto;
     width: auto;
@@ -272,6 +288,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 /* SINGLE POST SINGLE POST SINGLE POST SINGLE POST */
 
 /* DONATIONS DONATIONS DONATIONS DONATIONS */
+
 .my-form {
     max-width: 50em;
 }
@@ -286,6 +303,8 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     display: block;
     position: relative;
     margin: 2em;
+    margin-top: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 }
 
 .dog-donate-pic {
@@ -298,6 +317,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     display: block;
     position: relative;
     margin: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 }
 
 /*.donate-pic {
