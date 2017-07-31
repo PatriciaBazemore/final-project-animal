@@ -183,30 +183,26 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 
 
 /* ANIMAL LIST ANIMAL LIST ANIMAL LIST ANIMAL LIST */
-/*#animal-display {
-    align-content: center;
-    padding: 10px;
-    margin: 10px;
-    vertical-align: middle;
-    justify-content: center;
-}*/
 
+#animal-list {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 .the-animals {
     padding: 5px;
 }
 
-.animal-name {
+ .animal-name {
     float: left;
 }
 
 .animal-description {
     float: right;
-}
+} 
 .animal-div:hover {
     /* margin-top: 7.5em; */
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border: 1px solid rgb(2, 92, 46); */
-    background-color: black;
+    background-color: rgb(2, 92, 46);
     color: white;
 }
 .animal-div {
@@ -220,11 +216,18 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     min-height: 300px;
     min-width: 300px;
 }
-#selectAnAnimalSection {
-    margin-left: 1em;
+#select {
+    float: left;
 }
+/* #select h3 {
+    color: white;
+} */
 #selectAnimalButton {
     margin-left: 1em;
+}
+.animalDropdownBtn {
+    /* background-color: rgb(2, 92, 46); */
+    /* width: 3em; */
 }
 #admin-animals {
     float: right;
@@ -242,6 +245,13 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 }
 .add-animal-btn {
     margin: 5px;
+}
+#prices {
+    background-color: rgb(150, 136, 98);
+    color: white;
+    height: 100%;
+    padding: 1em;
+    padding-bottom: 1em;
 }
 
 /* USER LIST USER LIST USER LIST USER LIST */
@@ -307,7 +317,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     position: relative;
     margin: 2em;
     margin-top: 2em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .dog-donate-pic {
@@ -320,7 +330,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     display: block;
     position: relative;
     margin: 2em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 /*.donate-pic {
