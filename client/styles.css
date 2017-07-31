@@ -23,6 +23,10 @@ nav {
     padding: 0.4em;
 }
 
+.top {
+    margin-top: 7.5em;
+}
+
 .custom-top {
     position: absolute;
     left:0;
@@ -60,6 +64,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     padding-bottom: 0.25em;
     margin-top: 0.75em;
 }
+
 .nav-text-b {
     color: white;
     font-size: 2em;
@@ -123,12 +128,13 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 
 .carousel-control.right:hover, .carousel-control.right:active,
 .carousel-control.right:visited,
-.carousel-control.right:link {
- background-color: transparent;
+.carousel-control.right:link{
+     background-color: transparent;
 }
+
 .carousel-control.left:hover, .carousel-control.left:active, .carousel-control.left:visited,
 .carousel-control.left:link {
- background-color: transparent;
+     background-color: transparent;
 }
 .carousel-control.right {
     background-color: transparent;
@@ -136,51 +142,68 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 .carousel-control.left {
     background-color: transparent;
 }
+.footer-icon {
+    color: white;
+    height: 22px;
+    width: 22px;
+}
 #custom-caption {
-    /*right: unset;*/
     left: 1em;
     text-align: left;
-    margin-bottom: 600px;
-    margin-top: 1em;
+    top: 5%;
+    -o-transform: translateY(-5%);
+    -moz-transform: translateY(-5%);
+    -ms-transform: translateY(-5%);
+    -webkit-transform: translateY(-5%);
+    transform: translateY(-5%);
 }
+
 #scroll-image {
     max-height: 950px;
     width: 100%;
-   position: center center;
+    position: center center;
+    margin-top: 5px;
 }
-.carousel slide {
-    margin-top: 51px;
+/*#myCarousel {
+    margin-top: 7.5em;
+}*/
+.carousel-inner {
+    margin-top: 0;
+    width: 100%;
 }
 .btn-mckamey {
     background-color: rgb(2, 92, 46);
     color: white;
     font-family: 'Zilla Slab', serif;
-}
-
-#cat-prices {
     float: right;
 }
 
+
 /* ANIMAL LIST ANIMAL LIST ANIMAL LIST ANIMAL LIST */
-#animal-display {
-    /*align-content: center;
+/*#animal-display {
+    align-content: center;
     padding: 10px;
     margin: 10px;
     vertical-align: middle;
-    justify-content: center;*/
-}
+    justify-content: center;
+}*/
+
 .the-animals {
     padding: 5px;
 }
+
 .animal-name {
     float: left;
 }
+
 .animal-description {
     float: right;
 }
-/*.animal-div {
-    align-content: center;
-}*/
+.animal-div:hover {
+    /* margin-top: 7.5em; */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(2, 92, 46); */
+}
 .animal-pic {
     height: auto;
     width: auto;
@@ -189,20 +212,121 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     min-height: 300px;
     min-width: 300px;
 }
-
-
-
-
-/* SINGLE ANIMAL SINGLE ANIMAL SINGLE ANIMAL */
+#selectAnAnimalSection {
+    margin-left: 1em;
+}
+#selectAnimalButton {
+    margin-left: 1em;
+}
+#admin-animals {
+    float: right;
+}
+#admin-users {
+    float: left;
+}
+#admin-comments {
+    clear: both;
+    margin-left: 30%;
+    padding-top: 5em;
+}
+.update-animal-pic {
+    float: left;
+}
+.add-animal-btn {
+    margin: 5px;
+}
 
 /* USER LIST USER LIST USER LIST USER LIST */
+.pad-top {
+    padding-top: 100px;
+}
 
-/* SINGLE USER SINGLE USER SINGLE USER SINGLE USER */
+.btn-text {
+    background-color: rgb(2, 92, 46);
+    color: white;
+    font-family: 'Zilla Slab', serif;
+    text-decoration: none;
+}
 
+/* SINGLE/UPDATE USER SINGLE/UPDATE USER SINGLE/UPDATE USER SINGLE/UPDATE USER */
+.extra-pad-top {
+    padding-top: 110px;
+}
+
+.bottom-pad {
+    padding-bottom: 100px;
+}
+
+.extra-bottom-pad {
+    padding-bottom: 175px;
+}
+
+#edit-user input {
+    max-width: 200px;
+    margin: 5px;
+}
+
+#edit-user select {
+    max-width: 90px;
+    margin: 5px;
+}
+
+.delete-user {
+    margin-left: 25px;
+}
+
+.btn-danger {
+    border-radius: 40px;
+}
 /* FORUM HOME FORUM HOME FORUM HOME FORUM HOME */
 
 /* SINGLE POST SINGLE POST SINGLE POST SINGLE POST */
 
 /* DONATIONS DONATIONS DONATIONS DONATIONS */
 
+.my-form {
+    max-width: 50em;
+}
+
+.cat-donate-pic {
+    content: 'Smiling Cat';
+    background-image: url("/images/talking-cat.jpg");
+    opacity: 0.5;
+    background-size: cover;
+    width: 25em;
+    height: 25em;
+    display: block;
+    position: relative;
+    margin: 2em;
+    margin-top: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+
+.dog-donate-pic {
+    background-image: url("/images/looking-up-dog.jpg");
+    content: 'Smiling Dog';
+    opacity: 0.5;
+    background-size: cover;
+    width: 25em;
+    height: 25em;
+    display: block;
+    position: relative;
+    margin: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+
+/*.donate-pic {
+    height: auto;
+    width: auto;
+    max-height: 300px;
+    max-width: 300px;
+    min-height: 300px;
+    min-width: 300px;
+}*/
 /* ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN */
+#animalDropDown {
+    max-width: 25em;
+}
+/*#admin-container {
+    margin-top: 7.5em;
+}*/

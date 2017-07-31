@@ -1,0 +1,40 @@
+<div class="container top bottom-pad">
+    <img src="{{ animal.imageurl }}" alt="{{ animal.name }}" width="500px" class="update-animal-pic">
+    <div class="container" id="edit-animal">
+
+        <div class="col-md-3">
+            <h6>Name</h6>
+            <input ng-required="true" type="text" class="form-control text" placeholder="Name" ng-model="animal.name"></input>
+            <h6>Age</h6>
+            <select class="form-control" ng-model="animal.age">
+                <option value="Young">Young</option>
+                <option value="Adult">Adult</option>
+                <option value="Senior">Senior</option>
+            </select>
+            <h6>Gender</h6>
+            <select class="form-control" ng-model="animal.gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <h6>Species</h6>
+            <input ng-required="true" type="text" class="form-control text" placeholder="Species (Dog, Cat, Rabbit, etc.)" ng-model="animal.species"></input>
+            <h6>Breed</h6>
+            <input ng-required="true" type="text" class="form-control text" placeholder="Breed" ng-model="animal.breed"></input>
+            <h6>Size</h6>
+            <select class="form-control" ng-model="animal.size">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
+            <h6>Shelter ID</h6>
+            <input ng-required="true" type="text" class="form-control text" placeholder="Shelter ID" ng-model="animal.shelterid"></input>
+            <button ng-click="updateAnimal()" class="btn btn-md btn-text"><span>Save</span></button>
+            <button ng-click="deleteAnimal()" class="btn btn-danger btn-xs delete-btn"><span><i class="fa fa-trash-o" aria-hidden="true"></i>Delete Animal</span></button>
+            </div>
+        </div>
+
+    </div>
+</div>

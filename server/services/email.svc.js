@@ -1,7 +1,3 @@
-//After checkout, send an email to the customer thanking them for their purchase, 
-//complete with the list of items they purchased and the amounts
-
-
 var helper = require('sendgrid').mail; //look in sendgrid. get .mail property
 var sg = require('sendgrid')(process.env.SENDGRID_API_KEY); //is an IFE, use ()
 

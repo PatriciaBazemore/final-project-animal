@@ -16,6 +16,6 @@ exports.destroy = function(id) {
     return db.empty('DeleteAnimal', [id]);
 }
 
-exports.create = function(name, age, gender, species, breed, size, shelterid) {
-    return db.row('InsertAnimal', [name, age, gender, species, breed, size, shelterid]);
+exports.create = function(name, age, gender, species, breed, size, shelterid, imageurl, bio) {
+    return db.row('InsertAnimal', [name, age, gender, species, breed, size, shelterid, imageurl, bio]);
 }
