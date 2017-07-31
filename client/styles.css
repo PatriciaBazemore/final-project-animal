@@ -85,9 +85,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     color: white;
     padding: 1em;
 }
-.login {
-    border: solid black .5px;
-}
+
 .fa {
     color: white;
     height: 22px;
@@ -172,16 +170,50 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     width: 100%;
 }
 .btn-mckamey {
-    background-color: rgb(2, 92, 46);
+    background-color: transparent;
     color: white;
+    border: 3px solid white;
+    border-radius: 0.45em;
     font-family: 'Zilla Slab', serif;
     float: right;
+    font-weight: bold;
+    font-size: 2.5em;
+}
+.btn-mckamey:hover, .btn-mckamey:active, .btn-mckamey:link, .btn-mckamey:visited {
+    text-decoration: none;
+    background-color: transparent;
+    color: white;
 }
 .topp {
-    margin-top: 7em;
+    margin-top: 5em;
 }
-
-
+#vol-logo {
+    /* height: 50px;
+    width: auto; */
+    max-height: 200px;
+    max-width: auto;
+}
+.login {
+    float: left;
+}
+#login {
+    border: 3px dashed rgb(150, 136, 98);
+    border-radius: 0.45em;
+}
+#gold-btn {
+    margin-top: 1em;
+    background-color: rgb(2, 92, 46);
+    color: white;
+    cursor: pointer;
+    position:  relative;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#gold-btn:hover {
+    background-color: black;
+}
 /* ANIMAL LIST ANIMAL LIST ANIMAL LIST ANIMAL LIST */
 
 #animal-list {

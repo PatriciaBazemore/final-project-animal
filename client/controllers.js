@@ -1,9 +1,21 @@
 angular.module('volunteerApp.controllers', [])
-    .controller('AppCtrl', ['$scope', function ($scope) {
-        $scope.$back = function () {
-            window.history.back();
-        };
-    }])
+    // .controller('AppCtrl', ['$scope', 'UserService', function ($scope, $UserService) {
+    //     $scope.$back = function () {
+    //         window.history.back();
+    //     };
+    // }
+    //     UserService.me()
+    //         .then(function (success) {
+    //             $scope.user = success;
+    //         });
+    //     $scope.IsAdmin = function () {
+    //         return $scope.UserRole == "admin";
+    //     }
+
+    //     $scope.IsUser = function () {
+    //         return $scope.UserRole == "user";
+    //     }
+    // }])
     .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', function ($scope, SEOService, $location, UserService) {
         UserService.me().then(function () {
             // redirect();
@@ -28,16 +40,16 @@ angular.module('volunteerApp.controllers', [])
             $location.path('/animal_list');
         }
     }])
-    // .controller('NavToggle', ['$scope', '$routeParams', '$location', function($scope, $routeParams, $location) {
-    //     if $location.url() === 
+    // .controller('AccountController', ['$scope', 'UserRole', function($scope, UserRole) {
+    //     $scope.IsAdmin = function(){
+    //         return $scope.UserRole == "Admin";
+    //     }
+    //     $scope.IsUser = function(){
+    //         return $scope.UserRole == "StandardUser";}
+    // $scope.IsVisitor = function(){
+    //     return $scope.UserRole == "Visitor";
+    // }
     // }])
-    // WORK W WILL TO CREATE CONTROLLERS TOGGLING PUBLIC NAV & PRIVATE (USER) NAV
-    .controller('IndexController', ['$scope', function ($scope) {
-        // $('.').click(function() {
-        $(this).toggleClass('myclass');
-        $(this).toggleClass('showhidenew');
-        ;
-    }])
     .controller('AnimalsController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', function ($scope, Animal, UserService, SEOService, $location) {
         $scope.getAnimals = function (callback) {
             callback($scope.animals);
@@ -218,40 +230,40 @@ angular.module('volunteerApp.controllers', [])
             url: $location.url(),
             description: 'Edit McKamey Animal Shelter Volunteer User'
         })
-}])
-.controller('DonationController', ['$scope', 'SEOService', 'Donation', '$location', function($scope, SEOService, Donation, $location) {
-    var elements = stripe.elements();
-    var card = elements.create('card');
-    card.mount('#card-field');
+    }])
+    .controller('DonationController', ['$scope', 'SEOService', 'Donation', '$location', function ($scope, SEOService, Donation, $location) {
+        var elements = stripe.elements();
+        var card = elements.create('card');
+        card.mount('#card-field');
 
-    $scope.errorMessage = '';
+        $scope.errorMessage = '';
 
-    $scope.processDonation = function() {
-        stripe.createToken(card, {
-            name: $scope.fullname,
-            address_line1: $scope.line1,
-            address_line2: $scope.line2,
-            address_city: $scope.city,
-            address_state: $scope.state,
-            email: $scope.email
-        }).then(function(result) {
-            if (result.error) {
-                $scope.errorMessage = result.error.message;
-            } else {
-                var d = new Donation({
-                    token: result.token.id,
-                    amount: $scope.amount,
-                    email: $scope.email
-                });
-                d.$save(function() {
-                    $location.path('/');
-                    alert('Thank you for your donation!');
-                }, function(err) {
-                    console.log(err);
-                });
-            }
-        });
-    }
+        $scope.processDonation = function () {
+            stripe.createToken(card, {
+                name: $scope.fullname,
+                address_line1: $scope.line1,
+                address_line2: $scope.line2,
+                address_city: $scope.city,
+                address_state: $scope.state,
+                email: $scope.email
+            }).then(function (result) {
+                if (result.error) {
+                    $scope.errorMessage = result.error.message;
+                } else {
+                    var d = new Donation({
+                        token: result.token.id,
+                        amount: $scope.amount,
+                        email: $scope.email
+                    });
+                    d.$save(function () {
+                        $location.path('/');
+                        alert('Thank you for your donation!');
+                    }, function (err) {
+                        console.log(err);
+                    });
+                }
+            });
+        }
         SEOService.setSEO({
             title: 'Donate',
             url: $location.url(),
@@ -294,8 +306,13 @@ angular.module('volunteerApp.controllers', [])
         $scope.users = User.query();
 
 
-    }]);
-
+    }])
+    .controller('StaticController', ['$scope',])
+SEOService.setSEO({
+    title: 'Bulletin Board',
+    url: $location.url(),
+    description: 'McKamey Volunteer Bulletin Board'
+})
 
     // UserService.isAdmin();
     // $scope.user = User.get({ id: $routeParams.id });
@@ -390,14 +407,4 @@ angular.module('volunteerApp.controllers', [])
 //         }
 //     };
 
-// .controller('NavController', ['$scope', '$location', function($scope, $location) {
-//     if(localStorage.items === undefined) 
-//         localStorage.items = angular.toJson([]);
-//     $scope.cartTotal = angular.fromJson(localStorage.items).length;
-//     $scope.$on("cartChanged", function() {
-//         $scope.cartTotal = angular.fromJson(localStorage.items).length;
-//     })
-//     $scope.$on("purchase", function() {
-//         $scope.cartTotal = 0;
-//     })
 
