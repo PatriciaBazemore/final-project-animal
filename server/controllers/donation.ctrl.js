@@ -5,6 +5,7 @@ var mailService = require('../services/email.svc');
 var router = express.Router();
 
 router.post('/', function(req, res) {
+    console.log(process.env.STRIPE_SECRET_KEY);
     stripeSvc.charge(req.body.token, req.body.amount)
     .then(function(response) {
         console.log(response);
@@ -13,8 +14,8 @@ router.post('/', function(req, res) {
     .then(function(response) {
     let content = `<h3>We've received your generous donation of $${req.body.amount} to McKamey Animal Center.</h3>
     <p>Your money will be used to improve the lives of many Hamilton County animals in need.</p>
-    <h6>From all of us to you, </h6>
-    <h6>Thank You!</h6>`;
+    <h3>From all of us to you, </h3>
+    <h3>Thank You!</h3>`;
 
     return mailService.sendEmail(req.body.email, 'no-reply@mckameyshelter.org', 'McKamey Animals', content);
     })

@@ -239,8 +239,8 @@ angular.module('volunteerApp.controllers', [])
                     email: $scope.email
                 });
                 d.$save(function() {
-                    alert('Thank you for your donation!');
                     $location.path('/');
+                    alert('Thank you for your donation!');
                 }, function(err) {
                     console.log(err);
                 });
