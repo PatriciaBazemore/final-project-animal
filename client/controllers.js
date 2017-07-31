@@ -50,7 +50,7 @@ angular.module('volunteerApp.controllers', [])
     //     return $scope.UserRole == "Visitor";
     // }
     // }])
-<<<<<<< HEAD
+
     // WORK W WILL TO CREATE CONTROLLERS TOGGLING PUBLIC NAV & PRIVATE (USER) NAV
     .controller('IndexController', ['$scope', function ($scope) {
         // $('.').click(function() {
@@ -67,10 +67,6 @@ angular.module('volunteerApp.controllers', [])
             });
             //$location.replace().path('/users/' + '/update');  
         }
-
-=======
-    .controller('AnimalsController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', function ($scope, Animal, UserService, SEOService, $location) {
->>>>>>> 267d816101e7532d729376d195fa63f2b4d9a080
         $scope.getAnimals = function (callback) {
             callback($scope.animals);
         };
@@ -273,43 +269,6 @@ angular.module('volunteerApp.controllers', [])
             url: $location.url(),
             description: 'Edit McKamey Animal Shelter Volunteer User'
         })
-<<<<<<< HEAD
-}])
-.controller('DonationController', ['$scope', 'SEOService', 'Donation', '$location', function($scope, SEOService, Donation, $location) {
-    var elements = stripe.elements();
-    var card = elements.create('card');
-    card.mount('#card-field');
-
-    $scope.errorMessage = '';
-
-    $scope.processDonation = function() {
-        stripe.createToken(card, {
-            name: $scope.fullname,
-            address_line1: $scope.line1,
-            address_line2: $scope.line2,
-            address_city: $scope.city,
-            address_state: $scope.state,
-            email: $scope.email
-        }).then(function(result) {
-            if (result.error) {
-                $scope.errorMessage = result.error.message;
-            } else {
-                var d = new Donation({
-                    token: result.token.id,
-                    amount: $scope.amount,
-                    email: $scope.email
-                });
-                d.$save(function() {
-                    $location.path('/');
-                    alert('Thank you for your donation!');
-                }, function(err) {
-                    console.log(err);
-                });
-            }
-        });
-    }
-
-=======
     }])
     .controller('DonationController', ['$scope', 'SEOService', 'Donation', '$location', function ($scope, SEOService, Donation, $location) {
         var elements = stripe.elements();
@@ -344,7 +303,6 @@ angular.module('volunteerApp.controllers', [])
                 }
             });
         }
->>>>>>> e5fd997d5727ab6bff8e74373f76f92fd8a4a33d
         SEOService.setSEO({
             title: 'Donate',
             url: $location.url(),
@@ -385,8 +343,7 @@ angular.module('volunteerApp.controllers', [])
             $scope.userInfo = user.name;
         };
         $scope.users = User.query();
-<<<<<<< HEAD
-    }]);
+    }])
 
 
 // .controller('NavController', ['$scope', '$location', function($scope, $location) {
@@ -399,109 +356,12 @@ angular.module('volunteerApp.controllers', [])
 //     $scope.$on("purchase", function() {
 //         $scope.cartTotal = 0;
 //     })
-=======
-
-
-    }])
     .controller('StaticController', ['$scope',])
-SEOService.setSEO({
-    title: 'Bulletin Board',
-    url: $location.url(),
-    description: 'McKamey Volunteer Bulletin Board'
+        SEOService.setSEO({
+            title: 'Bulletin Board',
+            url: $location.url(),
+            description: 'McKamey Volunteer Bulletin Board'
 })
 
-    // UserService.isAdmin();
-    // $scope.user = User.get({ id: $routeParams.id });
-
-    // $scope.updateUser = function() {
-    //     $scope.user.$update(function(success) {
-    //         $location.path('/users/' + $routeParams.id);
-    //     }, function(err) {
-    //         console.log(err);
-    //     });
-    // };
-
-    // UserService.isAdmin();
-    // $scope.user = User.get({ id: $routeParams.id });
-
-    // $scope.deleteUser = function() {
-    //     if(confirm('Are you sure you want to delete ' + $scope.user.firstname + ' ' + $scope.user.lastname + '?')) {
-    //         $scope.user.$delete(function(success) {
-    //             $location.replace().path('/users');
-    //         }, function(err) {
-    //             console.log(err);
-    //         });
-    //     }
-    // };
-
-    // UserService.isAdmin();
-    // $scope.users = User.query();
-
-    // $scope.saveUser = function() {
-    //     var payload = {
-    //         email: $scope.email,
-    //         password: $scope.password,
-    //         firstname: $scope.firstname,
-    //         lastname: $scope.lastname
-    //     };
-
-    //     var u = new User(payload);
-
-    //     u.$save(function(success) {
-    //         $scope.email = '';
-    //         $scope.password = '';
-    //         $scope.firstname = '';
-    //         $scope.lastname = '';
-    //         $scope.users = User.query();
-    //     }, function(err) {
-    //         console.log(err);
-    //     });
-    // }
-
-    // $scope.animals = Animal.query();
-
-    // $scope.saveAnimal = function() {
-    //     var payload = {
-    //         name: $scope.name,
-    //         age: $scope.age,
-    //         gender: $scope.gender,
-    //         species: $scope.species,
-    //         breed: $scope.breed,
-    //         size: $scope.size,
-    //         shelterid: $scope.shelterid,
-    //         imageurl: $scope.imageurl,
-    //         bio: $scope.bio
-    //     };
-
-    //     var a = new Animal(payload);
-
-    //     a.$save(function(success) {
-    //         $location.path('/animals');
-    //     }, function(err) {
-    //         console.log(err);
-    //     });
-    // }
-
-// UserService.isAdmin();
-//     $scope.animal = Animal.get({ id: $routeParams.id });
-
-//     $scope.updateAnimal = function() {
-//         $scope.animal.$update(function(success) {
-//             $location.path('/animals/' + $routeParams.id);
-//         }, function(err) {
-//             console.log(err);
-//         });
-//     };
-
-//     $scope.deleteAnimal = function() {
-//         if(confirm('Are you sure you want to delete ' + $scope.animal.name + '?')) {
-//             $scope.animal.$delete(function(success) {
-//                 $location.replace().path('/animals');
-//             }, function(err) {
-//                 console.log(err);
-//             });
-//         }
-//     };
-
->>>>>>> 267d816101e7532d729376d195fa63f2b4d9a080
+    
 
