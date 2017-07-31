@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 
 <div class="container-fluid top col-md-6">
     <div class="container" id="animal-list">
+=======
+<div class="container-fluid top">
+    <div class="container col-md-6" id="animal-list">
+>>>>>>> d4be77bb368d97112fbeb1434e1df734a68abd53
         <h1>{{ animal.name }} - #{{ animal.shelterid }}</h1>
         <img src="{{ animal.imageurl }}" class="animal-img" width="500px">
         <h3>{{ animal.breed }} - {{ animal.age }} - {{ animal.gender }} - {{ animal.size }}</h3>
@@ -8,8 +13,8 @@
         <button ng-show="user.role === 'admin'" class="btn btn-text btn-xs"><a ng-href="/animals/{{ animal.id }}/update" class="btn-text"><span><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>Edit Animal</span></a></button>
         <button ng-show="user.role === 'admin'" ng-click="deleteAnimal()" class="btn btn-danger btn-xs"><span><i class="fa fa-trash-o" aria-hidden="true"></i>Delete Animal</span></button>
     </div>
-</div>
 
-<div class="container col-md-6 pad-top">
-    <h1><strong>Volunteer Comments/Feedback</strong></h1>
+    <div class="container col-md-6">
+        <h1><strong>Volunteer Comments/Feedback</strong></h1>
+    </div>
 </div>
