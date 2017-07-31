@@ -4,7 +4,6 @@ angular.module('volunteerApp.services', [])
     this.isLoggedIn = function() {
         return !!currentUser;
     }
-
     this.isAdmin = function() {
         if (currentUser && currentUser.role === 'admin') {
             return true;

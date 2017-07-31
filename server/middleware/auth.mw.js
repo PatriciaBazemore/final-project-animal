@@ -14,5 +14,17 @@ exports.isAdmin = function(req, res, next) {
     }
 }
 
+exports.canUpdateUser = function (req, res, next) {
+    if (req.user.role === 'admin') {
+        next();
+    } else if (req.params.id == req.user.id) {
+        //get user to update from database, then:
+            next();
+        } else { //not the same team
+            res.sendStatus(403);
+        }
+    } //not admin or manager
+
+
 //these two will the same for many projects
 //all mw has 3 params

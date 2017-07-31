@@ -11,17 +11,22 @@
             Kittens: $70
             <br>Adults: $50
          </div>
-        <div class="col-md-4" id="select"> <h3>Select an Animal</h3>
-            <div id="selectAnimalButton" class="dropdown animalDropdownMainDiv" auto-close="outsideClick">
-                <button class="btn btn-default dropdown-toggle animalDropdownBtn title" type="button" id="individualDrop" data-toggle="dropdown">{{animal.shelterid}} Search
-                    <span class="caret text-center">
-                     </span>
-                </button>
-                <span ng-show="submitted"><label class="error">Select an Animal</label></span>
-                <ul id="animalDropDown" class="dropdown-menu animalDropdownUlStyle" role="menu" aria-labelledby="individualDrop">
-                    <input disable-auto-close type="search" ng-model="serchFilter" class="animalDropdownSearchBox" placeholder="Search by Name or ID"></input>
-                    <li role="presentation" ng-repeat="a in animals | filter: serchFilter"><a role="menuitem" ng-href="/animals/{{ a.id }}">{{a.name}} {{a.shelterid}}</a>
-                 </div></div>
+            <div class="col-md-4" id="select"> <h3>Select an Animal</h3>
+                <div id="selectAnimalButton" class="dropdown animalDropdownMainDiv" auto-close="outsideClick">
+                    <button class="btn btn-default dropdown-toggle animalDropdownBtn title" type="button" id="individualDrop" data-toggle="dropdown">{{animal.shelterid}} Search
+                        <span class="caret text-center">
+                        </span>
+                    </button>
+                    <span ng-show="submitted"><label class="error">Select an Animal</label></span>
+                    <ul id="animalDropDown" class="dropdown-menu animalDropdownUlStyle" role="menu" aria-labelledby="individualDrop">
+                        <input disable-auto-close type="search" ng-model="serchFilter" class="animalDropdownSearchBox" placeholder="Search by Name or ID"></input>
+                        <li role="presentation" ng-repeat="a in animals | filter: serchFilter"><a role="menuitem" ng-href="/animals/{{ a.id }}">{{a.name}} {{a.shelterid}}</a>
+                </div>
+            </div>
+            <div class="col-md-4" id="editprofile">
+                <h3>My Profile</h3>
+                <a class="btn btn-large btn-mckamey" ng-click="editProfile()">Edit</a>
+            </div>
         <div class="col-md-4" id="prices">
             <h3>Other Animals</h3>
             Pricing and availability of livestock and exotic pets may vary

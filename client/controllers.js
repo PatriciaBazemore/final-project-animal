@@ -8,10 +8,10 @@ angular.module('volunteerApp.controllers', [])
         UserService.me().then(function () {
             // redirect();
         });
-
+    
         $scope.login = function () {
             UserService.login($scope.email, $scope.password)
-                .then(function () {
+                .then (function () {
                     $location.path('/animals');
                 }, function (err) {
                     console.log(err);
@@ -38,7 +38,16 @@ angular.module('volunteerApp.controllers', [])
         $(this).toggleClass('showhidenew');
         ;
     }])
-    .controller('AnimalsController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', function ($scope, Animal, UserService, SEOService, $location) {
+    .controller('AnimalsController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', '$http', function ($scope, Animal, UserService, SEOService, $location, $http) {
+        $scope.editProfile = function() {
+            UserService.me()
+            .then(function(currentUser) {
+                console.log(currentUser);
+                $location.path('/users/' + currentUser.id + '/update');
+            });
+            //$location.replace().path('/users/' + '/update');  
+        }
+
         $scope.getAnimals = function (callback) {
             callback($scope.animals);
         };
@@ -48,9 +57,9 @@ angular.module('volunteerApp.controllers', [])
         $scope.animals = Animal.query();
         UserService.me()
             .then(function (success) {
+                
                 $scope.user = success;
             });
-
 
         SEOService.setSEO({
             title: 'Adoptions List',
@@ -82,9 +91,7 @@ angular.module('volunteerApp.controllers', [])
         })
     }])
     .controller('AnimalUpdateController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', '$routeParams', function ($scope, Animal, UserService, SEOService, $location, $routeParams) {
-        UserService.isAdmin();
         $scope.animal = Animal.get({ id: $routeParams.id });
-
         $scope.updateAnimal = function () {
             $scope.animal.$update(function (success) {
                 $location.path('/animals/' + $routeParams.id);
@@ -92,7 +99,6 @@ angular.module('volunteerApp.controllers', [])
                 console.log(err);
             });
         };
-
         $scope.deleteAnimal = function () {
             if (confirm('Are you sure you want to delete ' + $scope.animal.name + '?')) {
                 $scope.animal.$delete(function (success) {
@@ -111,7 +117,6 @@ angular.module('volunteerApp.controllers', [])
     }])
     .controller('AddAnimalController', ['$scope', 'Animal', 'SEOService', '$location', function ($scope, Animal, SEOService, $location) {
         $scope.animals = Animal.query();
-
         $scope.saveAnimal = function () {
             var payload = {
                 name: $scope.name,
@@ -124,9 +129,7 @@ angular.module('volunteerApp.controllers', [])
                 imageurl: $scope.imageurl,
                 bio: $scope.bio
             };
-
             var a = new Animal(payload);
-
             a.$save(function (success) {
                 $location.path('/animals');
             }, function (err) {
@@ -141,7 +144,6 @@ angular.module('volunteerApp.controllers', [])
         })
     }])
     .controller('UserListController', ['$scope', 'User', 'UserService', 'SEOService', '$location', function ($scope, User, UserService, SEOService, $location) {
-        UserService.isAdmin();
         $scope.users = User.query();
 
         $scope.saveUser = function () {
@@ -172,9 +174,11 @@ angular.module('volunteerApp.controllers', [])
         })
     }])
     .controller('SingleUserController', ['$scope', 'User', 'UserService', 'SEOService', '$location', '$routeParams', function ($scope, User, UserService, SEOService, $location, $routeParams) {
-        UserService.isAdmin();
+        UserService.me()
+            .then(function (success) {
+                $scope.user = success;
+            });
         $scope.user = User.get({ id: $routeParams.id });
-
         $scope.deleteUser = function () {
             if (confirm('Are you sure you want to delete ' + $scope.user.firstname + ' ' + $scope.user.lastname + '?')) {
                 $scope.user.$delete(function (success) {
@@ -192,9 +196,9 @@ angular.module('volunteerApp.controllers', [])
         })
     }])
     .controller('UserUpdateController', ['$scope', 'User', 'UserService', 'SEOService', '$location', '$routeParams', function ($scope, User, UserService, SEOService, $location, $routeParams) {
-        UserService.isAdmin();
         $scope.user = User.get({ id: $routeParams.id });
 
+        //should put req to /users/id
         $scope.updateUser = function () {
             $scope.user.$update(function (success) {
                 $location.path('/users/' + $routeParams.id);
@@ -292,103 +296,8 @@ angular.module('volunteerApp.controllers', [])
             $scope.userInfo = user.name;
         };
         $scope.users = User.query();
-
-
     }]);
 
-
-    // UserService.isAdmin();
-    // $scope.user = User.get({ id: $routeParams.id });
-
-    // $scope.updateUser = function() {
-    //     $scope.user.$update(function(success) {
-    //         $location.path('/users/' + $routeParams.id);
-    //     }, function(err) {
-    //         console.log(err);
-    //     });
-    // };
-
-    // UserService.isAdmin();
-    // $scope.user = User.get({ id: $routeParams.id });
-
-    // $scope.deleteUser = function() {
-    //     if(confirm('Are you sure you want to delete ' + $scope.user.firstname + ' ' + $scope.user.lastname + '?')) {
-    //         $scope.user.$delete(function(success) {
-    //             $location.replace().path('/users');
-    //         }, function(err) {
-    //             console.log(err);
-    //         });
-    //     }
-    // };
-
-    // UserService.isAdmin();
-    // $scope.users = User.query();
-
-    // $scope.saveUser = function() {
-    //     var payload = {
-    //         email: $scope.email,
-    //         password: $scope.password,
-    //         firstname: $scope.firstname,
-    //         lastname: $scope.lastname
-    //     };
-
-    //     var u = new User(payload);
-
-    //     u.$save(function(success) {
-    //         $scope.email = '';
-    //         $scope.password = '';
-    //         $scope.firstname = '';
-    //         $scope.lastname = '';
-    //         $scope.users = User.query();
-    //     }, function(err) {
-    //         console.log(err);
-    //     });
-    // }
-
-    // $scope.animals = Animal.query();
-
-    // $scope.saveAnimal = function() {
-    //     var payload = {
-    //         name: $scope.name,
-    //         age: $scope.age,
-    //         gender: $scope.gender,
-    //         species: $scope.species,
-    //         breed: $scope.breed,
-    //         size: $scope.size,
-    //         shelterid: $scope.shelterid,
-    //         imageurl: $scope.imageurl,
-    //         bio: $scope.bio
-    //     };
-
-    //     var a = new Animal(payload);
-
-    //     a.$save(function(success) {
-    //         $location.path('/animals');
-    //     }, function(err) {
-    //         console.log(err);
-    //     });
-    // }
-
-// UserService.isAdmin();
-//     $scope.animal = Animal.get({ id: $routeParams.id });
-
-//     $scope.updateAnimal = function() {
-//         $scope.animal.$update(function(success) {
-//             $location.path('/animals/' + $routeParams.id);
-//         }, function(err) {
-//             console.log(err);
-//         });
-//     };
-
-//     $scope.deleteAnimal = function() {
-//         if(confirm('Are you sure you want to delete ' + $scope.animal.name + '?')) {
-//             $scope.animal.$delete(function(success) {
-//                 $location.replace().path('/animals');
-//             }, function(err) {
-//                 console.log(err);
-//             });
-//         }
-//     };
 
 // .controller('NavController', ['$scope', '$location', function($scope, $location) {
 //     if(localStorage.items === undefined) 

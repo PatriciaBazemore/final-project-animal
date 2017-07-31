@@ -72,7 +72,7 @@ router.route('/')
 
 // /api/users/:id
 router.route('/:id')
-    .get(auth.isAdmin, function(req, res) {
+    .get(auth.canUpdateUser, function(req, res) {
         procedures.read(req.params.id)
         .then(function(user) {
             res.send(user);
@@ -81,6 +81,7 @@ router.route('/:id')
             res.sendStatus(500);
         });
     })
+    //should be using this to update
     .put(function(req, res) {
         procedures.update(req.body.firstname, req.body.lastname, req.body.email, req.body.password, req.body.role, req.params.id)
         .then(function() {
