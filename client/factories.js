@@ -15,5 +15,4 @@ angular.module('volunteerApp.factories', [])
 }])
 .factory('Donation', ['$resource', function($resource) {
     return $resource('api/donations/:id');
-
 }]);

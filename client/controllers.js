@@ -227,14 +227,16 @@ angular.module('volunteerApp.controllers', [])
             address_line1: $scope.line1,
             address_line2: $scope.line2,
             address_city: $scope.city,
-            address_state: $scope.state
+            address_state: $scope.state,
+            email: $scope.email
         }).then(function(result) {
             if (result.error) {
                 $scope.errorMessage = result.error.message;
             } else {
                 var d = new Donation({
                     token: result.token.id,
-                    amount: $scope.amount
+                    amount: $scope.amount,
+                    email: $scope.email
                 });
                 d.$save(function() {
                     alert('Thank you for your donation!');

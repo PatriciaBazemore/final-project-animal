@@ -272,7 +272,42 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 /* SINGLE POST SINGLE POST SINGLE POST SINGLE POST */
 
 /* DONATIONS DONATIONS DONATIONS DONATIONS */
+.my-form {
+    max-width: 50em;
+}
 
+.cat-donate-pic {
+    content: 'Smiling Cat';
+    background-image: url("/images/talking-cat.jpg");
+    opacity: 0.5;
+    background-size: cover;
+    width: 25em;
+    height: 25em;
+    display: block;
+    position: relative;
+    margin: 2em;
+}
+
+.dog-donate-pic {
+    background-image: url("/images/looking-up-dog.jpg");
+    content: 'Smiling Dog';
+    opacity: 0.5;
+    background-size: cover;
+    width: 25em;
+    height: 25em;
+    display: block;
+    position: relative;
+    margin: 2em;
+}
+
+/*.donate-pic {
+    height: auto;
+    width: auto;
+    max-height: 300px;
+    max-width: 300px;
+    min-height: 300px;
+    min-width: 300px;
+}*/
 /* ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN */
 #animalDropDown {
     max-width: 25em;
