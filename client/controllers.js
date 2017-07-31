@@ -356,12 +356,12 @@ angular.module('volunteerApp.controllers', [])
 //     $scope.$on("purchase", function() {
 //         $scope.cartTotal = 0;
 //     })
-    .controller('StaticController', ['$scope',])
-        SEOService.setSEO({
-            title: 'Bulletin Board',
-            url: $location.url(),
-            description: 'McKamey Volunteer Bulletin Board'
-})
+//     .controller('StaticController', ['$scope',])
+//         SEOService.setSEO({
+//             title: 'Bulletin Board',
+//             url: $location.url(),
+//             description: 'McKamey Volunteer Bulletin Board'
+// })
 
     
 
