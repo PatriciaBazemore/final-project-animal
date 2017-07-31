@@ -58,8 +58,10 @@ angular.module('volunteerApp.controllers', [])
             description: 'McKamey Animal Shelter Volunteer Portal'
         })
     }])
-    .controller('SingleAnimalController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', '$routeParams', function ($scope, Animal, UserService, SEOService, $location, $routeParams) {
+    .controller('SingleAnimalController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', '$routeParams', 'Comments', function ($scope, Animal, UserService, SEOService, $location, $routeParams, Comments) {
         $scope.animal = Animal.get({ id: $routeParams.id });
+        $scope.comment = Comments.queryForAnimal({ id: $routeParams.id });
+
         UserService.me()
             .then(function (success) {
                 $scope.user = success;
@@ -74,6 +76,32 @@ angular.module('volunteerApp.controllers', [])
                 });
             }
         };
+
+        $scope.deleteComment = function(comment) {
+            if (confirm('Are you sure you want to delete your comment?')) {
+                comment.$delete(function (success) {
+                    $scope.comment = Comments.queryForAnimal({ id: $routeParams.id });
+                }, function (err) {
+                    console.log(err);
+                });
+            }
+        };
+
+        $scope.addComment = function () {
+            var payload = {
+                animalid: $scope.animal.id,
+                userid: $scope.user.id,
+                comment: $scope.commentToAdd,
+            };
+            var c = new Comments(payload);
+            c.$save(function (success) {
+                $scope.commentToAdd = '';
+                $scope.comment = Comments.queryForAnimal({ id: $routeParams.id });
+            }, function (err) {
+                console.log(err);
+            });
+        }
+
 
         SEOService.setSEO({
             title: 'Animal Bio',
@@ -218,7 +246,6 @@ angular.module('volunteerApp.controllers', [])
             url: $location.url(),
             description: 'Edit McKamey Animal Shelter Volunteer User'
         })
-<<<<<<< HEAD
 }])
 .controller('DonationController', ['$scope', 'SEOService', 'Donation', '$location', function($scope, SEOService, Donation, $location) {
     var elements = stripe.elements();
@@ -253,42 +280,6 @@ angular.module('volunteerApp.controllers', [])
             }
         });
     }
-=======
-    }])
-    .controller('DonationController', ['$scope', 'SEOService', 'Donation', '$location', function ($scope, SEOService, Donation, $location) {
-        var elements = stripe.elements();
-        var card = elements.create('card');
-        card.mount('#card-field');
-
-        $scope.errorMessage = '';
-
-        $scope.processDonation = function () {
-            stripe.createToken(card, {
-                name: $scope.fullname,
-                address_line1: $scope.line1,
-                address_line2: $scope.line2,
-                address_city: $scope.city,
-                address_state: $scope.state,
-                email: $scope.email
-            }).then(function (result) {
-                if (result.error) {
-                    $scope.errorMessage = result.error.message;
-                } else {
-                    var d = new Donation({
-                        token: result.token.id,
-                        amount: $scope.amount,
-                        email: $scope.email
-                    });
-                    d.$save(function () {
-                        alert('Thank you for your donation!');
-                        $location.path('/');
-                    }, function (err) {
-                        console.log(err);
-                    });
-                }
-            });
-        }
->>>>>>> e9afc98e4c4c82c0ec600ed9b07a974d4204c49d
 
         SEOService.setSEO({
             title: 'Donate',

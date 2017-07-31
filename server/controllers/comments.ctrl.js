@@ -4,13 +4,32 @@ var procedures = require('../procedures/comments.proc');
 var router = express.Router();
 
 //need route for /api/comments/?
+router.route('/')
+    .get(function(req, res) {
+        procedures.all()
+        .then(function(comments) {
+            res.send(comments);
+        }).catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        })
+    })
+    .post(function(req, res) {
+        procedures.create(req.body.animalid, req.body.userid, req.body.comment)
+        .then(function (id) {
+            res.status(201).send(id);
+        }, function (err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
+    });
 
 // /api/comments/:id
 router.route('/:id')
     .get(function(req, res) {
-        procedures.all(req.params.id)
-        .then(function() {
-            res.sendStatus(204);
+        procedures.read(req.params.id)
+        .then(function(comments) {
+            res.send(comments);
         }).catch(function(err) {
             console.log(err);
             res.sendStatus(500);

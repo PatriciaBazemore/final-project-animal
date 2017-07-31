@@ -11,5 +11,21 @@
 
     <div class="container col-md-6">
         <h1><strong>Volunteer Comments/Feedback</strong></h1>
+         <div class="container col-md-12" ng-repeat="c in comment">
+            <h4>{{ c.firstname }} {{ c.lastname }}</h4> 
+            <h4>{{ c.comment }}</h4>
+            <h5>{{ c.timestamp | date: "short" }}</h5>
+            <button ng-click="updateComment()" class="btn btn-sm btn-text">Update Comment</button>
+            <button ng-click="deleteComment(c)" class="btn btn-danger btn-xs delete-user"><span><i class="fa fa-trash-o" aria-hidden="true"></i>Delete Comment</span></button>
+        </div>
+
+        <h1><strong>Add Comment</strong></h1>
+        <div class="container col-md-12">
+            <h4>{{ user.firstname }} {{ user.lastname }}</h4>
+            <textarea ng-model="commentToAdd" class="form-control text" placeholder="Comment"></textarea>
+            <button ng-click="addComment()" class="btn btn-sm btn-text">Save</button>
+        </div>
+
     </div>
+
 </div>
