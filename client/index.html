@@ -26,9 +26,10 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 
-<body ng-click="AppCtrl">
-    <div class="container" ng-controller="IndexController">
- <nav class="navbar custom-top" role="navigation">
+<body>
+    <div class="container">
+ <!-- <nav class="navbar custom-top" id="main-nav" role="navigation" ng-controller="AppCtrl" ng-hide="user.role === 'admin' | 'user'"> -->
+     <nav class="navbar custom-top" id="main-nav" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <button ng-click="clearClass()" class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -45,30 +46,74 @@
                 <li><a class="nav-text" href="http://www.mckameyanimalcenter.org/contact" target="_blank">Contact</a></li>
                 <li><a class="nav-text" href="#">Calendar</a></li>
                 <li><a class="nav-text" href="/donate">Donate</a></li>
-                <!-- Put here your menu items -->
             </ul>
 </div>
-        </div --><!--/.navbar-collapse -->
+        </div>
     </div>
 </nav> 
     </div>
-    <!-- HEADER END  -->
-    <div ng-view class="view" ></div>
 
+    <!-- USER NAV -->
+<!-- <nav class="navbar custom-top" id="user-nav" role="navigation" ng-controller="AppCtrl" ng-show="user.role === 'user'">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button ng-click="clearClass()" class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar" style="background-color: black;"></span>
+                <span class="icon-bar" style="background-color: black;"></span>
+                <span class="icon-bar" style="background-color: black;"></span>
+            </button><ul class="nav navbar-nav navbar-right"><li>
+             <a class="navbar-brand" href="/animals"><img alt="McKamey Logo" class="nav-logo" src="http://0d368e4264074a316fe7-20bead50f0a484ec4adb7b671367dd87.r59.cf2.rackcdn.com/f849fa7b7457410fbfa6d2b9cc006a39.png"></a></li></ul> 
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+             <ul class="nav navbar-nav navbar-right"> 
+                <li><a class="nav-text" href="/animals">Find Animal</a></li>
+                <li><a class="nav-text" href="/single_user">Profile</a></li>
+                <li><a class="nav-text" href="#">Bulletin Board</a></li>
+                <li><a class="nav-text" href="/logout">Logout</a></li>
+
+            </ul>
+</div>
+        </div>
+    </div>
+</nav>  -->
+
+<!-- ADMIN NAV  -->
+<!-- <nav class="navbar custom-top" id="admin-nav" role="navigation" ng-controller="AppCtrl" ng-show="user.role === 'admin'">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button ng-click="clearClass()" class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar" style="background-color: black;"></span>
+                <span class="icon-bar" style="background-color: black;"></span>
+                <span class="icon-bar" style="background-color: black;"></span>
+            </button><ul class="nav navbar-nav navbar-right"><li>
+             <a class="navbar-brand" href="/admin_controls"><img alt="McKamey Logo" class="nav-logo" src="http://0d368e4264074a316fe7-20bead50f0a484ec4adb7b671367dd87.r59.cf2.rackcdn.com/f849fa7b7457410fbfa6d2b9cc006a39.png"></a></li></ul> 
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+             <ul class="nav navbar-nav navbar-right"> 
+                <li><a class="nav-text" href="/admin_controls">Admin Controls</a></li>
+                <li><a class="nav-text" href="/user_list">User List</a></li>
+                <li><a class="nav-text" href="#">Bulletin Board</a></li>
+                <li><a class="nav-text" href="/logout">Logout</a></li>
+                
+            </ul>
+</div>
+        </div>
+    </div>
+</nav>  -->
+
+    <!-- HEADER END  -->
+<br>
+    <div ng-view class="view" ></div>
+<br>
     <!-- FOOTER BEGIN  -->
     <div class="container-fluid col-md-12 brand-footer fixed-bottom">
         <!-- LEFT  -->
             <div class="text-center row col-md-4">
                     <h3>Not a volunteer?</h3>
                     <a class="nav-text-b" href="http://www.mckameyanimalcenter.org/" target="_blank"> <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Go back to main site </a>
-                    <!-- <div id="dog-prices">
-                        <h6>Dogs</h6>
-                        <ul>
-                            <li>Ambassadors(puppies/pure breds): $150</li>
-                            <li>Adults: $80</li>
-                        </ul>
-                        <h6>Senior discounts (1/2 off) available for pets 7+ years old. Only one discount per pet is allowed</h6>
-                    </div> -->
+                    
                 </div>
 <!-- CENTER  -->
                 <div class="text-center row col-md-4">
@@ -84,14 +129,6 @@
                     <h3>Need Karen?</h3>
                     <p>(423) 305-6504</p>
                     <p>volunteercoordinator@mckameyanimalcenter.org</p>
-                    <!-- <div id="cat-prices">
-                        <h6>Cats</h6>
-                        <ul>
-                            <li>Kittens: $70</li>
-                            <li>Adults: $50</li>
-                        </ul>
-                        <h6>Pricing and availability of livestock and exotic pets may vary</h6>
-                    </div> -->
                 </div>
             </div>
 <!-- FOOTER END  -->
