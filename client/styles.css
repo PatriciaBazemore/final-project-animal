@@ -203,6 +203,11 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     /* margin-top: 7.5em; */
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border: 1px solid rgb(2, 92, 46); */
+    background-color: black;
+    color: white;
+}
+.animal-div {
+    padding: 1.5em;
 }
 .animal-pic {
     height: auto;
