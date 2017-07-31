@@ -15,7 +15,7 @@
             <div class="carousel-caption" id="custom-caption">
               <h1>The Vision</h1>
               <p class="lead">McKamey Animal Center focuses on spay/neuter, advocacy, enforcement and education. Checkout our main site to learn more.</p>
-              <a class="btn btn-large btn-mckamey" href="http://www.mckameyanimalcenter.org">Go to Main Site</a>
+              <a class="btn btn-large btn-mckamey" href="http://www.mckameyanimalcenter.org" target="_blank">Go to Main Site</a>
             </div>
           </div>
         </div>
@@ -32,17 +32,14 @@
         <div class="item">
           <img id="scroll-image" src="/images/vol-play.jpg" alt="">
           <div class="container">
-            <div class="carousel-caption" id="custom-caption">
+            <div class="carousel-caption " id="custom-caption">
               <h1>We need YOU in our lives.</h1>
               <p class="lead">Become a hero today. Our furry friends need attention and exercise. We depend on volunteers like you to make it happen.</p>
-              <a class="btn btn-large btn-mckamey" href="http://www.mckameyanimalcenter.org/volunteer">Learn more about volunteering</a>
+              <a class="btn btn-large btn-mckamey" href="http://www.mckameyanimalcenter.org/volunteer" target="_blank">Learn more about volunteering</a>
             </div>
           </div>
         </div>
       </div>
-      <!--<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>-->
-      <!-- Left and right controls -->
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
         <span class="sr-only">Previous</span>
@@ -52,17 +49,25 @@
         <span class="sr-only">Next</span>
       </a>
     </div><!-- /.carousel -->
-
-<div class="text-center">
-  <h3>Log in</h3>
-  <div class="login">
+    <br>
+    <div class="row">
+<div class="vol-area col-md-6">
+  <img id="vol-logo" src="http://5c687496f37587b72e6e-025072c27a797a68811fc973a45aea14.r28.cf2.rackcdn.com/83bcead2e6f5725e12d68db78c71744d-8610c770a6ad7bc0b8a9e05e237df3b0.png"/></div>
+<div class="text-center login col-md-5">
+  <div class="gold-bar"><h2>Volunteer Log in</h2></div>
+  <div id="login">
+    <br>
     <form ng-submit="login()">
       <input type="email" ng-model="email" placeholder="email">
       <input type="password" ng-model="password" placeholder="password">
-      <button ng-click="login()">Login</button>
+      <!-- <a ng-click="login()"><span class="badge" id="gold-btn">Go!</span></a> -->
+        <div id="gold-btn" class="title" ng-click="login()"><h3>Let's go!</h3></div>  
+       <!-- <button id="gold-btn" class="title" ng-click="login()">Login</button>  -->
     </form>
-    <a href="http://www.mckameyanimalcenter.org/volunteer"><h6>Become a Volunteer</h6></a>
+    <a href="http://www.mckameyanimalcenter.org/volunteer" target="_blank"><h6>Become a Volunteer</h6></a>
+  </div>
   </div>
 </div>
+<br>
 </div>
 

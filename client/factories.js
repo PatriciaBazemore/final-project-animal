@@ -13,10 +13,15 @@ angular.module('volunteerApp.factories', [])
         }
     });
 }])
-.factory('Comment', ['$resource', function($resource) {
+.factory('Comments', ['$resource', function($resource) {
     return $resource('/api/comments/:id', {id: '@id'}, {
         update: {
             method: 'PUT'
+        },
+        queryForAnimal: {
+            method: 'GET',
+            url: '/api/comments/:id',
+            isArray: true
         }
     });
 }])
