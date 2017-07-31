@@ -48,6 +48,10 @@ angular.module('volunteerApp', ['volunteerApp.controllers', 'volunteerApp.factor
             templateUrl: 'views/admin_controls.html',
             controller: 'AdminController'
         })
+        // .when('/bulletin_board', {
+        //     templateUrl: 'views/bulletin_board',
+        //     controller: 'StaticController'
+        // })
         .otherwise({
             redirectTo: '/'
         });
