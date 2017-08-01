@@ -183,7 +183,6 @@ angular.module('volunteerApp.controllers', [])
                 breed: $scope.breed,
                 size: $scope.size,
                 shelterid: $scope.shelterid,
-                imageurl: $scope.imageurl,
                 bio: $scope.bio
             };
             var a = new Animal(payload);
