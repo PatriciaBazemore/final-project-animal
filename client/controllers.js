@@ -258,7 +258,6 @@ angular.module('volunteerApp.controllers', [])
             url: $location.url(),
             description: 'Edit McKamey Animal Shelter Volunteer User'
         })
-<<<<<<< HEAD
 }])
 .controller('DonationController', ['$scope', 'SEOService', 'Donation', '$location', function($scope, SEOService, Donation, $location) {
     var elements = stripe.elements();
@@ -294,42 +293,6 @@ angular.module('volunteerApp.controllers', [])
         });
     }
 
-=======
-    }])
-    .controller('DonationController', ['$scope', 'SEOService', 'Donation', '$location', function ($scope, SEOService, Donation, $location) {
-        var elements = stripe.elements();
-        var card = elements.create('card');
-        card.mount('#card-field');
-
-        $scope.errorMessage = '';
-
-        $scope.processDonation = function () {
-            stripe.createToken(card, {
-                name: $scope.fullname,
-                address_line1: $scope.line1,
-                address_line2: $scope.line2,
-                address_city: $scope.city,
-                address_state: $scope.state,
-                email: $scope.email
-            }).then(function (result) {
-                if (result.error) {
-                    $scope.errorMessage = result.error.message;
-                } else {
-                    var d = new Donation({
-                        token: result.token.id,
-                        amount: $scope.amount,
-                        email: $scope.email
-                    });
-                    d.$save(function () {
-                        $location.path('/');
-                        alert('Thank you for your donation!');
-                    }, function (err) {
-                        console.log(err);
-                    });
-                }
-            });
-        }
->>>>>>> e5fd997d5727ab6bff8e74373f76f92fd8a4a33d
         SEOService.setSEO({
             title: 'Donate',
             url: $location.url(),
