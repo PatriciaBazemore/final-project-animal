@@ -14,7 +14,7 @@ router.route('/')
         });
     })
     .post(function(req, res) {
-        procedures.create(req.body.name, req.body.age, req.body.gender, req.body.species, req.body.breed, req.body.size, req.body.shelterid, req.body.imageurl, req.body.bio)
+        procedures.create(req.body.name, req.body.age, req.body.gender, req.body.species, req.body.breed, req.body.size, req.body.shelterid, req.body.bio)
         .then(function (id) {
             res.status(201).send(id);
         }, function (err) {

@@ -43,7 +43,15 @@ button to go to /admin-animals-->
         </div>
 </div>
 
-<div id="admin-comments">
-        <h1>Flagged Comments</h1>
-</div>
+    <div id="admin-comments">
+            <h1>Flagged Comments</h1>
+            <div class="container col-md-12" ng-repeat="c in comment">
+                <h4>{{ c.firstname }} {{ c.lastname }}=> {{ c.name }}</h4> 
+                <h4>{{ c.comment }}</h4>
+                <h5 class="col-md-6">{{ c.timestamp | date: "short" }}</h5>
+                <button ng-click="c.flagged = 0; flagComment(c)" class="col-md-offset-2 btn btn-success btn-xs"><span><i class="glyphicon glyphicon-flag" aria-hidden="true"></i>Ignore</span></button>
+                <button ng-click="deleteComment(c)" class="col-md-3 btn btn-danger btn-xs delete-user"><span><i class="fa fa-trash-o" aria-hidden="true"></i>Delete Comment</span></button>
+            </div>
+    </div>
+
 </div>

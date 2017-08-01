@@ -24,6 +24,19 @@ router.route('/')
         });
     });
 
+///api/comments
+router.route('/flagged')
+    .get(function(req, res) {
+        procedures.flagged()
+        .then(function(comments) {
+            res.send(comments);
+        }).catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        })
+    });
+
+
 // /api/comments/:id
 router.route('/:id')
     .get(function(req, res) {
@@ -36,7 +49,7 @@ router.route('/:id')
         })
     })
     .put(function(req, res) {
-        procedures.update(req.body.comment, req.params.id)
+        procedures.update(req.body.flagged, req.params.id)
         .then(function() {
             res.sendStatus(204);
         }).catch(function(err) {

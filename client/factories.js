@@ -22,6 +22,11 @@ angular.module('volunteerApp.factories', [])
             method: 'GET',
             url: '/api/comments/:id',
             isArray: true
+        },
+        queryForFlag: {
+            method: 'GET',
+            url: '/api/comments/flagged',
+            isArray: true
         }
     });
 }])

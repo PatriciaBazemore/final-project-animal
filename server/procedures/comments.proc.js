@@ -9,8 +9,8 @@ exports.read = function(id) {
     return db.rows('GetComments', [id]);
 }
 
-exports.update = function(comment, id) {
-    return db.empty('UpdateComment', [comment, id]);
+exports.update = function(flag, id) {
+    return db.empty('FlagComment', [flag, id]);
 }
 
 exports.destroy = function(id) {
@@ -19,4 +19,8 @@ exports.destroy = function(id) {
 
 exports.create = function(animalid, userid, comment) {
     return db.row('InsertComment', [animalid, userid, comment]);
+}
+
+exports.flagged = function() {
+    return db.rows('GetFlaggedComments')
 }
