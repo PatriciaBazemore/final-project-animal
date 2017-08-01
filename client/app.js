@@ -33,8 +33,8 @@ angular.module('volunteerApp', ['volunteerApp.controllers', 'volunteerApp.factor
         .when('/users', {
             templateUrl: 'views/user_list.html',
             controller: 'UserListController',
-            requiresLogin: true, //made up requiresLogin
-            requiresAdmin: true //made up requiresAdmin
+            // requiresLogin: true, //made up requiresLogin
+            // requiresAdmin: true //made up requiresAdmin
         })
         .when('/donate', {
             templateUrl: 'views/donations.html',
