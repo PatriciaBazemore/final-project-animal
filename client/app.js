@@ -32,7 +32,9 @@ angular.module('volunteerApp', ['volunteerApp.controllers', 'volunteerApp.factor
         })
         .when('/users', {
             templateUrl: 'views/user_list.html',
-            controller: 'UserListController'
+            controller: 'UserListController',
+            requiresLogin: true, //made up requiresLogin
+            requiresAdmin: true //made up requiresAdmin
         })
         .when('/donate', {
             templateUrl: 'views/donations.html',
@@ -54,4 +56,24 @@ angular.module('volunteerApp', ['volunteerApp.controllers', 'volunteerApp.factor
             redirectTo: '/'
         });
         
+}])
+
+//  function run($rootScope, $location, authentication) {
+//     $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
+//       if ($location.path() === '/user/:id' && !authentication.isLoggedIn()) {
+//         $location.path('/');
+//       }
+//     });
+//   }
+
+.run(['$rootScope', '$location', 'UserService', function($rootScope, $location, UserService) {
+    $rootScope.$on('$routeChangeStart', function(event, nextRoute, previousRoute) {
+        if (nextRoute.$$route.requiresLogin && !UserService.isLoggedIn()) { //if route requires login and arent logged in
+            event.preventDefault();
+            UserService.loginRedirect();
+        } else if (nextRoute.$$route.requiresAdmin && !UserService.isAdmin()) {
+            event.preventDefault();
+            $location.path('/');
+        }
+    });
 }]);
