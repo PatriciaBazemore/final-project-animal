@@ -350,10 +350,6 @@ angular.module('volunteerApp.controllers', [])
             $scope.userInfo = user.name;
         };
         $scope.users = User.query();
-<<<<<<< HEAD
-    }]);
-=======
-
 
         //flagged comment logic
         $scope.comment = Comments.queryForFlag();
@@ -378,8 +374,6 @@ angular.module('volunteerApp.controllers', [])
         };
 
     }])
-
->>>>>>> 64ecc8938d43957ecf7266129d8d402f8ad33946
 
 // .controller('NavController', ['$scope', '$location', function($scope, $location) {
 //     if(localStorage.items === undefined) 
