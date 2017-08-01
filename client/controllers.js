@@ -341,8 +341,7 @@ angular.module('volunteerApp.controllers', [])
             $scope.userInfo = user.name;
         };
         $scope.users = User.query();
-    }])
-
+    }]);
 
 // .controller('NavController', ['$scope', '$location', function($scope, $location) {
 //     if(localStorage.items === undefined) 
