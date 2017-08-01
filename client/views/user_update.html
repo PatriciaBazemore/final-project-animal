@@ -4,7 +4,7 @@
         <input ng-required="true" type="text" class="form-control text" placeholder="First Name" ng-model="user.firstname"></input>
         <input ng-required="true" type="text" class="form-control text" placeholder="Last Name" ng-model="user.lastname"></input>
         <input ng-required="true" type="text" class="form-control text" placeholder="Email" ng-model="user.email"></input>
-        <select class="form-control" ng-model="user.role">
+        <select ng-show="user.role == 'admin'" class="form-control" ng-model="user.role">
             <option value="user">User</option>
             <option value="admin">Admin</option>
         </select>

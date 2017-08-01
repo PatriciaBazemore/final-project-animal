@@ -83,7 +83,7 @@ router.route('/:id')
     })
     //should be using this to update
     .put(function(req, res) {
-        procedures.update(req.body.firstname, req.body.lastname, req.body.email, req.body.password, req.body.role, req.params.id)
+        procedures.update(req.body.firstname, req.body.lastname, req.body.email, req.body.role, req.params.id)
         .then(function() {
             res.sendStatus(204);
         }).catch(function(err) {

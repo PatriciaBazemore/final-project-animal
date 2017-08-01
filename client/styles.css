@@ -186,7 +186,6 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 }
 .topp {
     margin-top: 5em;
-
 }
 #vol-logo {
     /* height: 50px;
@@ -214,8 +213,6 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 }
 #gold-btn:hover {
     background-color: black;
-=======
->>>>>>> 9f744c8daa9a461ea8193bfe8f0f926609797e1b
 }
 /* ANIMAL LIST ANIMAL LIST ANIMAL LIST ANIMAL LIST */
 
@@ -254,15 +251,11 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 #select {
     float: left;
 }
-#editprofile {
-    margin-left: 1%;
-}
 /* #select h3 {
     color: white;
 } */
 #selectAnimalButton {
     margin-left: 1em;
-
 }
 .animalDropdownBtn {
     /* background-color: rgb(2, 92, 46); */
@@ -291,7 +284,6 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     height: 100%;
     padding: 1em;
     padding-bottom: 1em;
-    margin-right: 1em;
 }
 
 /* USER LIST USER LIST USER LIST USER LIST */

@@ -256,13 +256,11 @@ angular.module('volunteerApp.controllers', [])
         $scope.user = User.get({ id: $routeParams.id });
 
         //should put req to /users/id
-        $scope.updateUser = function () {
-            $scope.user.$update(function (success) {
+        $scope.updateUser = function() {
+            $scope.user.$update(function() {
                 $location.path('/users/' + $routeParams.id);
-            }, function (err) {
-                console.log(err);
             });
-        };
+        }
 
         $scope.deleteUser = function () {
             if (confirm('Are you sure you want to delete ' + $scope.user.firstname + ' ' + $scope.user.lastname + '?')) {
