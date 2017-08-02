@@ -297,6 +297,10 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 }
 
 /* SINGLE/UPDATE USER SINGLE/UPDATE USER SINGLE/UPDATE USER SINGLE/UPDATE USER */
+#startdate {
+    float:right;
+}
+
 .extra-pad-top {
     padding-top: 110px;
 }
@@ -319,16 +323,15 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     margin: 5px;
 }
 
-.delete-user {
+/*.delete-user {
     margin-left: 25px;
-}
+}*/
 
 .btn-danger {
     border-radius: 40px;
 }
 /* FORUM HOME FORUM HOME FORUM HOME FORUM HOME */
 
-/* SINGLE POST SINGLE POST SINGLE POST SINGLE POST */
 
 /* DONATIONS DONATIONS DONATIONS DONATIONS */
 .gold-bar {

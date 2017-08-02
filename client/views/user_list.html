@@ -1,7 +1,11 @@
 <div class="container text-center pad-top">
     <h1><strong>Current Users</strong></h1>
     <div class="container" ng-repeat="u in users">
-        <h1>{{ u.firstname }} {{ u.lastname }} - {{ u.email }}
+        <h1>{{ u.firstname }} {{ u.lastname }}</h1><br> 
+        <h3>{{ u.email }}</h3><br>
+        <h3>{{ u.started }}</h3><br>
+        <h5>{{ u.activity }}</h5><br>
+        <p>{{ u.random }}</p><br>
         <button class="btn btn-text btn-sm"><a ng-href="/users/{{ u.id }}" class="btn-text"><span><i class="glyphicon glyphicon-zoom-in" aria-hidden="true"></i>View User</span></a></button></h1>
     </div>
 

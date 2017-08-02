@@ -12,14 +12,14 @@ exports.readByEmail = function(email) {
     return db.row('GetUserByEmail', [email]);
 }
 
-exports.update = function(firstname, lastname, email, role, id) {
-    return db.empty('UpdateUser', [firstname, lastname, email, role, id]);
+exports.update = function(firstname, lastname, email, role, started, activity, random, id) {
+    return db.empty('UpdateUser', [firstname, lastname, email, role, started, activity, random, id]);
 }
 
 exports.destroy = function(id) {
     return db.empty('DeleteUser', [id]);
 }
 
-exports.create = function(email, password, firstname, lastname) {
-    return db.row('InsertUser', [email, password, firstname, lastname]);
+exports.create = function(email, password, firstname, lastname, date) {
+    return db.row('InsertUser', [email, password, firstname, lastname, date]);
 }

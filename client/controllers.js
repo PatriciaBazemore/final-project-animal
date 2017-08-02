@@ -110,6 +110,16 @@ angular.module('volunteerApp.controllers', [])
             }
         };
 
+
+        $scope.flagComment = function(comment) {
+             comment.$update(function (success) {
+                alert("Your comment report has been submitted");
+            }, function (err) {
+                console.log(err);
+            });
+        };
+
+
         $scope.deleteComment = function(comment) {
             if (confirm('Are you sure you want to delete your comment?')) {
                 comment.$delete(function (success) {
@@ -178,7 +188,6 @@ angular.module('volunteerApp.controllers', [])
                 breed: $scope.breed,
                 size: $scope.size,
                 shelterid: $scope.shelterid,
-                imageurl: $scope.imageurl,
                 bio: $scope.bio
             };
             var a = new Animal(payload);
@@ -324,7 +333,7 @@ angular.module('volunteerApp.controllers', [])
             description: 'Leaving the McKamey Animal Shelter Volunteer Portal'
         })
     }])
-    .controller('AdminController', ['$scope', 'SEOService', '$location', 'User', 'UserService', 'Animal', function ($scope, SEOService, $location, User, UserService, Animal) {
+    .controller('AdminController', ['$scope', 'SEOService', '$location', 'User', 'Comments', 'UserService', 'Animal', function ($scope, SEOService, $location, User, Comments, UserService, Animal) {
         SEOService.setSEO({
             title: 'Admin Dashboard',
             url: $location.url(),
@@ -346,8 +355,30 @@ angular.module('volunteerApp.controllers', [])
             $scope.userInfo = user.name;
         };
         $scope.users = User.query();
-    }])
 
+        //flagged comment logic
+        $scope.comment = Comments.queryForFlag();
+
+        $scope.flagComment = function(comment) {
+             comment.$update(function (success) {
+                $scope.comment = Comments.queryForFlag();
+            }, function (err) {
+                console.log(err);
+            });
+        };
+
+
+        $scope.deleteComment = function(comment) {
+            if (confirm('Are you sure you want to delete this comment?')) {
+                comment.$delete(function (success) {
+                    $scope.comment = Comments.queryForFlag();
+                }, function (err) {
+                    console.log(err);
+                });
+            }
+        };
+
+    }])
 
 // .controller('NavController', ['$scope', '$location', function($scope, $location) {
 //     if(localStorage.items === undefined) 
