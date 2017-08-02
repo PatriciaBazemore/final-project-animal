@@ -16,10 +16,11 @@ angular.module('volunteerApp.controllers', [])
     //         return $scope.UserRole == "user";
     //     }
     // }])
-    .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', function ($scope, SEOService, $location, UserService) {
-        UserService.me().then(function () {
-            // redirect();
-        });
+    .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', function ($scope, SEOService, $location, UserService, User) {
+        UserService.me()
+            .then(function (success) {
+                $scope.user = success;
+            });
     
         $scope.login = function () {
             UserService.login($scope.email, $scope.password)
@@ -40,24 +41,28 @@ angular.module('volunteerApp.controllers', [])
             $location.path('/animal_list');
         }
     }])
-    // .controller('AccountController', ['$scope', 'UserRole', function($scope, UserRole) {
-    //     $scope.IsAdmin = function(){
-    //         return $scope.UserRole == "Admin";
-    //     }
-    //     $scope.IsUser = function(){
-    //         return $scope.UserRole == "StandardUser";}
-    // $scope.IsVisitor = function(){
-    //     return $scope.UserRole == "Visitor";
-    // }
-    // }])
-
-    // WORK W WILL TO CREATE CONTROLLERS TOGGLING PUBLIC NAV & PRIVATE (USER) NAV
-    .controller('IndexController', ['$scope', function ($scope) {
-        // $('.').click(function() {
-        $(this).toggleClass('myclass');
-        $(this).toggleClass('showhidenew');
-        ;
+    .controller('AcctController', ['$scope', 'UserService', function($scope, UserService) {
+        UserService.me()
+            .then(function (success) {
+                $scope.user = success;
+            });
+        $scope.IsAdmin = function(){
+            return $scope.user == "admin";
+        }
+        $scope.IsUser = function(){
+            return $scope.user == "user";
+        }
+    $scope.IsVisitor = function(){
+        return $scope.user == "";
+    }
     }])
+    // WORK W WILL TO CREATE CONTROLLERS TOGGLING PUBLIC NAV & PRIVATE (USER) NAV
+    // .controller('IndexController', ['$scope', function ($scope) {
+    //     // $('.').click(function() {
+    //     $(this).toggleClass('myclass');
+    //     $(this).toggleClass('showhidenew');
+    //     ;
+    // }])
     .controller('AnimalsController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', '$http', function ($scope, Animal, UserService, SEOService, $location, $http) {
         $scope.editProfile = function() {
             UserService.me()
