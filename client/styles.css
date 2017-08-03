@@ -17,6 +17,11 @@ a:focus, a:hover {
 .navbar-nav>li>a:hover, .navbar-nav>li>a:link, .navbar-nav>li>a:visited {
     background-color: transparent;
 }
+
+.pointer {
+    cursor: pointer;
+}
+
 /* INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX */
 nav {
     width: 100%;

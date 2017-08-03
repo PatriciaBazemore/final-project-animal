@@ -1,4 +1,7 @@
 angular.module('volunteerApp.controllers', [])
+<<<<<<< HEAD
+    .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', function ($scope, SEOService, $location, UserService, User) {
+=======
     // .controller('AppCtrl', ['$scope', 'UserService', function ($scope, $UserService) {
     //     $scope.$back = function () {
     //         window.history.back();
@@ -17,6 +20,7 @@ angular.module('volunteerApp.controllers', [])
     //     }
     // }])
     .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', '$window', function ($scope, SEOService, $location, UserService, User, $window) {
+>>>>>>> cba215bb0929cbbd868480a741dcc7f11d88676f
         UserService.me()
             .then(function (success) {
                 $scope.user = success;
@@ -57,13 +61,6 @@ angular.module('volunteerApp.controllers', [])
         return $scope.user == "";
     }
     }])
-    // WORK W WILL TO CREATE CONTROLLERS TOGGLING PUBLIC NAV & PRIVATE (USER) NAV
-    // .controller('IndexController', ['$scope', function ($scope) {
-    //     // $('.').click(function() {
-    //     $(this).toggleClass('myclass');
-    //     $(this).toggleClass('showhidenew');
-    //     ;
-    // }])
     .controller('AnimalsController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', '$http', function ($scope, Animal, UserService, SEOService, $location, $http) {
         $scope.editProfile = function() {
             UserService.me()
