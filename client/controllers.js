@@ -16,7 +16,7 @@ angular.module('volunteerApp.controllers', [])
     //         return $scope.UserRole == "user";
     //     }
     // }])
-    .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', function ($scope, SEOService, $location, UserService, User) {
+    .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', '$window', function ($scope, SEOService, $location, UserService, User, $window) {
         UserService.me()
             .then(function (success) {
                 $scope.user = success;
@@ -26,6 +26,7 @@ angular.module('volunteerApp.controllers', [])
             UserService.login($scope.email, $scope.password)
                 .then (function () {
                     $location.path('/animals');
+                    $window.location.reload();
                 }, function (err) {
                     console.log(err);
                 });
@@ -321,10 +322,11 @@ angular.module('volunteerApp.controllers', [])
             description: 'Help Out The McKamey Animal Shelter'
         })
     }])
-    .controller('LogoutController', ['$scope', 'UserService', 'SEOService', '$location', function ($scope, UserService, SEOService, $location) {
+    .controller('LogoutController', ['$scope', 'UserService', 'SEOService', '$location', '$window', function ($scope, UserService, SEOService, $location, $window) {
         UserService.logout()
             .then(function (success) {
                 $location.path('/');
+                $window.location.reload();
             });
 
         SEOService.setSEO({
