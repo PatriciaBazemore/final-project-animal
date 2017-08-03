@@ -87,7 +87,7 @@
 </div>
         <!-- ADMIN NAV  -->
         <div ng-if="user.role === 'admin'">
-        <nav class="navbar custom-top" id="admin-nav" role="navigation" >
+        <nav ng-controller="NavController" class="navbar custom-top" id="admin-nav" role="navigation" >
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button ng-click="clearClass()" class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -101,9 +101,9 @@
                             <a class="navbar-brand" href="/animals"><img alt="McKamey Logo" class="nav-logo" src="http://0d368e4264074a316fe7-20bead50f0a484ec4adb7b671367dd87.r59.cf2.rackcdn.com/f849fa7b7457410fbfa6d2b9cc006a39.png"></a></li>
                     </ul>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
+                <div id="navbar" class="navbar-collapse collapse nav-pills">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="nav-text" href="/admin">Admin Controls</a></li>
+                        <li><a class="nav-text active" href="/admin">Admin Controls</a></li>
                         <li><a class="nav-text" href="/users">User List</a></li>
                         <li><a class="nav-text" href="#">Bulletin Board</a></li>
                         <li><a class="nav-text" href="/logout">Logout</a></li>
@@ -150,7 +150,6 @@
             <a href="https://twitter.com/McKameyCenter" target="_blank"><i class="fa fa-twitter footer-icon" aria-hidden="true"></i></a>
         </div>
         <!-- RIGHT  -->
-        <!-- <div ng-show="user.role != 'user' && user.role != 'admin'"> -->
         <div class="text-center row col-md-4" ng-if="user.role === 'user'">
             <h3>Need Karen?</h3>
             <p>(423) 305-6504</p>

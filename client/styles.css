@@ -1,11 +1,10 @@
-
 h1, h2, h3, h4, h5, h6, .title {
     font-family: 'Zilla Slab', serif;
 }
 p, .lead {
     font-family: 'Roboto', serif;
 }
-a:link {
+a:link, a:visited {
     color: black;
     text-decoration: none;
 }
@@ -14,13 +13,17 @@ a:focus, a:hover {
     background-color: black;
     text-decoration: none;
 }
-#navbar>.navbar-nav>li>a:hover, #navbar>.navbar-nav>li>a:focus {
+  #navbar>.navbar-nav>li>a:hover, #navbar>.navbar-nav>li>a:focus {
     color: white;
     background-color: black;
 }
 .navbar-nav>li>a:hover, .navbar-nav>li>a:link, .navbar-nav>li>a:visited {
     background-color: transparent;
-}
+}  
+/* .active {
+    background-color: black;
+    color: white;
+} */
 .pointer {
     cursor: pointer;
 }
@@ -39,6 +42,11 @@ a:focus, a:hover {
 
 h3 {
     padding-top: 0px;
+}
+
+.text-area {
+    overflow: hidden;
+    resize: none;
 }
 /* INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX */
 nav {
@@ -304,7 +312,10 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     padding: 1em;
     padding-bottom: 1em;
 }
-
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
 /* USER LIST USER LIST USER LIST USER LIST */
 .pad-top {
     padding-top: 100px;

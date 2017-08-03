@@ -25,6 +25,7 @@
 ## Styling
 * GREEN rgb(2, 92, 46);
 * TAN rgb(150, 136, 98);
+* GRAY #EFEFEF
 * HEADER FONT: 'Zilla Slab'
 * CONTENT FONT: 'Roboto'
 	
