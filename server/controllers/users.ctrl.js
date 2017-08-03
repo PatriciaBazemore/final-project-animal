@@ -61,7 +61,7 @@ router.route('/')
         var u = req.body;
         utils.encryptPassword(u.password)
         .then(function(hash) {
-            return procedures.create(u.email, hash, u.firstname, u.lastname);
+            return procedures.create(u.email, hash, u.firstname, u.lastname, u.date);
         }).then(function(id) {
             res.status(201).send(id);
         }).catch(function(err) {
@@ -83,7 +83,7 @@ router.route('/:id')
     })
     //should be using this to update
     .put(function(req, res) {
-        procedures.update(req.body.firstname, req.body.lastname, req.body.email, req.body.role, req.body.started, req.body.activity, req.body.random, req.params.id)
+        procedures.update(req.body.firstname, req.body.lastname, req.body.email, req.body.role, req.body.started, req.body.activity, req.body.random, req.file, req.params.id)
         .then(function() {
             res.sendStatus(204);
         }).catch(function(err) {

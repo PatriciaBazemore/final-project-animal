@@ -1,26 +1,5 @@
 angular.module('volunteerApp.controllers', [])
-<<<<<<< HEAD
-    .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', function ($scope, SEOService, $location, UserService, User) {
-=======
-    // .controller('AppCtrl', ['$scope', 'UserService', function ($scope, $UserService) {
-    //     $scope.$back = function () {
-    //         window.history.back();
-    //     };
-    // }
-    //     UserService.me()
-    //         .then(function (success) {
-    //             $scope.user = success;
-    //         });
-    //     $scope.IsAdmin = function () {
-    //         return $scope.UserRole == "admin";
-    //     }
-
-    //     $scope.IsUser = function () {
-    //         return $scope.UserRole == "user";
-    //     }
-    // }])
     .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', '$window', function ($scope, SEOService, $location, UserService, User, $window) {
->>>>>>> cba215bb0929cbbd868480a741dcc7f11d88676f
         UserService.me()
             .then(function (success) {
                 $scope.user = success;
@@ -239,7 +218,8 @@ angular.module('volunteerApp.controllers', [])
             .then(function (success) {
                 $scope.user = success;
             });
-        $scope.user = User.get({ id: $routeParams.id });
+
+        $scope.clickuser = User.get({ id: $routeParams.id });
         $scope.deleteUser = function () {
             if (confirm('Are you sure you want to delete ' + $scope.user.firstname + ' ' + $scope.user.lastname + '?')) {
                 $scope.user.$delete(function (success) {
@@ -256,13 +236,14 @@ angular.module('volunteerApp.controllers', [])
             description: 'View McKamey Animal Shelter Volunteer'
         })
     }])
-    .controller('UserUpdateController', ['$scope', 'User', 'UserService', 'SEOService', '$location', '$routeParams', function ($scope, User, UserService, SEOService, $location, $routeParams) {
+    .controller('UserUpdateController', ['$scope', 'User', 'UserService', 'SEOService', '$location', '$routeParams', '$window', function ($scope, User, UserService, SEOService, $location, $routeParams, $window) {
         $scope.user = User.get({ id: $routeParams.id });
 
         //should put req to /users/id
         $scope.updateUser = function() {
             $scope.user.$update(function() {
                 $location.path('/users/' + $routeParams.id);
+                $window.location.reload();
             });
         }
 
