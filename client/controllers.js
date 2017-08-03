@@ -1,7 +1,4 @@
 angular.module('volunteerApp.controllers', [])
-<<<<<<< HEAD
-    .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', function ($scope, SEOService, $location, UserService, User) {
-=======
     // .controller('AppCtrl', ['$scope', 'UserService', function ($scope, $UserService) {
     //     $scope.$back = function () {
     //         window.history.back();
@@ -20,7 +17,6 @@ angular.module('volunteerApp.controllers', [])
     //     }
     // }])
     .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', '$window', function ($scope, SEOService, $location, UserService, User, $window) {
->>>>>>> cba215bb0929cbbd868480a741dcc7f11d88676f
         UserService.me()
             .then(function (success) {
                 $scope.user = success;

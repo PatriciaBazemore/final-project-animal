@@ -5,9 +5,9 @@ angular.module('volunteerApp.directives', [])
         require: 'ngModel',
         link: function (scope, element, attrs, ngModelCtrl) {
             $(element).datepicker({
-                dateFormat: 'YYYY MM, DD',
+                dateFormat: 'yy-mm-dd',
                 onSelect: function (date) {
-                    scope.date = date;
+                    scope.user.started = date;
                     scope.$apply();
                 }
             });
