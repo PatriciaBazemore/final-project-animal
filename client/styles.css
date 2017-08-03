@@ -232,8 +232,6 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 } 
 .animal-div:hover {
     /* margin-top: 7.5em; */
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border: 1px solid rgb(2, 92, 46); */
     background-color: rgb(2, 92, 46);
     color: white;
 }
@@ -299,6 +297,10 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 }
 
 /* SINGLE/UPDATE USER SINGLE/UPDATE USER SINGLE/UPDATE USER SINGLE/UPDATE USER */
+#startdate {
+    float:right;
+}
+
 .extra-pad-top {
     padding-top: 110px;
 }
@@ -330,7 +332,6 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 }
 /* FORUM HOME FORUM HOME FORUM HOME FORUM HOME */
 
-/* SINGLE POST SINGLE POST SINGLE POST SINGLE POST */
 
 /* DONATIONS DONATIONS DONATIONS DONATIONS */
 .gold-bar {
@@ -344,7 +345,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 .cat-donate-pic {
     content: 'Smiling Cat';
     background-image: url("/images/talking-cat.jpg");
-    opacity: 0.5;
+    opacity: 0.9;
     background-size: cover;
     width: 25em;
     height: 25em;
@@ -352,20 +353,20 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     position: relative;
     margin: 2em;
     margin-top: 2em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
 }
 
 .dog-donate-pic {
     background-image: url("/images/looking-up-dog.jpg");
     content: 'Smiling Dog';
-    opacity: 0.5;
+    opacity: 0.9;
     background-size: cover;
     width: 25em;
     height: 25em;
     display: block;
     position: relative;
     margin: 2em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
 }
 
 /*.donate-pic {
