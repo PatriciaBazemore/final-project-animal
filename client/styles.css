@@ -2,13 +2,17 @@
 h1, h2, h3, h4, h5, h6, .title {
     font-family: 'Zilla Slab', serif;
 }
-
 p, .lead {
     font-family: 'Roboto', serif;
+}
+a:link {
+    color: black;
+    text-decoration: none;
 }
 a:focus, a:hover {
     color: white;
     background-color: black;
+    text-decoration: none;
 }
 #navbar>.navbar-nav>li>a:hover, #navbar>.navbar-nav>li>a:focus {
     color: white;
@@ -17,11 +21,25 @@ a:focus, a:hover {
 .navbar-nav>li>a:hover, .navbar-nav>li>a:link, .navbar-nav>li>a:visited {
     background-color: transparent;
 }
-
 .pointer {
     cursor: pointer;
 }
+.green-back {
+    background-color: rgb(2, 92, 46);
+    color: white;
+}
+.gold-back {
+    background-color: rgb(150, 136, 98);
+    color: white;
+}
+.black-back {
+    background-color: black;
+    color: white;
+}
 
+h3 {
+    padding-top: 0px;
+}
 /* INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX */
 nav {
     width: 100%;
@@ -59,11 +77,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     font-size: 2em;
     font-family: 'Zilla Slab', serif;
 }
-#public-nav {
-    display: inline-block;
-    list-style-type: none;
-    margin-top: 1em;
-}
+
 .navbar-nav>li>a {
     padding-top: 0.25em;
     padding-bottom: 0.25em;
@@ -96,7 +110,9 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     height: 22px;
     width: 22px;
 }
-
+.bold-text {
+    font-weight: bold;
+}
 /* SIDE PANEL SIDE PANEL SIDE PANEL SIDE PANEL */
 /* .slideout-menu {
         position: fixed;
@@ -335,8 +351,14 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 .btn-danger {
     border-radius: 40px;
 }
-/* FORUM HOME FORUM HOME FORUM HOME FORUM HOME */
+/* SINGLE ANIMAL SINGLE ANIMAL ANIMAL SINGLE ANIMAL */
 
+.animal-single {
+    box-shadow: -4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.animal-comments {
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
 /* DONATIONS DONATIONS DONATIONS DONATIONS */
 .gold-bar {

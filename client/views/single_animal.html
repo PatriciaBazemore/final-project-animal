@@ -1,7 +1,11 @@
 <div class="container-fluid top">
-    <a href="/animals"><button>Go back</button></a>
-    <!--  -->
-    <div class="container col-md-6" id="animal-list">
+    <div class="container col-md-12 gold-back">
+        <a href="/animals">
+            <h3>Back to Animals</h3>
+        </a>
+        <!--  -->
+    </div>
+    <div class="container col-md-6 animal-single">
         <h1>{{ animal.name }} - #{{ animal.shelterid }}</h1>
         <img src="{{ animal.imageurl }}" class="animal-img" width="500px">
         <h3>{{ animal.breed }} - {{ animal.age }} - {{ animal.gender }} - {{ animal.size }}</h3>
@@ -10,22 +14,26 @@
         <button ng-show="user.role === 'admin'" ng-click="deleteAnimal()" class="btn btn-danger btn-xs"><span><i class="fa fa-trash-o" aria-hidden="true"></i>Delete Animal</span></button>
     </div>
 
-    <div class="container col-md-6">
-        <h1><strong>Volunteer Comments/Feedback</strong></h1>
-         <div class="container col-md-12" ng-repeat="c in comment">
-            <h4>{{ c.firstname }} {{ c.lastname }}</h4> 
+    <div class="container col-md-6 animal-comments">
+        <h1 class="green-back"><strong>Volunteer Comments/Feedback</strong></h1>
+        <div class="container row col-md-12" ng-repeat="c in comment">
+            <h4><strong>{{ c.firstname }} {{ c.lastname }}</strong></h4>
             <h4>{{ c.comment }}</h4>
-            <h5 class="col-md-6">{{ c.timestamp | date: "short" }}</h5><button ng-hide="c.userid === user.id" ng-click="c.flagged = 1; flagComment(c)" class="col-md-offset-2 btn btn-danger btn-xs"><span><i class="glyphicon glyphicon-flag" aria-hidden="true"></i>Report</span></button>
-            <button ng-if="c.userid === user.id || user.role === 'admin'" ng-click="deleteComment(c)" class="col-md-3 btn btn-danger btn-xs delete-user"><span><i class="fa fa-trash-o" aria-hidden="true"></i>Delete Comment</span></button>
+            <h5 class="row col-md-6"><em>{{ c.timestamp | date: "short" }}</em></h5>
+            <button ng-hide="c.userid === user.id" ng-click="c.flagged = 1; flagComment(c)" class="btn btn-danger btn-xs">
+                <span><i class="glyphicon glyphicon-flag" aria-hidden="true"></i>Report</span>
+            </button>
+            <button ng-if="c.userid === user.id || user.role === 'admin'" ng-click="deleteComment(c)" class="col-md-3 col-md-offset-2 btn btn-danger btn-xs delete-user">
+                <span><i class="fa fa-trash-o" aria-hidden="true"></i>Delete Comment</span>
+            </button>
         </div>
-
-        <h1><strong>Add Comment</strong></h1>
-        <div class="container col-md-12">
-            <h4>{{ user.firstname }} {{ user.lastname }}</h4>
-            <textarea ng-model="commentToAdd" class="form-control text" placeholder="Comment"></textarea>
-            <button ng-click="addComment()" class="btn btn-sm btn-text">Save</button>
+        <div class="container col-md-12 row">
+            <h1 class="green-back"><strong>Add Comment</strong></h1>
+            <div class="container row col-md-12">
+                <h4><strong>{{ user.firstname }} {{ user.lastname }}</strong></h4>
+                <textarea ng-model="commentToAdd" class="form-control text" placeholder="Comment"></textarea>
+                <button ng-click="addComment()" class="btn btn-sm btn-text">Save</button>
+            </div>
         </div>
-
     </div>
-
 </div>
