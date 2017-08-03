@@ -1,5 +1,4 @@
 angular.module('volunteerApp.controllers', [])
-<<<<<<< HEAD
     // .controller('AppCtrl', ['$scope', 'UserService', function ($scope, $UserService) {
     //     $scope.$back = function () {
     //         window.history.back();
@@ -17,8 +16,6 @@ angular.module('volunteerApp.controllers', [])
     //         return $scope.UserRole == "user";
     //     }
     // }])
-=======
->>>>>>> a9045ffba412673e6564af1c4ce9dd3708298991
     .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', '$window', function ($scope, SEOService, $location, UserService, User, $window) {
         UserService.me()
             .then(function (success) {
