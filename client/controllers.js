@@ -1,21 +1,4 @@
 angular.module('volunteerApp.controllers', [])
-    // .controller('AppCtrl', ['$scope', 'UserService', function ($scope, $UserService) {
-    //     $scope.$back = function () {
-    //         window.history.back();
-    //     };
-    // }
-    //     UserService.me()
-    //         .then(function (success) {
-    //             $scope.user = success;
-    //         });
-    //     $scope.IsAdmin = function () {
-    //         return $scope.UserRole == "admin";
-    //     }
-
-    //     $scope.IsUser = function () {
-    //         return $scope.UserRole == "user";
-    //     }
-    // }])
     .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', function ($scope, SEOService, $location, UserService, User) {
         UserService.me()
             .then(function (success) {
@@ -56,13 +39,6 @@ angular.module('volunteerApp.controllers', [])
         return $scope.user == "";
     }
     }])
-    // WORK W WILL TO CREATE CONTROLLERS TOGGLING PUBLIC NAV & PRIVATE (USER) NAV
-    // .controller('IndexController', ['$scope', function ($scope) {
-    //     // $('.').click(function() {
-    //     $(this).toggleClass('myclass');
-    //     $(this).toggleClass('showhidenew');
-    //     ;
-    // }])
     .controller('AnimalsController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', '$http', function ($scope, Animal, UserService, SEOService, $location, $http) {
         $scope.editProfile = function() {
             UserService.me()
