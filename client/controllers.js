@@ -113,11 +113,13 @@ angular.module('volunteerApp.controllers', [])
 
 
         $scope.flagComment = function(comment) {
-             comment.$update(function (success) {
-                alert("Your comment report has been submitted");
-            }, function (err) {
-                console.log(err);
-            });
+            if (confirm('Are you sure you want to report this comment?')) {
+                comment.$update(function (success) {
+                    alert("Your comment report has been submitted");
+                }, function (err) {
+                    console.log(err);
+                });
+            }
         };
 
 
