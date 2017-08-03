@@ -1,5 +1,26 @@
 angular.module('volunteerApp.controllers', [])
+<<<<<<< HEAD
     .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', function ($scope, SEOService, $location, UserService, User) {
+=======
+    // .controller('AppCtrl', ['$scope', 'UserService', function ($scope, $UserService) {
+    //     $scope.$back = function () {
+    //         window.history.back();
+    //     };
+    // }
+    //     UserService.me()
+    //         .then(function (success) {
+    //             $scope.user = success;
+    //         });
+    //     $scope.IsAdmin = function () {
+    //         return $scope.UserRole == "admin";
+    //     }
+
+    //     $scope.IsUser = function () {
+    //         return $scope.UserRole == "user";
+    //     }
+    // }])
+    .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', '$window', function ($scope, SEOService, $location, UserService, User, $window) {
+>>>>>>> cba215bb0929cbbd868480a741dcc7f11d88676f
         UserService.me()
             .then(function (success) {
                 $scope.user = success;
@@ -9,6 +30,7 @@ angular.module('volunteerApp.controllers', [])
             UserService.login($scope.email, $scope.password)
                 .then (function () {
                     $location.path('/animals');
+                    $window.location.reload();
                 }, function (err) {
                     console.log(err);
                 });
@@ -297,10 +319,11 @@ angular.module('volunteerApp.controllers', [])
             description: 'Help Out The McKamey Animal Shelter'
         })
     }])
-    .controller('LogoutController', ['$scope', 'UserService', 'SEOService', '$location', function ($scope, UserService, SEOService, $location) {
+    .controller('LogoutController', ['$scope', 'UserService', 'SEOService', '$location', '$window', function ($scope, UserService, SEOService, $location, $window) {
         UserService.logout()
             .then(function (success) {
                 $location.path('/');
+                $window.location.reload();
             });
 
         SEOService.setSEO({
