@@ -53,8 +53,8 @@ angular.module('volunteerApp.controllers', [])
         $scope.IsUser = function(){
             return $scope.user == "user";
         }
-    $scope.IsVisitor = function(){
-        return $scope.user == "";
+        $scope.IsVisitor = function(){
+            return $scope.user == "";
     }
     }])
     .controller('AnimalsController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', '$http', function ($scope, Animal, UserService, SEOService, $location, $http) {
@@ -140,8 +140,7 @@ angular.module('volunteerApp.controllers', [])
                 console.log(err);
             });
         }
-
-
+       
         SEOService.setSEO({
             title: 'Animal Bio',
             url: $location.url(),
@@ -363,8 +362,6 @@ angular.module('volunteerApp.controllers', [])
                 console.log(err);
             });
         };
-
-
         $scope.deleteComment = function(comment) {
             if (confirm('Are you sure you want to delete this comment?')) {
                 comment.$delete(function (success) {

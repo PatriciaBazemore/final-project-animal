@@ -183,9 +183,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     position: center center;
     margin-top: 5px;
 }
-/*#myCarousel {
-    margin-top: 7.5em;
-}*/
+
 .carousel-inner {
     margin-top: 0;
     width: 100%;
@@ -276,27 +274,11 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 #selectAnimalButton {
     margin-left: 1em;
 }
-.animalDropdownBtn {
-    /* background-color: rgb(2, 92, 46); */
-    /* width: 3em; */
-}
-#admin-animals {
-    float: right;
-}
-#admin-users {
-    float: left;
-}
-#admin-comments {
-    clear: both;
-    margin-left: 30%;
-    padding-top: 5em;
-}
-.update-animal-pic {
-    float: left;
-}
-.add-animal-btn {
-    margin: 5px;
-}
+/*.animalDropdownBtn {
+     background-color: rgb(2, 92, 46);
+    width: 3em; 
+}*/
+
 #prices {
     background-color: rgb(150, 136, 98);
     color: white;
@@ -405,9 +387,67 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     min-width: 300px;
 }*/
 /* ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN */
+#admin-animals {
+    float: right;
+    min-width: 20em;
+    min-height: 20em;
+    border-radius: 25px;
+    padding-bottom: 1em;
+}
+#admin-users {
+    float: left;
+    min-width: 20em;
+    min-height: 20em;
+    border-radius: 25px;
+    padding-bottom: 1em;
+}
+.admin-tools {
+    clear: both;
+    margin-right: 1em;
+    margin-left: 3em;
+}
+.admin-heading {
+    padding-top: 1em;
+    margin-left: .25em;
+}
+#admin-comments {
+    clear: both;
+    margin-left: 30%;
+    padding-top: 5em;
+}
+.update-animal-pic {
+    float: left;
+}
+.add-animal-btn {
+    margin: 5px;
+}
+
 #animalDropDown {
     max-width: 25em;
 }
+/*#searchby {
+    margin-right: 7em;
+}*/
 /*#admin-container {
     margin-top: 7.5em;
 }*/
+#flagged-comments {
+    border: 5px solid  rgb(2, 92, 46);
+    border-radius: 25px;
+    float: left;
+    min-width: 100%;
+    min-height: 10em;
+    padding-bottom: 1em;
+    margin-bottom: 5em;
+}
+#flagged-header {
+    clear: both;
+    margin-left: 35%;
+    padding-top: 6em;
+}
+#flagged-alert {
+    margin-top: .5em;
+    margin-left: 1em;
+    color: rgb(2, 92, 46);
+    font-size:  5em;
+}

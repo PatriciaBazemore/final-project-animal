@@ -36,7 +36,6 @@ router.route('/flagged')
         })
     });
 
-
 // /api/comments/:id
 router.route('/:id')
     .get(function(req, res) {
