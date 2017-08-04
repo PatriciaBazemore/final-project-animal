@@ -1,21 +1,4 @@
 angular.module('volunteerApp.controllers', [])
-    // .controller('AppCtrl', ['$scope', 'UserService', function ($scope, $UserService) {
-    //     $scope.$back = function () {
-    //         window.history.back();
-    //     };
-    // }
-    //     UserService.me()
-    //         .then(function (success) {
-    //             $scope.user = success;
-    //         });
-    //     $scope.IsAdmin = function () {
-    //         return $scope.UserRole == "admin";
-    //     }
-
-    //     $scope.IsUser = function () {
-    //         return $scope.UserRole == "user";
-    //     }
-    // }])
     .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', '$window', function ($scope, SEOService, $location, UserService, User, $window) {
         UserService.me()
             .then(function (success) {
@@ -53,12 +36,6 @@ angular.module('volunteerApp.controllers', [])
         $scope.IsUser = function () {
             return $scope.user == "user";
         }
-<<<<<<< HEAD
-=======
-        $scope.IsVisitor = function(){
-            return $scope.user == "";
-    }
->>>>>>> b709f0e84413324004f3ddfc610d91dedefa47a7
     }])
     // .controller('NavController', ['$scope', function ($scope) {
     //     $('.navbar li').on('click', function () {
@@ -373,13 +350,9 @@ angular.module('volunteerApp.controllers', [])
                 console.log(err);
             });
         };
-<<<<<<< HEAD
 
 
         $scope.deleteComment = function (comment) {
-=======
-        $scope.deleteComment = function(comment) {
->>>>>>> b709f0e84413324004f3ddfc610d91dedefa47a7
             if (confirm('Are you sure you want to delete this comment?')) {
                 comment.$delete(function (success) {
                     $scope.comment = Comments.queryForFlag();
