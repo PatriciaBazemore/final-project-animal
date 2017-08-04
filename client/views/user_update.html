@@ -1,6 +1,11 @@
 <div class="container top">
     <div class="container" id="edit-user">
         <!--I want current info as placeholder-->
+        <h1 class="gold-back">Update User</h1>
+        <div id="startdate">
+            <h3>Date you started volunteering</h3>
+            <input type="text" ng-model="user.started | date: short" jqdatepicker ><br/>
+        </div> 
         <div>
             <h3>Volunteer Name</h3>
             <input ng-required="true" type="text" class="form-control text" placeholder="First Name" ng-model="user.firstname">
@@ -10,21 +15,17 @@
             <h3>Email Address</h3>
             <input ng-required="true" type="text" class="form-control text" placeholder="Email" ng-model="user.email">
         </div>
-        <div id="startdate">
-            <h3>Date you started volunteering:</h3>
-            <input type="text" ng-model="user.started" jqdatepicker ><br/>
-        </div>  
         <!--<div>
             <h3>Upload a Profile Image:</h3>
             <input type="file" class="form-control col-md-3" ng-model="user.image">
         </div>-->
         <div>
-            <h3>Activities I help with at McKamey:</h3> 
+            <h3>Activities I help with at McKamey</h3> 
             <input ng-required="true" type="text" class="form-control text-area" placeholder="Volunteer Activities" ng-model="user.activity">
         </div>
         <div>
-            <h3>Why I volunteer/what I like about it:</h3>
-            <input ng-required="true" type="text" class="form-control text-area" placeholder="Tell us why you volunteer!" ng-model="user.random">
+            <h3>Why I volunteer/what I like about it</h3>
+            <textarea ng-required="true" col="30" row="5" type="text" class="form-control text-area" placeholder="Tell us why you volunteer!" ng-model="user.random"></textarea>
         </div>
         <div>
             <select ng-show="user.role == 'admin'" class="form-control" ng-model="user.role">
@@ -33,7 +34,7 @@
             </select>
         </div>
         <div>
-            <button ng-click="updateUser()" class="btn btn-sm btn-text">Save</button>
+            <button ng-click="updateUser()" class="btn btn-md btn-text">Save</button>
             <button ng-click="deleteUser()" class="btn btn-danger btn-xs delete-user"><span><i class="fa fa-trash-o" aria-hidden="true"></i>Delete User</span></button>
         </div>
     </div>

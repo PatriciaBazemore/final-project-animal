@@ -35,7 +35,7 @@ router.route('/:id')
         });
     })
     .put(function(req, res) {
-        procedures.update(req.body.name, req.body.age, req.body.gender, req.body.species, req.body.breed, req.body.size, req.body.shelterid, req.params.id)
+        procedures.update(req.body.name, req.body.age, req.body.gender, req.body.species, req.body.breed, req.body.size, req.body.shelterid, req.body.bio, req.params.id)
         .then(function() {
             res.sendStatus(204);
         }).catch(function(err) {
