@@ -9,8 +9,13 @@
         <p>{{ clickuser.activity }}</p><br>
         <h3>What motivates you to volunteer:</h3>
         <p>{{ clickuser.random }}</p><br>
+<<<<<<< HEAD
+        <h3 ng-show="user.role == 'admin'">{{ clickuser.role }}</h3>
+        <button class="btn btn-text btn-sm"><a ng-href="users/{{ clickuser.id }}/update" class="btn-text"><span><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>Edit User</span></a></button>
+=======
         <h3 ng-show="user.role == 'admin'">User Role:</h3>
         <p ng-show="user.role === 'admin'">{{ clickuser.role }}</p><br>
         <a ng-href="users/{{ clickuser.id }}/update" class="btn-text"><button class="btn btn-text btn-sm"><span><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>Edit User</span></button></a>
+>>>>>>> 8b44412ba76fbb115133a460da1d0f45a811386d
     </div>
 </div>
