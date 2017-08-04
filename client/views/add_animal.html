@@ -1,6 +1,6 @@
 <div class="container pad-top bottom-pad">
     <div class="container" id="edit-animal">
-        <h1 class="text-center"><strong>Add a New Animal to Adoptions</strong></h1>
+        <h1 class="green-back"><strong>Add a New Animal to Adoptions</strong></h1>
         <div class="col-md-6">
             <input ng-required="true" type="text" class="form-control text" placeholder="Name" ng-model="name"></input>
             <select class="form-control" ng-model="age">
@@ -26,8 +26,8 @@
 
         <div class="col-md-6">
             <input ng-required="true" type="text" class="form-control text" placeholder="Shelter ID" ng-model="shelterid"></input>
-            <textarea class="form-control" cols="30" rows="5" placeholder="Animal Bio/Information" ng-model="bio"></textarea>
-            <button ng-click="saveAnimal()" class="btn btn-md btn-text add-animal-btn">Add Animal</button>
+            <textarea class="form-control text-area" cols="30" rows="5" placeholder="Animal Bio/Information" ng-model="bio"></textarea>
+            <button ng-click="saveAnimal()" class="btn btn-md btn-text add-animal-btn">Save</button>
         </div>
 
     </div>
