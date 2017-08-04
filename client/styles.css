@@ -306,6 +306,10 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     font-family: 'Zilla Slab', serif;
     text-decoration: none;
 }
+.open>.dropdown-menu {
+    display: block;
+    float: right;
+}
 
 /* SINGLE/UPDATE USER SINGLE/UPDATE USER SINGLE/UPDATE USER SINGLE/UPDATE USER */
 #startdate {
