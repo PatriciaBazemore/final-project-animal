@@ -17,26 +17,24 @@ prerender.set('prerenderToken', process.env.PRERENDER_TOKEN); //this needs to be
 //ENVIRO variable 
 
 var app = express();
-// aws.config.update({region: 'us-east-1'});
-aws.config.region = 'us-east-1';
-//fill in the below brackets with bucket name
-var s3 = new aws.S3({ params: { Bucket: 'mcKameyImages'}});
+
+//BELOW IS UNFINISHED IMAGE UPLOAD CODE:
+// aws.config.update({region: 'us-east-1'});  not sure which way is correct
+// aws.config.region = 'us-east-1';
+// var s3 = new aws.S3({ params: { Bucket: 'mcKameyImages'}});
 // var bucketParams = {Bucket: 'mcKameyImages'};
-s3.createBucket(bucketParams);
+// s3.createBucket(bucketParams);
 
-var upload = multer({
+// var upload = multer({
 
-  storage: multerS3({
-    s3: s3,
-    bucket: 'mcKameyImages',
-    metadata: function (req, file, cb) {
-      cb(null, {fieldName: file.fieldname});
-    },
-    key: function (req, file, cb) {
-      cb(null, Date.now().toString())
-    }
-  })
-})
+//   storage: multerS3({
+//     s3: s3,
+//     bucket: 'mcKameyImages',
+//     key: function (req, file, cb) {
+//       cb(null, Date.now().toString())
+//     }
+//   })
+// })
 
 
 app.use(prerender);

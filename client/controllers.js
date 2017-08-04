@@ -246,7 +246,8 @@ angular.module('volunteerApp.controllers', [])
                 $window.location.reload();
             });
         }
-
+        //use http and update to create multiform submission. (google angjs submit image multer, maybe directives)
+        
         $scope.deleteUser = function () {
             if (confirm('Are you sure you want to delete ' + $scope.user.firstname + ' ' + $scope.user.lastname + '?')) {
                 $scope.user.$delete(function (success) {
