@@ -2,13 +2,17 @@
 h1, h2, h3, h4, h5, h6, .title {
     font-family: 'Zilla Slab', serif;
 }
-
 p, .lead {
     font-family: 'Roboto', serif;
+}
+a:link {
+    color: black;
+    text-decoration: none;
 }
 a:focus, a:hover {
     color: white;
     background-color: black;
+    text-decoration: none;
 }
 #navbar>.navbar-nav>li>a:hover, #navbar>.navbar-nav>li>a:focus {
     color: white;
@@ -17,11 +21,26 @@ a:focus, a:hover {
 .navbar-nav>li>a:hover, .navbar-nav>li>a:link, .navbar-nav>li>a:visited {
     background-color: transparent;
 }
-
 .pointer {
     cursor: pointer;
 }
+.green-back {
+    background-color: rgb(2, 92, 46);
+    color: white;
+    padding: .5em ; 
+}
+.gold-back {
+    background-color: rgb(150, 136, 98);
+    color: white;
+}
+.black-back {
+    background-color: black;
+    color: white;
+}
 
+h3 {
+    padding-top: 0px;
+}
 /* INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX */
 nav {
     width: 100%;
@@ -59,11 +78,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     font-size: 2em;
     font-family: 'Zilla Slab', serif;
 }
-#public-nav {
-    display: inline-block;
-    list-style-type: none;
-    margin-top: 1em;
-}
+
 .navbar-nav>li>a {
     padding-top: 0.25em;
     padding-bottom: 0.25em;
@@ -95,8 +110,11 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     color: white;
     height: 22px;
     width: 22px;
+    margin-top: .7em;
 }
-
+.bold-text {
+    font-weight: bold;
+}
 /* SIDE PANEL SIDE PANEL SIDE PANEL SIDE PANEL */
 /* .slideout-menu {
         position: fixed;
@@ -167,9 +185,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     position: center center;
     margin-top: 5px;
 }
-/*#myCarousel {
-    margin-top: 7.5em;
-}*/
+
 .carousel-inner {
     margin-top: 0;
     width: 100%;
@@ -260,27 +276,11 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 #selectAnimalButton {
     margin-left: 1em;
 }
-.animalDropdownBtn {
-    /* background-color: rgb(2, 92, 46); */
-    /* width: 3em; */
-}
-#admin-animals {
-    float: right;
-}
-#admin-users {
-    float: left;
-}
-#admin-comments {
-    clear: both;
-    margin-left: 30%;
-    padding-top: 5em;
-}
-.update-animal-pic {
-    float: left;
-}
-.add-animal-btn {
-    margin: 5px;
-}
+/*.animalDropdownBtn {
+     background-color: rgb(2, 92, 46);
+    width: 3em; 
+}*/
+
 #prices {
     background-color: rgb(150, 136, 98);
     color: white;
@@ -332,11 +332,17 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     margin-left: 25px;
 }*/
 
-.btn-danger {
-    border-radius: 40px;
-}
-/* FORUM HOME FORUM HOME FORUM HOME FORUM HOME */
+/*.btn-danger {
+    border-radius: 10px;
+}*/
+/* SINGLE ANIMAL SINGLE ANIMAL ANIMAL SINGLE ANIMAL */
 
+.animal-single {
+    box-shadow: -4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.animal-comments {
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
 /* DONATIONS DONATIONS DONATIONS DONATIONS */
 .gold-bar {
@@ -383,9 +389,71 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     min-width: 300px;
 }*/
 /* ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN */
+#admin-animals {
+    float: right;
+    min-width: 20em;
+    min-height: 20em;
+    border-radius: 25px;
+    padding-bottom: 1em;
+}
+#admin-users {
+    float: left;
+    min-width: 20em;
+    min-height: 20em;
+    border-radius: 25px;
+    padding-bottom: 1em;
+}
+.admin-tools {
+    clear: both;
+    margin-right: 1em;
+    margin-left: 3em;
+}
+.admin-heading {
+    padding-top: 1em;
+    margin-left: .25em;
+}
+#admin-comments {
+    clear: both;
+    margin-left: 30%;
+    padding-top: 5em;
+}
+.update-animal-pic {
+    float: left;
+}
+.add-animal-btn {
+    margin: 5px;
+}
+
 #animalDropDown {
     max-width: 25em;
 }
+/*#searchby {
+    margin-right: 7em;
+}*/
 /*#admin-container {
     margin-top: 7.5em;
+}*/
+#flagged-comments {
+    border: 5px solid  rgb(2, 92, 46);
+    border-radius: 25px;
+    float: left;
+    min-width: 100%;
+    min-height: 10em;
+    padding-bottom: 1em;
+    margin-bottom: 5em;
+}
+#flagged-header {
+    clear: both;
+    margin-left: 2em;;
+    padding-top: 6em;
+}
+#flagged-alert {
+    margin-top: .5em;
+    margin-left: 1em;
+    color: rgb(2, 92, 46);
+    font-size:  5em;
+}
+/*.glypicon-flag {
+    margin-top: 1em;
+    margin-left: 1em;
 }*/

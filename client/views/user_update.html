@@ -3,12 +3,12 @@
         <!--I want current info as placeholder-->
         <div>
             <h3>Volunteer Name</h3>
-            <input ng-required="true" type="text" class="form-control text" placeholder="First Name" ng-model="user.firstname"></input>
-            <input ng-required="true" type="text" class="form-control text" placeholder="Last Name" ng-model="user.lastname"></input>
+            <input ng-required="true" type="text" class="form-control text" placeholder="First Name" ng-model="user.firstname">
+            <input ng-required="true" type="text" class="form-control text" placeholder="Last Name" ng-model="user.lastname">
         </div>
         <div>
             <h3>Email Address</h3>
-            <input ng-required="true" type="text" class="form-control text" placeholder="Email" ng-model="user.email"></input>
+            <input ng-required="true" type="text" class="form-control text" placeholder="Email" ng-model="user.email">
         </div>
         <div id="startdate">
             <h3>Date you started volunteering:</h3>
@@ -20,11 +20,11 @@
         </div>-->
         <div>
             <h3>Activities I help with at McKamey:</h3> 
-            <input ng-required="true" type="text" class="form-control text" placeholder="Volunteer Activities" ng-model="user.activity"></input>
+            <input ng-required="true" type="text" class="form-control text-area" placeholder="Volunteer Activities" ng-model="user.activity">
         </div>
         <div>
             <h3>Why I volunteer/what I like about it:</h3>
-            <input ng-required="true" type="text" class="form-control text" placeholder="Tell us why you volunteer!" ng-model="user.random"></input>
+            <input ng-required="true" type="text" class="form-control text-area" placeholder="Tell us why you volunteer!" ng-model="user.random">
         </div>
         <div>
             <select ng-show="user.role == 'admin'" class="form-control" ng-model="user.role">

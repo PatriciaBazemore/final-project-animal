@@ -28,7 +28,7 @@ angular.module('volunteerApp.factories', [])
             url: '/api/comments/flagged',
             isArray: true
         }
-    });
+    }); 
 }])
 .factory('Donation', ['$resource', function($resource) {
     return $resource('/api/donations/:id');

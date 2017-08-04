@@ -24,3 +24,7 @@ exports.create = function(animalid, userid, comment) {
 exports.flagged = function() {
     return db.rows('GetFlaggedComments')
 }
+
+// exports.count = function() {
+//     return db.rows('FlaggedCommentCount')
+// }

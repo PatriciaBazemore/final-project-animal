@@ -20,6 +20,7 @@ exports.destroy = function(id) {
     return db.empty('DeleteUser', [id]);
 }
 
-exports.create = function(email, password, firstname, lastname, date) {
-    return db.row('InsertUser', [email, password, firstname, lastname, date]);
+exports.create = function(email, password, firstname, lastname, started) {
+    return db.row('InsertUser', [email, password, firstname, lastname, started]);
 }
+
