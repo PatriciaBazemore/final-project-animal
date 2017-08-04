@@ -10,7 +10,7 @@
         <h3>What motivates you to volunteer:</h3>
         <p>{{ user.random }}</p><br>
         <h3 ng-show="user.role == 'admin'">{{ user.role }}</h3>
-        <button class="btn btn-text btn-sm"><a ng-href="users/{{ user.id }}/update" class="btn-text"><span><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>Edit User</span></a></button>
+        <button class="btn btn-text btn-sm"><a ng-href="users/{{ user.id }}/update"><span><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>Edit User</span></a></button>
         <!--<button ng-click="deleteUser()" class="btn btn-danger btn-sm delete-user"><span><i class="fa fa-trash-o" aria-hidden="true"></i>Delete User</span></button>-->
     </div>
 </div>

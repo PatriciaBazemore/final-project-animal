@@ -27,6 +27,7 @@ a:focus, a:hover {
 .green-back {
     background-color: rgb(2, 92, 46);
     color: white;
+    padding: .5em ; 
 }
 .gold-back {
     background-color: rgb(150, 136, 98);
@@ -109,6 +110,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     color: white;
     height: 22px;
     width: 22px;
+    margin-top: .7em;
 }
 .bold-text {
     font-weight: bold;
@@ -330,9 +332,9 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     margin-left: 25px;
 }*/
 
-.btn-danger {
-    border-radius: 40px;
-}
+/*.btn-danger {
+    border-radius: 10px;
+}*/
 /* SINGLE ANIMAL SINGLE ANIMAL ANIMAL SINGLE ANIMAL */
 
 .animal-single {
@@ -442,7 +444,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 }
 #flagged-header {
     clear: both;
-    margin-left: 35%;
+    margin-left: 2em;;
     padding-top: 6em;
 }
 #flagged-alert {
@@ -451,3 +453,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     color: rgb(2, 92, 46);
     font-size:  5em;
 }
+/*.glypicon-flag {
+    margin-top: 1em;
+    margin-left: 1em;
+}*/
