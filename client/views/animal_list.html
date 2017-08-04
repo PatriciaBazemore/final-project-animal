@@ -1,5 +1,3 @@
-<!-- DISPLAY OF ALL ANIMALS // SEARCH COMPONENT @ TOP (aka page you go to looking for animals)  // shelterId/Name to single_animal.html -->
-
 <div class="row top">
     <div class="container" id="animal-list">
         <div class="row text-center">
@@ -23,9 +21,6 @@
                         <li role="presentation" ng-repeat="a in animals | filter: searchFilter"><a role="menuitem" ng-href="/animals/{{ a.id }}">{{a.name}} {{a.shelterid}}</a>
                 </form>
             </div>
-             <!-- <div class="col-md-4" id="editprofile">
-                <h3>My Profile</h3><a class="btn btn-large" ng-click="editProfile()">Edit</a>
-            </div>  -->
             <div class="col-md-4" id="prices">
                 <h3>Other Animals</h3>
                 Pricing and availability of livestock and exotic pets may vary
@@ -44,7 +39,7 @@
                 <h2 class="animal-description">
                     {{ a.shelterid }}</h2>
 
-                <a href="/animals/{{ a.id }}"><img src="{{ a.imageurl }}" class="animal-pic img-responsive" width="500px"></a>
+                <a href="/animals/{{ a.id }}"><img src="{{ a.imageurl }}" class="animal-pic img-fluid" width="500px"></a>
             </div>
          </div>
     </div>

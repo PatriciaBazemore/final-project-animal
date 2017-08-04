@@ -1,16 +1,17 @@
 <div class="container-fluid top">
     <div class="container col-md-12 gold-back">
-        <a href="/animals">
-            <h3>Back to Animals</h3>
+        <h3><a href="/animals">
+            <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Back to Animals
         </a>
-        <!--  -->
+    </h3>
+    
     </div>
     <div class="container col-md-12 animal-single">
         <h1>{{ animal.name }} - #{{ animal.shelterid }}</h1>
         <img src="{{ animal.imageurl }}" class="animal-img img-responsive" width="500px">
         <h3>{{ animal.breed }} - {{ animal.age }} - {{ animal.gender }} - {{ animal.size }}</h3>
         <p>{{ animal.bio }}</p>
-        <a ng-href="/animals/{{ animal.id }}/update"><button ng-show="user.role === 'admin'" class="glyphicon glyphicon-pencil btn-text btn-md btn"><span><i aria-hidden="true"></i>Edit Animal</span></button></a>
+        <a ng-href="/animals/{{ animal.id }}/update"><button ng-show="user.role === 'admin'" class="btn btn-text btn-md btn"><span><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>Edit Animal</span></button></a>
         <button ng-show="user.role === 'admin'" ng-click="deleteAnimal()" class="btn btn-danger btn-xs"><span><i class="fa fa-trash-o" aria-hidden="true"></i>Delete Animal</span></button>
     </div>
 

@@ -1,30 +1,13 @@
 angular.module('volunteerApp.controllers', [])
-    // .controller('AppCtrl', ['$scope', 'UserService', function ($scope, $UserService) {
-    //     $scope.$back = function () {
-    //         window.history.back();
-    //     };
-    // }
-    //     UserService.me()
-    //         .then(function (success) {
-    //             $scope.user = success;
-    //         });
-    //     $scope.IsAdmin = function () {
-    //         return $scope.UserRole == "admin";
-    //     }
-
-    //     $scope.IsUser = function () {
-    //         return $scope.UserRole == "user";
-    //     }
-    // }])
     .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', '$window', function ($scope, SEOService, $location, UserService, User, $window) {
         UserService.me()
             .then(function (success) {
                 $scope.user = success;
             });
-    
+
         $scope.login = function () {
             UserService.login($scope.email, $scope.password)
-                .then (function () {
+                .then(function () {
                     $location.path('/animals');
                     $window.location.reload();
                 }, function (err) {
@@ -42,29 +25,31 @@ angular.module('volunteerApp.controllers', [])
             $location.path('/animal_list');
         }
     }])
-    .controller('AcctController', ['$scope', 'UserService', function($scope, UserService) {
+    .controller('AcctController', ['$scope', 'UserService', function ($scope, UserService) {
         UserService.me()
             .then(function (success) {
                 $scope.user = success;
             });
-        $scope.IsAdmin = function(){
+        $scope.IsAdmin = function () {
             return $scope.user == "admin";
         }
-        $scope.IsUser = function(){
+        $scope.IsUser = function () {
             return $scope.user == "user";
         }
-        $scope.IsVisitor = function(){
-            return $scope.user == "";
-    }
     }])
+    // .controller('NavController', ['$scope', function ($scope) {
+    //     $('.navbar li').on('click', function () {
+    //         $('.nav li').removeClass("active");
+    //         $(this).addClass('active');
+    //     })
+    // }])
     .controller('AnimalsController', ['$scope', 'Animal', 'UserService', 'SEOService', '$location', '$http', function ($scope, Animal, UserService, SEOService, $location, $http) {
-        $scope.editProfile = function() {
+        $scope.editProfile = function () {
             UserService.me()
-            .then(function(currentUser) {
-                console.log(currentUser);
-                $location.path('/users/' + currentUser.id + '/update');
-            });
-            //$location.replace().path('/users/' + '/update');  
+                .then(function (currentUser) {
+                    console.log(currentUser);
+                    $location.path('/users/' + currentUser.id + '/update');
+                });
         }
         $scope.getAnimals = function (callback) {
             callback($scope.animals);
@@ -75,7 +60,7 @@ angular.module('volunteerApp.controllers', [])
         $scope.animals = Animal.query();
         UserService.me()
             .then(function (success) {
-                
+
                 $scope.user = success;
             });
 
@@ -105,7 +90,7 @@ angular.module('volunteerApp.controllers', [])
         };
 
 
-        $scope.flagComment = function(comment) {
+        $scope.flagComment = function (comment) {
             if (confirm('Are you sure you want to report this comment?')) {
                 comment.$update(function (success) {
                     alert("Your comment report has been submitted");
@@ -116,7 +101,7 @@ angular.module('volunteerApp.controllers', [])
         };
 
 
-        $scope.deleteComment = function(comment) {
+        $scope.deleteComment = function (comment) {
             if (confirm('Are you sure you want to delete your comment?')) {
                 comment.$delete(function (success) {
                     $scope.comment = Comments.queryForAnimal({ id: $routeParams.id });
@@ -256,8 +241,8 @@ angular.module('volunteerApp.controllers', [])
         $scope.user = User.get({ id: $routeParams.id });
 
         //should put req to /users/id
-        $scope.updateUser = function() {
-            $scope.user.$update(function() {
+        $scope.updateUser = function () {
+            $scope.user.$update(function () {
                 $location.path('/users/' + $routeParams.id);
                 $window.location.reload();
             });
@@ -358,14 +343,16 @@ angular.module('volunteerApp.controllers', [])
         //flagged comment logic
         $scope.comment = Comments.queryForFlag();
 
-        $scope.flagComment = function(comment) {
-             comment.$update(function (success) {
+        $scope.flagComment = function (comment) {
+            comment.$update(function (success) {
                 $scope.comment = Comments.queryForFlag();
             }, function (err) {
                 console.log(err);
             });
         };
-        $scope.deleteComment = function(comment) {
+
+
+        $scope.deleteComment = function (comment) {
             if (confirm('Are you sure you want to delete this comment?')) {
                 comment.$delete(function (success) {
                     $scope.comment = Comments.queryForFlag();
@@ -394,5 +381,5 @@ angular.module('volunteerApp.controllers', [])
 //             description: 'McKamey Volunteer Bulletin Board'
 // })
 
-    
+
 
