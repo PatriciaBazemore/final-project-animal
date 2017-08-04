@@ -29,6 +29,7 @@ a:focus, a:hover {
 .gold-back {
     background-color: rgb(150, 136, 98);
     color: white;
+    padding: .5em;
 }
 .black-back {
     background-color: black;
@@ -343,10 +344,11 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 /* SINGLE ANIMAL SINGLE ANIMAL ANIMAL SINGLE ANIMAL */
 
 .animal-single {
-    box-shadow: -4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #dddddd;
 }
 .animal-comments {
-    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #dddddd;
+    margin-top: 1em;
 }
 
 /* DONATIONS DONATIONS DONATIONS DONATIONS */
@@ -398,14 +400,12 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     float: right;
     min-width: 20em;
     min-height: 20em;
-    border-radius: 25px;
     padding-bottom: 1em;
 }
 #admin-users {
     float: left;
     min-width: 20em;
     min-height: 20em;
-    border-radius: 25px;
     padding-bottom: 1em;
 }
 .admin-tools {
@@ -439,8 +439,8 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     margin-top: 7.5em;
 }*/
 #flagged-comments {
-    border: 5px solid  rgb(2, 92, 46);
-    border-radius: 25px;
+    /*border: 5px solid  rgb(2, 92, 46);*/
+    border: 1px solid #dddddd;
     float: left;
     min-width: 100%;
     min-height: 10em;
@@ -458,7 +458,6 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 }*/
 #flagged-header {
     clear: both;
-    margin-left: 2em;;
     padding-top: 6em;
 }
 #flagged-alert {

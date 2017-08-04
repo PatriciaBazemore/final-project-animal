@@ -8,8 +8,8 @@ exports.read = function(id) {
     return db.row('GetAnimal', [id]);
 }
 
-exports.update = function(name, age, gender, species, breed, size, shelterid, id) {
-    return db.empty('UpdateAnimal', [name, age, gender, species, breed, size, shelterid, id]);
+exports.update = function(name, age, gender, species, breed, size, shelterid, bio, id) {
+    return db.empty('UpdateAnimal', [name, age, gender, species, breed, size, shelterid, bio, id]);
 }
 
 exports.destroy = function(id) {
