@@ -442,16 +442,29 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     padding-bottom: 1em;
     margin-bottom: 5em;
 }
+/*.flagged-comments {
+    border: 5px solid  rgb(2, 92, 46);
+    border-radius: 25px;
+    float: left;
+    min-width: 100%;
+    min-height: 10em;
+    padding-bottom: 1em;
+    margin-bottom: 5em;
+}*/
 #flagged-header {
     clear: both;
     margin-left: 2em;;
     padding-top: 6em;
 }
 #flagged-alert {
-    margin-top: .5em;
+    margin-top: 1em;
     margin-left: 1em;
     color: rgb(2, 92, 46);
     font-size:  5em;
+    border: 5px solid  rgb(2, 92, 46);
+    border-radius: 25px;
+    min-width: 100%;
+    min-height: 3em;
 }
 /*.glypicon-flag {
     margin-top: 1em;

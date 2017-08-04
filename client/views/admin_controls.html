@@ -69,8 +69,8 @@ button to go to /admin-animals-->
     <div id="flagged-header">
         <h1>Flagged Comments</h1>
     </div>
+    <h3 id="flagged-alert" class="cov-font flagged-comments" ng-show="!comment || comment.length === 0">No flagged comments</h3>
     <div id="flagged-comments" ng-repeat="c in comment" class="container col-md-12">
-        <h3 id="flagged-alert" class="cov-font" ng-hide="c.flagged != 0">No flagged comments</h3>
         <h3>{{ c.firstname }} {{ c.lastname }}'s comment below on {{ c.name }} was flagged!</h3> 
         <h4>{{ c.comment }}</h4>
         <h5 class="col-md-6">{{ c.timestamp | date: "short" }}</h5>
