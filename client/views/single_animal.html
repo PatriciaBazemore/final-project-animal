@@ -4,15 +4,11 @@
             <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Back to Animals
         </a>
     </h3>
-        <!--  -->
+    
     </div>
     <div class="container col-md-12 animal-single">
         <h1>{{ animal.name }} - #{{ animal.shelterid }}</h1>
-<<<<<<< HEAD
-        <img src="{{ animal.imageurl }}" class="animal-img img-fluid" width="500px">
-=======
         <img src="{{ animal.imageurl }}" class="animal-img img-responsive" width="500px">
->>>>>>> b709f0e84413324004f3ddfc610d91dedefa47a7
         <h3>{{ animal.breed }} - {{ animal.age }} - {{ animal.gender }} - {{ animal.size }}</h3>
         <p>{{ animal.bio }}</p>
         <a ng-href="/animals/{{ animal.id }}/update"><button ng-show="user.role === 'admin'" class="btn btn-text btn-md btn"><span><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>Edit Animal</span></button></a>
@@ -33,15 +29,6 @@
             <button ng-if="c.userid === user.id || user.role === 'admin'" ng-click="deleteComment(c)" class="col-md-offset-2 btn btn-danger btn-xs pull-right delete-user">
                 <span><i class="fa fa-trash-o" aria-hidden="true"></i>Delete Comment</span>
             </button>
-<<<<<<< HEAD
-        </div>
-        <div class="container col-md-12 row">
-            <h1 class="green-back"><strong>Add Comment</strong></h1>
-            <div class="container row col-md-12">
-                <h4><strong>{{ user.firstname }} {{ user.lastname }}</strong></h4>
-                <textarea ng-model="commentToAdd" class="form-control text text-area" placeholder="Comment"></textarea>
-                <button ng-click="addComment()" class="btn btn-sm btn-text">Save</button>
-=======
         </div><br>
         <div>
             <div>
@@ -51,7 +38,6 @@
                 <h4><strong> by {{ user.firstname }} {{ user.lastname }}</strong></h4>
                 <textarea ng-model="commentToAdd" class="form-control text" placeholder="Comment"></textarea>
                 <button ng-click="addComment()" class="btn btn-md btn-text pull-right">Save</button>
->>>>>>> b709f0e84413324004f3ddfc610d91dedefa47a7
             </div>
         </div>
     </div>
