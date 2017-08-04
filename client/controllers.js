@@ -1,4 +1,21 @@
 angular.module('volunteerApp.controllers', [])
+    // .controller('AppCtrl', ['$scope', 'UserService', function ($scope, $UserService) {
+    //     $scope.$back = function () {
+    //         window.history.back();
+    //     };
+    // }
+    //     UserService.me()
+    //         .then(function (success) {
+    //             $scope.user = success;
+    //         });
+    //     $scope.IsAdmin = function () {
+    //         return $scope.UserRole == "admin";
+    //     }
+
+    //     $scope.IsUser = function () {
+    //         return $scope.UserRole == "user";
+    //     }
+    // }])
     .controller('WelcomeController', ['$scope', 'SEOService', '$location', 'UserService', 'User', '$window', function ($scope, SEOService, $location, UserService, User, $window) {
         UserService.me()
             .then(function (success) {
