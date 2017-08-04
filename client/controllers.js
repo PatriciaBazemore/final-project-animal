@@ -53,6 +53,12 @@ angular.module('volunteerApp.controllers', [])
         $scope.IsUser = function () {
             return $scope.user == "user";
         }
+<<<<<<< HEAD
+=======
+        $scope.IsVisitor = function(){
+            return $scope.user == "";
+    }
+>>>>>>> b709f0e84413324004f3ddfc610d91dedefa47a7
     }])
     // .controller('NavController', ['$scope', function ($scope) {
     //     $('.navbar li').on('click', function () {
@@ -142,8 +148,7 @@ angular.module('volunteerApp.controllers', [])
                 console.log(err);
             });
         }
-
-
+       
         SEOService.setSEO({
             title: 'Animal Bio',
             url: $location.url(),
@@ -237,7 +242,8 @@ angular.module('volunteerApp.controllers', [])
             .then(function (success) {
                 $scope.user = success;
             });
-        $scope.user = User.get({ id: $routeParams.id });
+
+        $scope.clickuser = User.get({ id: $routeParams.id });
         $scope.deleteUser = function () {
             if (confirm('Are you sure you want to delete ' + $scope.user.firstname + ' ' + $scope.user.lastname + '?')) {
                 $scope.user.$delete(function (success) {
@@ -254,16 +260,18 @@ angular.module('volunteerApp.controllers', [])
             description: 'View McKamey Animal Shelter Volunteer'
         })
     }])
-    .controller('UserUpdateController', ['$scope', 'User', 'UserService', 'SEOService', '$location', '$routeParams', function ($scope, User, UserService, SEOService, $location, $routeParams) {
+    .controller('UserUpdateController', ['$scope', 'User', 'UserService', 'SEOService', '$location', '$routeParams', '$window', function ($scope, User, UserService, SEOService, $location, $routeParams, $window) {
         $scope.user = User.get({ id: $routeParams.id });
 
         //should put req to /users/id
         $scope.updateUser = function () {
             $scope.user.$update(function () {
                 $location.path('/users/' + $routeParams.id);
+                $window.location.reload();
             });
         }
-
+        //use http and update to create multiform submission. (google angjs submit image multer, maybe directives)
+        
         $scope.deleteUser = function () {
             if (confirm('Are you sure you want to delete ' + $scope.user.firstname + ' ' + $scope.user.lastname + '?')) {
                 $scope.user.$delete(function (success) {
@@ -365,9 +373,13 @@ angular.module('volunteerApp.controllers', [])
                 console.log(err);
             });
         };
+<<<<<<< HEAD
 
 
         $scope.deleteComment = function (comment) {
+=======
+        $scope.deleteComment = function(comment) {
+>>>>>>> b709f0e84413324004f3ddfc610d91dedefa47a7
             if (confirm('Are you sure you want to delete this comment?')) {
                 comment.$delete(function (success) {
                     $scope.comment = Comments.queryForFlag();

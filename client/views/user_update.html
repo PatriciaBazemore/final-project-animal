@@ -12,8 +12,12 @@
         </div>
         <div id="startdate">
             <h3>Date you started volunteering:</h3>
-            <input type="text" ng-model="user.started" jqdatepicker /><br/>
+            <input type="text" ng-model="user.started" jqdatepicker ><br/>
         </div>  
+        <!--<div>
+            <h3>Upload a Profile Image:</h3>
+            <input type="file" class="form-control col-md-3" ng-model="user.image">
+        </div>-->
         <div>
             <h3>Activities I help with at McKamey:</h3> 
             <input ng-required="true" type="text" class="form-control text-area" placeholder="Volunteer Activities" ng-model="user.activity">

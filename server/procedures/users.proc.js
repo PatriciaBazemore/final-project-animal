@@ -23,3 +23,4 @@ exports.destroy = function(id) {
 exports.create = function(email, password, firstname, lastname, started) {
     return db.row('InsertUser', [email, password, firstname, lastname, started]);
 }
+

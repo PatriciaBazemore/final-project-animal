@@ -1,16 +1,22 @@
 <div class="container top">
     <div class="container-fluid list-group-item" id="user-list">
-        <h1>{{ user.firstname }} {{ user.lastname }}</h1><br>
+        <h1>{{ clickuser.firstname }} {{ clickuser.lastname }}</h1><br>
         <h3>Email:</h3>
-        <h5>{{ user.email }}</h5><br>
+        <h5>{{ clickuser.email }}</h5><br>
         <h3>Date Started Volunteering:</h3>
-        <h4>{{ user.started }}</h4><br>
+        <h4>{{ clickuser.started }}</h4><br>
         <h3>What activities do you do at McKamey:</h3>
-        <p>{{ user.activity }}</p><br>
+        <p>{{ clickuser.activity }}</p><br>
         <h3>What motivates you to volunteer:</h3>
+<<<<<<< HEAD
+        <p>{{ clickuser.random }}</p><br>
+        <h3 ng-show="user.role == 'admin'">{{ clickuser.role }}</h3>
+        <button class="btn btn-text btn-sm"><a ng-href="users/{{ clickuser.id }}/update" class="btn-text"><span><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>Edit User</span></a></button>
+=======
         <p>{{ user.random }}</p><br>
         <h3 ng-show="user.role == 'admin'">{{ user.role }}</h3>
-        <button class="btn btn-text btn-sm"><a ng-href="users/{{ user.id }}/update" class="btn-text"><span><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>Edit User</span></a></button>
+        <button class="btn btn-text btn-sm"><a ng-href="users/{{ user.id }}/update"><span><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>Edit User</span></a></button>
         <!--<button ng-click="deleteUser()" class="btn btn-danger btn-sm delete-user"><span><i class="fa fa-trash-o" aria-hidden="true"></i>Delete User</span></button>-->
+>>>>>>> fdd1465a2ff0544f2abb5a94d0257e8a15523765
     </div>
 </div>
