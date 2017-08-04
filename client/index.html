@@ -18,7 +18,7 @@
     <meta property="og:description" content="{{ seo.description }}">
     <meta property="twitter:description" content="{{ seo.description }}">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400|Zilla+Slab:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400|Zilla+Slab:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -142,10 +142,12 @@
             </div>
         </div> 
         <!-- CENTER  -->
-        <div class="text-center row col-md-4">
+
+            <div class="text-center row col-md-4 pull-right">
+            <!-- <div class="text-center row col-md-4" ng-show="user.role === 'admin'">   -->
             <span ng-show="user.role != 'user' && user.role != 'admin'"><h3>Have questions? Visit us!</h3></span>
             <span ng-if="user.role === 'user'"><h3>Thank you for volunteering, {{ user.firstname }}!</h3></span>
-            <span ng-if="user.role === 'admin'"><h3>Logged in as {{ user.firstname }}</h3></span>
+            <span ng-if="user.role === 'admin'"><h3>Logged in as <em>{{ user.firstname }}</em></h3></span>
             <p style="font-size: 1.1em;">4500 North Access Rd.</p>
             <p style="font-size: 1.1em;">Chattanooga, TN 37415</p>
             <a href="https://www.facebook.com/McKameyAnimalCenter/" target="_blank"><i class="fa fa-facebook footer-icon" aria-hidden="true"></i></a>

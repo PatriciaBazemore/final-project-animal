@@ -10,15 +10,15 @@
                 <br>Adults: $50
             </div>
             <div class="col-md-4" id="select"> <h3 class="green-back">Select an Animal</h3>
-                <form id="selectAnimalButton" class="dropdown animalDropdownMainDiv pull-right" auto-close="outsideClick">
-                    <input disable-auto-close type="search" ng-model="searchFilter" class="animalDropdownSearchBox text-center" placeholder="Search by Name or ID"></input>
+                <form id="selectAnimalButton" class="dropdown animalDropdownMainDiv" auto-close="outsideClick">
+                    <input disable-auto-close type="search" ng-model="serchFilter" class="animalDropdownSearchBox text-center" placeholder="Search by Name or ID"></input>
                     <button class="btn btn-default dropdown-toggle animalDropdownBtn title" type="submit" id="individualDrop" data-toggle="dropdown"> 
                         Search <span class="caret text-center"></span>
                     </button>
                     <span ng-show="submitted"><label class="error">Error</label></span>
-                    <ul id="animalDropDown" class="dropdown-menu animalDropdownUlStyle" role="menu" aria-labelledby="individualDrop">
+                    <ul id="animalDropDown" class="dropdown-menu animalDropdownUlStyle pull-right" role="menu" aria-labelledby="individualDrop">
                         
-                        <li role="presentation" ng-repeat="a in animals | filter: searchFilter"><a role="menuitem" ng-href="/animals/{{ a.id }}">{{a.name}} {{a.shelterid}}</a>
+                        <li role="presentation" ng-repeat="a in animals | filter: serchFilter"><a role="menuitem" ng-href="/animals/{{ a.id }}">{{a.name}} {{a.shelterid}}</a>
                 </form>
             </div>
             <div class="col-md-4" id="prices">
