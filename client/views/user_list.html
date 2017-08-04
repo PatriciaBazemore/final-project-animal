@@ -1,16 +1,5 @@
-<div class="container text-center pad-top">
-    <h1><strong>Current Users</strong></h1>
-    <div class="container" ng-repeat="u in users">
-        <h1>{{ u.firstname }} {{ u.lastname }}</h1><br> 
-        <h3>{{ u.email }}</h3><br>
-        <h3>{{ u.started }}</h3><br>
-        <h5>{{ u.activity }}</h5><br>
-        <p>{{ u.random }}</p><br>
-        <button class="btn btn-text btn-sm"><a ng-href="/users/{{ u.id }}" class="btn-text"><span><i class="glyphicon glyphicon-zoom-in" aria-hidden="true"></i>View User</span></a></button></h1>
-    </div>
-
-
-    <div class="text-center">
+<div class="container pad-top">
+    <div>
         <h1><strong>Add New User</strong></h1>
         <form ng-submit="saveUser()">
             <input ng-model="firstname" placeholder="First Name">
@@ -19,5 +8,19 @@
             <input type="password" ng-model="password" placeholder="Password">
             <input class="btn btn-text" type="submit" value="Save">
         </form>
+    </div>
+    <h1><strong>Current Users</strong></h1>
+    <h3>Select User</h3>
+            <div class="dropdown userDropdownMainDiv" auto-close="outsideClick">
+                <button class="btn btn-default dropdown-toggle userDropdownBtn" type="button" id="individualDrop" data-toggle="dropdown">{{user.id}}<span class="caret pull-right"></span></button>
+                <span ng-show="submitted"><label class="error">Select a User</label></span>
+                <ul id="userDropDown" class="dropdown-menu userDropdownUlStyle" role="menu" aria-labelledby="individualDrop">
+                    <input disable-auto-close type="search" ng-model="serchFilter" class="userDropdownSearchBox" placeholder="Search"></input>
+                    <li role="presentation" ng-repeat="u in users | filter: serchFilter"><a role="menuitem" ng-href="/users/{{ u.id }}">{{u.firstname}} {{u.lastname}}</a></li>  
+                </ul>
+            </div>
+    <div class="container" ng-repeat="u in users">
+        <h1>{{ u.firstname }} {{ u.lastname }}</h1><br> 
+        <a ng-href="/users/{{ u.id }}"><button class="btn btn-text btn-sm"><span><i class="glyphicon glyphicon-zoom-in" aria-hidden="true"></i>View User</span></button></a>
     </div>
 </div>
