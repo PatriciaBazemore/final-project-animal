@@ -10,14 +10,9 @@ a:link {
     text-decoration: none;
 }
 a:focus, a:hover {
-    color: white;
-    background-color: black;
     text-decoration: none;
 }
-#navbar>.navbar-nav>li>a:hover, #navbar>.navbar-nav>li>a:focus {
-    color: white;
-    background-color: black;
-}
+
 .navbar-nav>li>a:hover, .navbar-nav>li>a:link, .navbar-nav>li>a:visited {
     background-color: transparent;
 }
@@ -180,7 +175,7 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
 }
 
 #scroll-image {
-    max-height: 950px;
+    max-height: 650px;
     width: 100%;
     position: center center;
     margin-top: 5px;
@@ -232,9 +227,9 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     margin-left: auto;
     margin-right: auto;
 }
-#gold-btn:hover {
+/*#gold-btn:hover {
     background-color: black;
-}
+}*/
 /* ANIMAL LIST ANIMAL LIST ANIMAL LIST ANIMAL LIST */
 
 #animal-list {
