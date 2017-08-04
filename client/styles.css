@@ -479,3 +479,30 @@ a.navbar-brand:hover, a.navbar-brand:active, a.navbar-brand:visited, a.navbar-br
     margin-top: 1em;
     margin-left: 1em;
 }*/
+
+.ui-icon-circle-triangle-w {
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.ui-icon-circle-triangle-e {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#edit-animal input, #edit-animal textarea, #edit-animal select {
+    margin-top: 1em;
+}
+
+.donation-form .btn-success {
+    margin-bottom: 1em;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.comment {
+    border: 1px solid #dddddd;
+    margin-bottom: 1em;
+}

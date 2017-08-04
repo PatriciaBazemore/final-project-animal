@@ -23,8 +23,8 @@
         <div>
         <h1 class="green-back">Volunteer Comments/Feedback</h1>
         </div>
-        <div ng-repeat="c in comment">
-            <h4>{{ c.firstname }} {{ c.lastname }} commented: </h4>
+        <div class="comment" ng-repeat="c in comment">
+            <h4><span class="bold">{{ c.firstname }} {{ c.lastname }}</span> commented: </h4>
             <h4>{{ c.comment }}</h4>
             <h5><em>at: {{ c.timestamp | date: "short" }}</em></h5>
             <button ng-hide="c.userid === user.id" ng-click="c.flagged = 1; flagComment(c)" class="btn btn-warning btn-sm pull-right">
@@ -40,7 +40,7 @@
             </div>
             <div>
                 <h4><strong> by {{ user.firstname }} {{ user.lastname }}</strong></h4>
-                <textarea ng-model="commentToAdd" class="form-control text" placeholder="Comment"></textarea>
+                <textarea ng-model="commentToAdd" class="form-control text text-area" placeholder="Comment"></textarea>
                 <button ng-click="addComment()" class="btn btn-md btn-text pull-right">Save</button>
             </div>
         </div>

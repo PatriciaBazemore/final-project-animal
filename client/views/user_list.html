@@ -2,10 +2,10 @@
     <div>
         <h1><strong>Add New User</strong></h1>
         <form ng-submit="saveUser()">
-            <input ng-model="firstname" placeholder="First Name">
-            <input ng-model="lastname" placeholder="Last Name">
-            <input type="email" ng-model="email" placeholder="Email">
-            <input type="password" ng-model="password" placeholder="Password">
+            <input ng-model="firstname" ng-required="true" placeholder="First Name">
+            <input ng-model="lastname" ng-required="true" placeholder="Last Name">
+            <input type="email" ng-model="email" ng-required="true" placeholder="Email">
+            <input type="password" ng-model="password" ng-required="true" placeholder="Password">
             <input class="btn btn-text" type="submit" value="Save">
         </form>
     </div>
