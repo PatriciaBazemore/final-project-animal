@@ -72,7 +72,7 @@ router.route('/')
 
 // /api/users/:id
 router.route('/:id')
-    .get(auth.canUpdateUser, function(req, res) {
+    .get(function(req, res) {
         procedures.read(req.params.id)
         .then(function(user) {
             res.send(user);

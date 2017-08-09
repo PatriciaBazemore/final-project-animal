@@ -63,6 +63,10 @@ nav {
     margin-top: 7.5em;
 }
 
+.btm {
+    margin-bottom: 500px;
+}
+
 .custom-top {
     position: absolute;
     left:0;
