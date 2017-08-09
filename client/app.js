@@ -8,7 +8,9 @@ angular.module('volunteerApp', ['volunteerApp.controllers', 'volunteerApp.factor
         })
         .when('/animals/add', {
             templateUrl: 'views/add_animal.html',
-            controller: 'AddAnimalController'
+            controller: 'AddAnimalController',
+            requiresLogin: true,
+            requiresAdmin: true
         })
         .when('/animals/:id/update', {
             templateUrl: 'views/animal_update.html',
@@ -33,8 +35,6 @@ angular.module('volunteerApp', ['volunteerApp.controllers', 'volunteerApp.factor
         .when('/users', {
             templateUrl: 'views/user_list.html',
             controller: 'UserListController',
-            // requiresLogin: true, //made up requiresLogin
-            // requiresAdmin: true //made up requiresAdmin
         })
         .when('/donate', {
             templateUrl: 'views/donations.html',
@@ -46,7 +46,9 @@ angular.module('volunteerApp', ['volunteerApp.controllers', 'volunteerApp.factor
         })
         .when('/admin', {
             templateUrl: 'views/admin_controls.html',
-            controller: 'AdminController'
+            controller: 'AdminController',
+            requiresLogin: true,
+            requiresAdmin: true
         })
         // .when('/bulletin_board', {
         //     templateUrl: 'views/bulletin_board',

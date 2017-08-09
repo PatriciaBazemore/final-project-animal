@@ -187,6 +187,11 @@ angular.module('volunteerApp.controllers', [])
     .controller('UserListController', ['$scope', 'User', 'UserService', 'SEOService', '$location', function ($scope, User, UserService, SEOService, $location) {
         $scope.users = User.query();
 
+        UserService.me()
+            .then(function (success) {
+                $scope.user = success;
+            });
+
         $scope.saveUser = function () {
             var payload = {
                 email: $scope.email,

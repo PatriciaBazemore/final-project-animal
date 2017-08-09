@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <!-- ADD USER  -->
-        <div class="col-md-4 top">
+        <div ng-show="user.role === 'admin'" class="col-md-4 top">
             <h1 class="green-back">Add New User</h1>
             <div class="pads outline">
                 <form ng-submit="saveUser()">
@@ -24,12 +24,12 @@
             </div>
         </div>
         <!-- SELECT USER  -->
-        <div class="col-md-4 top">
+        <div ng-show="user.role === 'admin'" class="col-md-4 top">
             <h1 class="gold-back">Current Users</h1>
             <div class="pads outline">
                 <!-- <h3>Select User</h3> -->
                 <div class="dropdown userDropdownMainDiv" auto-close="outsideClick">
-                    <button class="btn btn-default dropdown-toggle userDropdownBtn" type="button" id="individualDrop" data-toggle="dropdown">{{user.id}}Select User<span class="caret pull-right"> </span> </button>
+                    <button class="btn btn-default dropdown-toggle userDropdownBtn" type="button" id="individualDrop" data-toggle="dropdown" value="{{user.id}}">Select User<span class="caret pull-right"> </span> </button>
                     <span ng-show="submitted"><label class="error">Error</label></span>
                     <ul id="userDropDown" class="dropdown-menu userDropdownUlStyle" role="menu" aria-labelledby="individualDrop">
                         <input disable-auto-close type="search" ng-model="serchFilter" class="userDropdownSearchBox" placeholder="Search"></input>
@@ -43,7 +43,7 @@
 <!-- USER LIST  -->
 <div class="container col-md-12">
         <!-- <div> -->
-        <h1 class="green-back">Users List</h1>
+        <h1 class="green-back pad-top">Users List</h1>
         <!-- </div> -->
         <div class="comment col-md-12" ng-repeat="u in users">
             <div class="col-md-6 pull-left">

@@ -48,7 +48,7 @@ router.get('/me', function(req, res) {
 
 // /api/users/
 router.route('/')
-    .get(auth.isAdmin, function(req, res) { //view all users
+    .get(function(req, res) { //view all users
         procedures.all()
         .then(function(users) {
             res.send(users);
@@ -82,7 +82,7 @@ router.route('/:id')
         });
     })
     //should be using this to update
-    .put(function(req, res) {
+    .put(auth.canUpdateUser, function(req, res) {
         procedures.update(req.body.firstname, req.body.lastname, req.body.email, req.body.role, req.body.started, req.body.activity, req.body.random, req.params.id)
         .then(function() {
             res.sendStatus(204);
